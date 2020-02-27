@@ -20,6 +20,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  String name = "", email = "";
+
+  @override
+  void initState() {
+    super.initState();
+    widget.auth.getCurrentUser().then((user) {
+      setState(() {
+        name = user.displayName;
+        email = user.email;
+      });
+    });
+  }
+
   signOut() async {
     try {
       await widget.auth.signOut();
@@ -82,7 +95,10 @@ class _HomePageState extends State<HomePage> {
               largeScreen: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  ProfileInfo(),
+                  ProfileInfo(
+                    name: name,
+                    email: email,
+                  ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.2,
                   ),
@@ -109,7 +125,7 @@ class NavHeader extends StatelessWidget {
             : MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          if (!ResponsiveWidget.isSmallScreen(context))
+          //if (!ResponsiveWidget.isSmallScreen(context))
             Row(
               children: navButtons,
             )
@@ -156,6 +172,15 @@ class NavButton extends StatelessWidget {
 
 class ProfileInfo extends StatelessWidget {
   final String formattedDate = DateFormat('yMMMd').format(DateTime.now());
+
+  final String name;
+  final String email;
+
+  ProfileInfo({Key key,
+      @required this.name,
+      @required this.email,
+      }): super(key: key);
+
   profileImage(context) => Container(
         height: ResponsiveWidget.isSmallScreen(context)
             ? MediaQuery.of(context).size.height * 0.3
@@ -185,21 +210,21 @@ class ProfileInfo extends StatelessWidget {
               ),
       );
 
-  final profileData = Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      SizedBox(
-            height: 100,
+  profileData(context) => SizedBox(
+    width: MediaQuery.of(context).size.height * 0.8,
+      child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Text(
+           "Hi " + name + "!\n" + email,
+          textScaleFactor: 4,
+          style: TextStyle(color: Colors.blue),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+      ],
       ),
-      Text(
-        "Hi Jane!",
-        textScaleFactor: 4,
-        style: TextStyle(color: Colors.blue),
-      ),
-      SizedBox(
-        height: 10,
-      ),
-    ],
   );
 
   @override
@@ -208,7 +233,7 @@ class ProfileInfo extends StatelessWidget {
       largeScreen: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[profileImage(context), profileData],
+        children: <Widget>[profileImage(context), profileData(context)],
       ),
       smallScreen: Column(
         mainAxisSize: MainAxisSize.max,
@@ -218,7 +243,7 @@ class ProfileInfo extends StatelessWidget {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
           ),
-          profileData
+          profileData(context),
         ],
       ),
     );
