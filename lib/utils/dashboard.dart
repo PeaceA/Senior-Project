@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class Dashboard extends StatefulWidget {
-  Dashboard({Key key}) : super(key: key);
+  Dashboard({Key key, this.name, this.email});
 
+  final String name;
+  final String email;
+
+  
   _DashboardState createState() => _DashboardState();
 }
 
@@ -15,138 +19,144 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return new Scaffold(
       backgroundColor: Colors.grey[50],
-      body: Padding(
+      body: new LayoutBuilder( builder:
+            (BuildContext context, BoxConstraints viewportConstraints){
+                return SingleChildScrollView(
+                                  child: Padding(
           padding: EdgeInsets.all(10.0),
-          child: Column(
+          child: 
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Row(children: <Widget>[
-                SizedBox(width: 80,),
-                Column(children: <Widget>[
-                  CircleAvatar(
-                backgroundImage: AssetImage('assets/student.png'),
-                backgroundColor: Colors.red[50],
-                radius: 80.0,
+                  SizedBox(width: 80,),
+                  Column(children: <Widget>[
+                    CircleAvatar(
+                  backgroundImage: AssetImage('assets/student.png'),
+                  backgroundColor: Colors.red[50],
+                  radius: 80.0,
               ),
               Divider(color: Colors.blue[600], height: 20.0),
-              Text('Student Name',
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    letterSpacing: 1.5,
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                  )),
+              Text(widget.name,
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      letterSpacing: 1.5,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                    )),
               SizedBox(height: 10.0),
               Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.email,
-                    color: Colors.redAccent
-                  ),
-                  SizedBox(width: 10.0),
-                  Text('student@example.com',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      )),
-                  SizedBox(width: 20.0),
-                  Icon(
-                    Icons.phone,
-                    color: Colors.redAccent,
-                  ),
-                  SizedBox(width: 10.0),
-                  Text('Junior',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      ))
-                ],
+                  children: <Widget>[
+                    Icon(
+                      Icons.email,
+                      color: Colors.redAccent
+                    ),
+                    SizedBox(width: 10.0),
+                    Text(widget.email,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        )),
+                    SizedBox(width: 20.0),
+                    Icon(
+                      Icons.phone,
+                      color: Colors.redAccent,
+                    ),
+                    SizedBox(width: 10.0),
+                    Text('Junior',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        ))
+                  ],
               ),
               Row(
-                children: <Widget> [
-                    Icon(
-                    Icons.calendar_today,
-                    color: Colors.redAccent,
-                  ),
-                  SizedBox(width: 10.0),
-                Text('3.5',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      )
-                  )
+                  children: <Widget> [
+                      Icon(
+                      Icons.calendar_today,
+                      color: Colors.redAccent,
+                    ),
+                    SizedBox(width: 10.0),
+                  Text('3.5',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        )
+                    )
               ],
               ),
-                ],
+                  ],
               ),
               SizedBox(width: 150.0),
               Column(children: <Widget>[
-                CircleAvatar(
-                backgroundImage: AssetImage('assets/teacher.png'),
-                backgroundColor: Colors.red[50],
-                radius: 80.0,
+                  CircleAvatar(
+                  backgroundImage: AssetImage('assets/teacher.png'),
+                  backgroundColor: Colors.red[50],
+                  radius: 80.0,
               ),
               Divider(color: Colors.blue[600], height: 20.0),
               Text('Advisor Name',
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    letterSpacing: 1.5,
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                  )),
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      letterSpacing: 1.5,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                    )),
               SizedBox(height: 10.0),
               Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.email,
-                    color: Colors.redAccent
-                  ),
-                  SizedBox(width: 10.0),
-                  Text('advisor@example.com',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      )),
-                  SizedBox(width: 20.0),
-                  Icon(
-                    Icons.phone,
-                    color: Colors.redAccent,
-                  ),
-                  SizedBox(width: 10.0),
-                  Text('111-111-2222',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      ))
-                ],
+                  children: <Widget>[
+                    Icon(
+                      Icons.email,
+                      color: Colors.redAccent
+                    ),
+                    SizedBox(width: 10.0),
+                    Text('advisor@example.com',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        )),
+                    SizedBox(width: 20.0),
+                    Icon(
+                      Icons.phone,
+                      color: Colors.redAccent,
+                    ),
+                    SizedBox(width: 10.0),
+                    Text('111-111-2222',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        ))
+                  ],
               ),
               Row(
-                children: <Widget> [
-                    Icon(
-                    Icons.calendar_today,
-                    color: Colors.redAccent,
-                  ),
-                  SizedBox(width: 10.0),
-                Text('MWF 12pm - 4pm',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      )
-                  )
-              ],
-              ),
+                  children: <Widget> [
+                      Icon(
+                      Icons.calendar_today,
+                      color: Colors.redAccent,
+                    ),
+                    SizedBox(width: 10.0),
+                  Text('MWF 12pm - 4pm',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        )
+                    )
               ],),
-              // _getHeader(context),
               ],),
+              ],),
+              SizedBox(height: 60,),
+              _getHeader(context),
             ],
           )
         ),
+                );
+              })
     );
   }
 
@@ -182,8 +192,10 @@ class _DashboardState extends State<Dashboard> {
   }
 
   Widget _getHeader(context) {
-    return TableCalendar(
-      calendarController: _calendarController,
-    );
+    return Container(
+              child: TableCalendar(
+            calendarController: _calendarController,
+          ),
+        );
   } 
 }

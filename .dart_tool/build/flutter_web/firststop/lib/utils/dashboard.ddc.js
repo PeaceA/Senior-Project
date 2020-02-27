@@ -6,10 +6,13 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
   const framework = packages__flutter__src__widgets__actions.src__widgets__framework;
+  const layout_builder = packages__flutter__src__widgets__actions.src__widgets__layout_builder;
+  const single_child_scroll_view = packages__flutter__src__widgets__actions.src__widgets__single_child_scroll_view;
   const basic = packages__flutter__src__widgets__actions.src__widgets__basic;
   const widget_inspector = packages__flutter__src__widgets__actions.src__widgets__widget_inspector;
   const text = packages__flutter__src__widgets__actions.src__widgets__text;
   const icon = packages__flutter__src__widgets__actions.src__widgets__icon;
+  const container = packages__flutter__src__widgets__actions.src__widgets__container;
   const table_calendar = packages__table_calendar__table_calendar.table_calendar;
   const scaffold = packages__flutter__material.src__material__scaffold;
   const colors = packages__flutter__material.src__material__colors;
@@ -20,9 +23,11 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
   const image_resolution = packages__flutter__src__painting___network_image_web.src__painting__image_resolution;
   const text_style = packages__flutter__src__painting___network_image_web.src__painting__text_style;
   const flex = packages__flutter__src__rendering__animated_size.src__rendering__flex;
+  const box = packages__flutter__src__rendering__animated_size.src__rendering__box;
   var dashboard = Object.create(dart.library);
   var $toString = dartx.toString;
   var JSArrayOfWidget = () => (JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))();
+  var BuildContextAndBoxConstraintsToSingleChildScrollView = () => (BuildContextAndBoxConstraintsToSingleChildScrollView = dart.constFn(dart.fnType(single_child_scroll_view.SingleChildScrollView, [framework.BuildContext, box.BoxConstraints])))();
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C2() {
@@ -30,8 +35,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 26,
-        [_Location_line]: 24,
+        [_Location_column]: 28,
+        [_Location_line]: 32,
         [_Location_file]: null
       });
     },
@@ -43,8 +48,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C1 || CT.C1,
         [_Location_name]: null,
-        [_Location_column]: 17,
-        [_Location_line]: 24,
+        [_Location_column]: 19,
+        [_Location_line]: 32,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -53,8 +58,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "backgroundImage",
-        [_Location_column]: 17,
-        [_Location_line]: 27,
+        [_Location_column]: 19,
+        [_Location_line]: 35,
         [_Location_file]: null
       });
     },
@@ -63,8 +68,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "backgroundColor",
-        [_Location_column]: 17,
-        [_Location_line]: 28,
+        [_Location_column]: 19,
+        [_Location_line]: 36,
         [_Location_file]: null
       });
     },
@@ -73,8 +78,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "radius",
-        [_Location_column]: 17,
-        [_Location_line]: 29,
+        [_Location_column]: 19,
+        [_Location_line]: 37,
         [_Location_file]: null
       });
     },
@@ -86,8 +91,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C4 || CT.C4,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 26,
+        [_Location_column]: 21,
+        [_Location_line]: 34,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -97,7 +102,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
         [_Location_column]: 23,
-        [_Location_line]: 31,
+        [_Location_line]: 39,
         [_Location_file]: null
       });
     },
@@ -107,7 +112,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "height",
         [_Location_column]: 48,
-        [_Location_line]: 31,
+        [_Location_line]: 39,
         [_Location_file]: null
       });
     },
@@ -120,7 +125,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C9 || CT.C9,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 31,
+        [_Location_line]: 39,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -129,8 +134,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
-        [_Location_column]: 20,
-        [_Location_line]: 32,
+        [_Location_column]: 27,
+        [_Location_line]: 40,
         [_Location_file]: null
       });
     },
@@ -139,8 +144,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 19,
-        [_Location_line]: 33,
+        [_Location_column]: 21,
+        [_Location_line]: 41,
         [_Location_file]: null
       });
     },
@@ -153,7 +158,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C13 || CT.C13,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 32,
+        [_Location_line]: 40,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -163,7 +168,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "height",
         [_Location_column]: 24,
-        [_Location_line]: 39,
+        [_Location_line]: 47,
         [_Location_file]: null
       });
     },
@@ -176,7 +181,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C17 || CT.C17,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 39,
+        [_Location_line]: 47,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -185,8 +190,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
-        [_Location_column]: 27,
-        [_Location_line]: 43,
+        [_Location_column]: 29,
+        [_Location_line]: 51,
         [_Location_file]: null
       });
     },
@@ -195,8 +200,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
-        [_Location_column]: 21,
-        [_Location_line]: 44,
+        [_Location_column]: 23,
+        [_Location_line]: 52,
         [_Location_file]: null
       });
     },
@@ -208,8 +213,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C20 || CT.C20,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 42,
+        [_Location_column]: 21,
+        [_Location_line]: 50,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -218,8 +223,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 28,
-        [_Location_line]: 46,
+        [_Location_column]: 30,
+        [_Location_line]: 54,
         [_Location_file]: null
       });
     },
@@ -231,8 +236,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C24 || CT.C24,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 46,
+        [_Location_column]: 21,
+        [_Location_line]: 54,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -241,8 +246,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
-        [_Location_column]: 24,
-        [_Location_line]: 47,
+        [_Location_column]: 33,
+        [_Location_line]: 55,
         [_Location_file]: null
       });
     },
@@ -251,8 +256,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 23,
-        [_Location_line]: 48,
+        [_Location_column]: 25,
+        [_Location_line]: 56,
         [_Location_file]: null
       });
     },
@@ -264,8 +269,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C27 || CT.C27,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 47,
+        [_Location_column]: 21,
+        [_Location_line]: 55,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -274,8 +279,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 28,
-        [_Location_line]: 53,
+        [_Location_column]: 30,
+        [_Location_line]: 61,
         [_Location_file]: null
       });
     },
@@ -287,8 +292,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C31 || CT.C31,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 53,
+        [_Location_column]: 21,
+        [_Location_line]: 61,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -297,8 +302,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
-        [_Location_column]: 27,
-        [_Location_line]: 55,
+        [_Location_column]: 29,
+        [_Location_line]: 63,
         [_Location_file]: null
       });
     },
@@ -307,8 +312,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
-        [_Location_column]: 21,
-        [_Location_line]: 56,
+        [_Location_column]: 23,
+        [_Location_line]: 64,
         [_Location_file]: null
       });
     },
@@ -320,8 +325,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C34 || CT.C34,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 54,
+        [_Location_column]: 21,
+        [_Location_line]: 62,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -330,8 +335,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 28,
-        [_Location_line]: 58,
+        [_Location_column]: 30,
+        [_Location_line]: 66,
         [_Location_file]: null
       });
     },
@@ -343,8 +348,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C38 || CT.C38,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 58,
+        [_Location_column]: 21,
+        [_Location_line]: 66,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -353,8 +358,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
-        [_Location_column]: 24,
-        [_Location_line]: 59,
+        [_Location_column]: 26,
+        [_Location_line]: 67,
         [_Location_file]: null
       });
     },
@@ -363,8 +368,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 23,
-        [_Location_line]: 60,
+        [_Location_column]: 25,
+        [_Location_line]: 68,
         [_Location_file]: null
       });
     },
@@ -376,8 +381,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C41 || CT.C41,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 59,
+        [_Location_column]: 21,
+        [_Location_line]: 67,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -386,8 +391,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
-        [_Location_column]: 17,
-        [_Location_line]: 41,
+        [_Location_column]: 19,
+        [_Location_line]: 49,
         [_Location_file]: null
       });
     },
@@ -400,7 +405,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C45 || CT.C45,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 40,
+        [_Location_line]: 48,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -409,8 +414,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
-        [_Location_column]: 27,
-        [_Location_line]: 70,
+        [_Location_column]: 29,
+        [_Location_line]: 78,
         [_Location_file]: null
       });
     },
@@ -419,8 +424,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
-        [_Location_column]: 21,
-        [_Location_line]: 71,
+        [_Location_column]: 23,
+        [_Location_line]: 79,
         [_Location_file]: null
       });
     },
@@ -432,8 +437,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C48 || CT.C48,
         [_Location_name]: null,
-        [_Location_column]: 21,
-        [_Location_line]: 69,
+        [_Location_column]: 23,
+        [_Location_line]: 77,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -442,8 +447,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 28,
-        [_Location_line]: 73,
+        [_Location_column]: 30,
+        [_Location_line]: 81,
         [_Location_file]: null
       });
     },
@@ -455,8 +460,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C52 || CT.C52,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 73,
+        [_Location_column]: 21,
+        [_Location_line]: 81,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -465,8 +470,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
-        [_Location_column]: 22,
-        [_Location_line]: 74,
+        [_Location_column]: 24,
+        [_Location_line]: 82,
         [_Location_file]: null
       });
     },
@@ -475,8 +480,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 23,
-        [_Location_line]: 75,
+        [_Location_column]: 25,
+        [_Location_line]: 83,
         [_Location_file]: null
       });
     },
@@ -488,8 +493,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C55 || CT.C55,
         [_Location_name]: null,
-        [_Location_column]: 17,
-        [_Location_line]: 74,
+        [_Location_column]: 19,
+        [_Location_line]: 82,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -498,8 +503,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
-        [_Location_column]: 17,
-        [_Location_line]: 68,
+        [_Location_column]: 19,
+        [_Location_line]: 76,
         [_Location_file]: null
       });
     },
@@ -512,7 +517,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C59 || CT.C59,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 67,
+        [_Location_line]: 75,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -521,8 +526,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
-        [_Location_column]: 24,
-        [_Location_line]: 25,
+        [_Location_column]: 26,
+        [_Location_line]: 33,
         [_Location_file]: null
       });
     },
@@ -534,8 +539,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C62 || CT.C62,
         [_Location_name]: null,
-        [_Location_column]: 17,
-        [_Location_line]: 25,
+        [_Location_column]: 19,
+        [_Location_line]: 33,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -545,7 +550,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
         [_Location_column]: 24,
-        [_Location_line]: 85,
+        [_Location_line]: 93,
         [_Location_file]: null
       });
     },
@@ -558,7 +563,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C65 || CT.C65,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 85,
+        [_Location_line]: 93,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -567,8 +572,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "backgroundImage",
-        [_Location_column]: 17,
-        [_Location_line]: 88,
+        [_Location_column]: 19,
+        [_Location_line]: 96,
         [_Location_file]: null
       });
     },
@@ -577,8 +582,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "backgroundColor",
-        [_Location_column]: 17,
-        [_Location_line]: 89,
+        [_Location_column]: 19,
+        [_Location_line]: 97,
         [_Location_file]: null
       });
     },
@@ -587,8 +592,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "radius",
-        [_Location_column]: 17,
-        [_Location_line]: 90,
+        [_Location_column]: 19,
+        [_Location_line]: 98,
         [_Location_file]: null
       });
     },
@@ -600,8 +605,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C68 || CT.C68,
         [_Location_name]: null,
-        [_Location_column]: 17,
-        [_Location_line]: 87,
+        [_Location_column]: 19,
+        [_Location_line]: 95,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -611,7 +616,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
         [_Location_column]: 23,
-        [_Location_line]: 92,
+        [_Location_line]: 100,
         [_Location_file]: null
       });
     },
@@ -621,7 +626,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "height",
         [_Location_column]: 48,
-        [_Location_line]: 92,
+        [_Location_line]: 100,
         [_Location_file]: null
       });
     },
@@ -634,7 +639,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C73 || CT.C73,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 92,
+        [_Location_line]: 100,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -644,7 +649,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
         [_Location_column]: 20,
-        [_Location_line]: 93,
+        [_Location_line]: 101,
         [_Location_file]: null
       });
     },
@@ -653,8 +658,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 19,
-        [_Location_line]: 94,
+        [_Location_column]: 21,
+        [_Location_line]: 102,
         [_Location_file]: null
       });
     },
@@ -667,7 +672,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C77 || CT.C77,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 93,
+        [_Location_line]: 101,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -677,7 +682,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "height",
         [_Location_column]: 24,
-        [_Location_line]: 100,
+        [_Location_line]: 108,
         [_Location_file]: null
       });
     },
@@ -690,7 +695,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C81 || CT.C81,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 100,
+        [_Location_line]: 108,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -699,8 +704,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
-        [_Location_column]: 27,
-        [_Location_line]: 104,
+        [_Location_column]: 29,
+        [_Location_line]: 112,
         [_Location_file]: null
       });
     },
@@ -709,8 +714,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
-        [_Location_column]: 21,
-        [_Location_line]: 105,
+        [_Location_column]: 23,
+        [_Location_line]: 113,
         [_Location_file]: null
       });
     },
@@ -722,8 +727,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C84 || CT.C84,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 103,
+        [_Location_column]: 21,
+        [_Location_line]: 111,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -732,8 +737,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 28,
-        [_Location_line]: 107,
+        [_Location_column]: 30,
+        [_Location_line]: 115,
         [_Location_file]: null
       });
     },
@@ -745,8 +750,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C88 || CT.C88,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 107,
+        [_Location_column]: 21,
+        [_Location_line]: 115,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -755,8 +760,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
-        [_Location_column]: 24,
-        [_Location_line]: 108,
+        [_Location_column]: 26,
+        [_Location_line]: 116,
         [_Location_file]: null
       });
     },
@@ -765,8 +770,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 23,
-        [_Location_line]: 109,
+        [_Location_column]: 25,
+        [_Location_line]: 117,
         [_Location_file]: null
       });
     },
@@ -778,8 +783,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C91 || CT.C91,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 108,
+        [_Location_column]: 21,
+        [_Location_line]: 116,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -788,8 +793,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 28,
-        [_Location_line]: 114,
+        [_Location_column]: 30,
+        [_Location_line]: 122,
         [_Location_file]: null
       });
     },
@@ -801,8 +806,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C95 || CT.C95,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 114,
+        [_Location_column]: 21,
+        [_Location_line]: 122,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -811,8 +816,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
-        [_Location_column]: 27,
-        [_Location_line]: 116,
+        [_Location_column]: 29,
+        [_Location_line]: 124,
         [_Location_file]: null
       });
     },
@@ -821,8 +826,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
-        [_Location_column]: 21,
-        [_Location_line]: 117,
+        [_Location_column]: 23,
+        [_Location_line]: 125,
         [_Location_file]: null
       });
     },
@@ -834,8 +839,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C98 || CT.C98,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 115,
+        [_Location_column]: 21,
+        [_Location_line]: 123,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -844,8 +849,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 28,
-        [_Location_line]: 119,
+        [_Location_column]: 30,
+        [_Location_line]: 127,
         [_Location_file]: null
       });
     },
@@ -857,8 +862,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C102 || CT.C102,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 119,
+        [_Location_column]: 21,
+        [_Location_line]: 127,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -867,8 +872,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
-        [_Location_column]: 24,
-        [_Location_line]: 120,
+        [_Location_column]: 26,
+        [_Location_line]: 128,
         [_Location_file]: null
       });
     },
@@ -877,8 +882,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 23,
-        [_Location_line]: 121,
+        [_Location_column]: 25,
+        [_Location_line]: 129,
         [_Location_file]: null
       });
     },
@@ -890,8 +895,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C105 || CT.C105,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 120,
+        [_Location_column]: 21,
+        [_Location_line]: 128,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -900,8 +905,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
-        [_Location_column]: 17,
-        [_Location_line]: 102,
+        [_Location_column]: 19,
+        [_Location_line]: 110,
         [_Location_file]: null
       });
     },
@@ -914,7 +919,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C109 || CT.C109,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 101,
+        [_Location_line]: 109,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -923,8 +928,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "icon",
-        [_Location_column]: 27,
-        [_Location_line]: 131,
+        [_Location_column]: 29,
+        [_Location_line]: 139,
         [_Location_file]: null
       });
     },
@@ -933,8 +938,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "color",
-        [_Location_column]: 21,
-        [_Location_line]: 132,
+        [_Location_column]: 23,
+        [_Location_line]: 140,
         [_Location_file]: null
       });
     },
@@ -946,8 +951,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C112 || CT.C112,
         [_Location_name]: null,
-        [_Location_column]: 21,
-        [_Location_line]: 130,
+        [_Location_column]: 23,
+        [_Location_line]: 138,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -956,8 +961,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "width",
-        [_Location_column]: 28,
-        [_Location_line]: 134,
+        [_Location_column]: 30,
+        [_Location_line]: 142,
         [_Location_file]: null
       });
     },
@@ -969,8 +974,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C116 || CT.C116,
         [_Location_name]: null,
-        [_Location_column]: 19,
-        [_Location_line]: 134,
+        [_Location_column]: 21,
+        [_Location_line]: 142,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -979,8 +984,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "data",
-        [_Location_column]: 22,
-        [_Location_line]: 135,
+        [_Location_column]: 24,
+        [_Location_line]: 143,
         [_Location_file]: null
       });
     },
@@ -989,8 +994,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "style",
-        [_Location_column]: 23,
-        [_Location_line]: 136,
+        [_Location_column]: 25,
+        [_Location_line]: 144,
         [_Location_file]: null
       });
     },
@@ -1002,8 +1007,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C119 || CT.C119,
         [_Location_name]: null,
-        [_Location_column]: 17,
-        [_Location_line]: 135,
+        [_Location_column]: 19,
+        [_Location_line]: 143,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -1012,8 +1017,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
-        [_Location_column]: 17,
-        [_Location_line]: 129,
+        [_Location_column]: 19,
+        [_Location_line]: 137,
         [_Location_file]: null
       });
     },
@@ -1026,7 +1031,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C123 || CT.C123,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 128,
+        [_Location_line]: 136,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -1036,7 +1041,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
         [_Location_column]: 22,
-        [_Location_line]: 86,
+        [_Location_line]: 94,
         [_Location_file]: null
       });
     },
@@ -1049,7 +1054,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C126 || CT.C126,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 86,
+        [_Location_line]: 94,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -1059,7 +1064,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: null,
         [_Location_name]: "children",
         [_Location_column]: 19,
-        [_Location_line]: 23,
+        [_Location_line]: 31,
         [_Location_file]: null
       });
     },
@@ -1072,7 +1077,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
         [_Location_parameterLocations]: C129 || CT.C129,
         [_Location_name]: null,
         [_Location_column]: 15,
-        [_Location_line]: 23,
+        [_Location_line]: 31,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     },
@@ -1080,134 +1085,244 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
       return C133 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "crossAxisAlignment",
-        [_Location_column]: 13,
-        [_Location_line]: 21,
-        [_Location_file]: null
-      });
-    },
-    get C134() {
-      return C134 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "children",
-        [_Location_column]: 13,
-        [_Location_line]: 22,
+        [_Location_name]: "height",
+        [_Location_column]: 24,
+        [_Location_line]: 153,
         [_Location_file]: null
       });
     },
     get C132() {
-      return C132 = dart.constList([C133 || CT.C133, C134 || CT.C134], widget_inspector._Location);
+      return C132 = dart.constList([C133 || CT.C133], widget_inspector._Location);
     },
     get C131() {
       return C131 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C132 || CT.C132,
         [_Location_name]: null,
-        [_Location_column]: 18,
-        [_Location_line]: 20,
+        [_Location_column]: 15,
+        [_Location_line]: 153,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
+      });
+    },
+    get C136() {
+      return C136 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "crossAxisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 29,
+        [_Location_file]: null
       });
     },
     get C137() {
       return C137 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "padding",
-        [_Location_column]: 11,
-        [_Location_line]: 19,
+        [_Location_name]: "children",
+        [_Location_column]: 13,
+        [_Location_line]: 30,
         [_Location_file]: null
       });
-    },
-    get C138() {
-      return C138 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: null,
-        [_Location_name]: "child",
-        [_Location_column]: 11,
-        [_Location_line]: 20,
-        [_Location_file]: null
-      });
-    },
-    get C136() {
-      return C136 = dart.constList([C137 || CT.C137, C138 || CT.C138], widget_inspector._Location);
     },
     get C135() {
-      return C135 = dart.const({
+      return C135 = dart.constList([C136 || CT.C136, C137 || CT.C137], widget_inspector._Location);
+    },
+    get C134() {
+      return C134 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C136 || CT.C136,
+        [_Location_parameterLocations]: C135 || CT.C135,
         [_Location_name]: null,
-        [_Location_column]: 13,
-        [_Location_line]: 18,
+        [_Location_column]: 11,
+        [_Location_line]: 28,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
+      });
+    },
+    get C140() {
+      return C140 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 11,
+        [_Location_line]: 26,
+        [_Location_file]: null
       });
     },
     get C141() {
       return C141 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "backgroundColor",
-        [_Location_column]: 7,
-        [_Location_line]: 17,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 27,
         [_Location_file]: null
       });
+    },
+    get C139() {
+      return C139 = dart.constList([C140 || CT.C140, C141 || CT.C141], widget_inspector._Location);
+    },
+    get C138() {
+      return C138 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C139 || CT.C139,
+        [_Location_name]: null,
+        [_Location_column]: 42,
+        [_Location_line]: 25,
+        [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
+      });
+    },
+    get C144() {
+      return C144 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 35,
+        [_Location_line]: 25,
+        [_Location_file]: null
+      });
+    },
+    get C143() {
+      return C143 = dart.constList([C144 || CT.C144], widget_inspector._Location);
     },
     get C142() {
       return C142 = dart.const({
         __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C143 || CT.C143,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 24,
+        [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
+      });
+    },
+    get C147() {
+      return C147 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "body",
-        [_Location_column]: 7,
-        [_Location_line]: 18,
+        [_Location_name]: "builder",
+        [_Location_column]: 32,
+        [_Location_line]: 22,
         [_Location_file]: null
       });
     },
-    get C140() {
-      return C140 = dart.constList([C141 || CT.C141, C142 || CT.C142], widget_inspector._Location);
-    },
-    get C139() {
-      return C139 = dart.const({
-        __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C140 || CT.C140,
-        [_Location_name]: null,
-        [_Location_column]: 16,
-        [_Location_line]: 16,
-        [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
-      });
+    get C146() {
+      return C146 = dart.constList([C147 || CT.C147], widget_inspector._Location);
     },
     get C145() {
       return C145 = dart.const({
         __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C146 || CT.C146,
+        [_Location_name]: null,
+        [_Location_column]: 17,
+        [_Location_line]: 22,
+        [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
+      });
+    },
+    get C150() {
+      return C150 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "calendarController",
+        [_Location_name]: "backgroundColor",
         [_Location_column]: 7,
-        [_Location_line]: 186,
+        [_Location_line]: 21,
         [_Location_file]: null
       });
     },
-    get C144() {
-      return C144 = dart.constList([C145 || CT.C145], widget_inspector._Location);
-    },
-    get C143() {
-      return C143 = dart.const({
+    get C151() {
+      return C151 = dart.const({
         __proto__: widget_inspector._Location.prototype,
-        [_Location_parameterLocations]: C144 || CT.C144,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 22,
+        [_Location_file]: null
+      });
+    },
+    get C149() {
+      return C149 = dart.constList([C150 || CT.C150, C151 || CT.C151], widget_inspector._Location);
+    },
+    get C148() {
+      return C148 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C149 || CT.C149,
+        [_Location_name]: null,
+        [_Location_column]: 16,
+        [_Location_line]: 20,
+        [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
+      });
+    },
+    get C154() {
+      return C154 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "calendarController",
+        [_Location_column]: 13,
+        [_Location_line]: 197,
+        [_Location_file]: null
+      });
+    },
+    get C153() {
+      return C153 = dart.constList([C154 || CT.C154], widget_inspector._Location);
+    },
+    get C152() {
+      return C152 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C153 || CT.C153,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 196,
+        [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
+      });
+    },
+    get C157() {
+      return C157 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 196,
+        [_Location_file]: null
+      });
+    },
+    get C156() {
+      return C156 = dart.constList([C157 || CT.C157], widget_inspector._Location);
+    },
+    get C155() {
+      return C155 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C156 || CT.C156,
         [_Location_name]: null,
         [_Location_column]: 12,
-        [_Location_line]: 185,
+        [_Location_line]: 195,
         [_Location_file]: "org-dartlang-app:///packages/firststop/utils/dashboard.dart"
       });
     }
   });
+  var name$ = dart.privateName(dashboard, "Dashboard.name");
+  var email$ = dart.privateName(dashboard, "Dashboard.email");
   dashboard.Dashboard = class Dashboard extends framework.StatefulWidget {
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      super.name = value;
+    }
+    get email() {
+      return this[email$];
+    }
+    set email(value) {
+      super.email = value;
+    }
     createState() {
       return new dashboard._DashboardState.new();
     }
   };
   (dashboard.Dashboard.new = function(opts) {
     let key = opts && 'key' in opts ? opts.key : null;
+    let name = opts && 'name' in opts ? opts.name : null;
+    let email = opts && 'email' in opts ? opts.email : null;
     let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
-    dashboard.Dashboard.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    this[name$] = name;
+    this[email$] = email;
+    dashboard.Dashboard.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
     ;
   }).prototype = dashboard.Dashboard.prototype;
   dart.addTypeTests(dashboard.Dashboard);
@@ -1216,6 +1331,11 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
     createState: dart.fnType(dashboard._DashboardState, [])
   }));
   dart.setLibraryUri(dashboard.Dashboard, "package:firststop/utils/dashboard.dart");
+  dart.setFieldSignature(dashboard.Dashboard, () => ({
+    __proto__: dart.getFields(dashboard.Dashboard.__proto__),
+    name: dart.finalFieldType(core.String),
+    email: dart.finalFieldType(core.String)
+  }));
   var _calendarController = dart.privateName(dashboard, "_calendarController");
   var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
   var _Location_name = dart.privateName(widget_inspector, "_Location.name");
@@ -1354,25 +1474,37 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
   var C129;
   var C128;
   var C133;
-  var C134;
   var C132;
   var C131;
-  var C137;
-  var C138;
+  var _getHeader = dart.privateName(dashboard, "_getHeader");
   var C136;
+  var C137;
   var C135;
-  var C141;
-  var C142;
+  var C134;
   var C140;
+  var C141;
   var C139;
-  var _getMonth = dart.privateName(dashboard, "_getMonth");
-  var C145;
+  var C138;
   var C144;
   var C143;
-  var _getHeader = dart.privateName(dashboard, "_getHeader");
+  var C142;
+  var C147;
+  var C146;
+  var C145;
+  var C150;
+  var C151;
+  var C149;
+  var C148;
+  var _getMonth = dart.privateName(dashboard, "_getMonth");
+  var C154;
+  var C153;
+  var C152;
+  var C157;
+  var C156;
+  var C155;
   dashboard._DashboardState = class _DashboardState extends framework.State$(dashboard.Dashboard) {
     build(context) {
-      return new scaffold.Scaffold.new({backgroundColor: colors.Colors.grey._get(50), body: new basic.Padding.new({padding: new edge_insets.EdgeInsets.all(10.0), child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: JSArrayOfWidget().of([new basic.Row.new({children: JSArrayOfWidget().of([new basic.SizedBox.new({width: 80.0, $creationLocationd_0dea112b090073317d4: C0 || CT.C0}), new basic.Column.new({children: JSArrayOfWidget().of([new circle_avatar.CircleAvatar.new({backgroundImage: new image_resolution.AssetImage.new("assets/student.png"), backgroundColor: colors.Colors.red._get(50), radius: 80.0, $creationLocationd_0dea112b090073317d4: C3 || CT.C3}), new divider.Divider.new({color: colors.Colors.blue._get(600), height: 20.0, $creationLocationd_0dea112b090073317d4: C8 || CT.C8}), new text.Text.new("Student Name", {style: new text_style.TextStyle.new({color: colors.Colors.blueAccent, letterSpacing: 1.5, fontSize: 30.0, fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C12 || CT.C12}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C16 || CT.C16}), new basic.Row.new({children: JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.email, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C19 || CT.C19}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C23 || CT.C23}), new text.Text.new("student@example.com", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C26 || CT.C26}), new basic.SizedBox.new({width: 20.0, $creationLocationd_0dea112b090073317d4: C30 || CT.C30}), new icon.Icon.new(icons.Icons.phone, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C33 || CT.C33}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C37 || CT.C37}), new text.Text.new("Junior", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C40 || CT.C40})]), $creationLocationd_0dea112b090073317d4: C44 || CT.C44}), new basic.Row.new({children: JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.calendar_today, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C47 || CT.C47}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C51 || CT.C51}), new text.Text.new("3.5", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C54 || CT.C54})]), $creationLocationd_0dea112b090073317d4: C58 || CT.C58})]), $creationLocationd_0dea112b090073317d4: C61 || CT.C61}), new basic.SizedBox.new({width: 150.0, $creationLocationd_0dea112b090073317d4: C64 || CT.C64}), new basic.Column.new({children: JSArrayOfWidget().of([new circle_avatar.CircleAvatar.new({backgroundImage: new image_resolution.AssetImage.new("assets/teacher.png"), backgroundColor: colors.Colors.red._get(50), radius: 80.0, $creationLocationd_0dea112b090073317d4: C67 || CT.C67}), new divider.Divider.new({color: colors.Colors.blue._get(600), height: 20.0, $creationLocationd_0dea112b090073317d4: C72 || CT.C72}), new text.Text.new("Advisor Name", {style: new text_style.TextStyle.new({color: colors.Colors.blueAccent, letterSpacing: 1.5, fontSize: 30.0, fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C76 || CT.C76}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C80 || CT.C80}), new basic.Row.new({children: JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.email, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C83 || CT.C83}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C87 || CT.C87}), new text.Text.new("advisor@example.com", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C90 || CT.C90}), new basic.SizedBox.new({width: 20.0, $creationLocationd_0dea112b090073317d4: C94 || CT.C94}), new icon.Icon.new(icons.Icons.phone, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C97 || CT.C97}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C101 || CT.C101}), new text.Text.new("111-111-2222", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C104 || CT.C104})]), $creationLocationd_0dea112b090073317d4: C108 || CT.C108}), new basic.Row.new({children: JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.calendar_today, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C111 || CT.C111}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C115 || CT.C115}), new text.Text.new("MWF 12pm - 4pm", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C118 || CT.C118})]), $creationLocationd_0dea112b090073317d4: C122 || CT.C122})]), $creationLocationd_0dea112b090073317d4: C125 || CT.C125})]), $creationLocationd_0dea112b090073317d4: C128 || CT.C128})]), $creationLocationd_0dea112b090073317d4: C131 || CT.C131}), $creationLocationd_0dea112b090073317d4: C135 || CT.C135}), $creationLocationd_0dea112b090073317d4: C139 || CT.C139});
+      return new scaffold.Scaffold.new({backgroundColor: colors.Colors.grey._get(50), body: new layout_builder.LayoutBuilder.new({builder: dart.fn((context, viewportConstraints) => new single_child_scroll_view.SingleChildScrollView.new({child: new basic.Padding.new({padding: new edge_insets.EdgeInsets.all(10.0), child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: JSArrayOfWidget().of([new basic.Row.new({children: JSArrayOfWidget().of([new basic.SizedBox.new({width: 80.0, $creationLocationd_0dea112b090073317d4: C0 || CT.C0}), new basic.Column.new({children: JSArrayOfWidget().of([new circle_avatar.CircleAvatar.new({backgroundImage: new image_resolution.AssetImage.new("assets/student.png"), backgroundColor: colors.Colors.red._get(50), radius: 80.0, $creationLocationd_0dea112b090073317d4: C3 || CT.C3}), new divider.Divider.new({color: colors.Colors.blue._get(600), height: 20.0, $creationLocationd_0dea112b090073317d4: C8 || CT.C8}), new text.Text.new(this.widget.name, {style: new text_style.TextStyle.new({color: colors.Colors.blueAccent, letterSpacing: 1.5, fontSize: 30.0, fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C12 || CT.C12}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C16 || CT.C16}), new basic.Row.new({children: JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.email, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C19 || CT.C19}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C23 || CT.C23}), new text.Text.new(this.widget.email, {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C26 || CT.C26}), new basic.SizedBox.new({width: 20.0, $creationLocationd_0dea112b090073317d4: C30 || CT.C30}), new icon.Icon.new(icons.Icons.phone, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C33 || CT.C33}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C37 || CT.C37}), new text.Text.new("Junior", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C40 || CT.C40})]), $creationLocationd_0dea112b090073317d4: C44 || CT.C44}), new basic.Row.new({children: JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.calendar_today, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C47 || CT.C47}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C51 || CT.C51}), new text.Text.new("3.5", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C54 || CT.C54})]), $creationLocationd_0dea112b090073317d4: C58 || CT.C58})]), $creationLocationd_0dea112b090073317d4: C61 || CT.C61}), new basic.SizedBox.new({width: 150.0, $creationLocationd_0dea112b090073317d4: C64 || CT.C64}), new basic.Column.new({children: JSArrayOfWidget().of([new circle_avatar.CircleAvatar.new({backgroundImage: new image_resolution.AssetImage.new("assets/teacher.png"), backgroundColor: colors.Colors.red._get(50), radius: 80.0, $creationLocationd_0dea112b090073317d4: C67 || CT.C67}), new divider.Divider.new({color: colors.Colors.blue._get(600), height: 20.0, $creationLocationd_0dea112b090073317d4: C72 || CT.C72}), new text.Text.new("Advisor Name", {style: new text_style.TextStyle.new({color: colors.Colors.blueAccent, letterSpacing: 1.5, fontSize: 30.0, fontWeight: ui.FontWeight.bold}), $creationLocationd_0dea112b090073317d4: C76 || CT.C76}), new basic.SizedBox.new({height: 10.0, $creationLocationd_0dea112b090073317d4: C80 || CT.C80}), new basic.Row.new({children: JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.email, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C83 || CT.C83}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C87 || CT.C87}), new text.Text.new("advisor@example.com", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C90 || CT.C90}), new basic.SizedBox.new({width: 20.0, $creationLocationd_0dea112b090073317d4: C94 || CT.C94}), new icon.Icon.new(icons.Icons.phone, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C97 || CT.C97}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C101 || CT.C101}), new text.Text.new("111-111-2222", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C104 || CT.C104})]), $creationLocationd_0dea112b090073317d4: C108 || CT.C108}), new basic.Row.new({children: JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.calendar_today, {color: colors.Colors.redAccent, $creationLocationd_0dea112b090073317d4: C111 || CT.C111}), new basic.SizedBox.new({width: 10.0, $creationLocationd_0dea112b090073317d4: C115 || CT.C115}), new text.Text.new("MWF 12pm - 4pm", {style: new text_style.TextStyle.new({color: colors.Colors.black, fontSize: 20.0, letterSpacing: 1.0}), $creationLocationd_0dea112b090073317d4: C118 || CT.C118})]), $creationLocationd_0dea112b090073317d4: C122 || CT.C122})]), $creationLocationd_0dea112b090073317d4: C125 || CT.C125})]), $creationLocationd_0dea112b090073317d4: C128 || CT.C128}), new basic.SizedBox.new({height: 60.0, $creationLocationd_0dea112b090073317d4: C131 || CT.C131}), this[_getHeader](context)]), $creationLocationd_0dea112b090073317d4: C134 || CT.C134}), $creationLocationd_0dea112b090073317d4: C138 || CT.C138}), $creationLocationd_0dea112b090073317d4: C142 || CT.C142}), BuildContextAndBoxConstraintsToSingleChildScrollView()), $creationLocationd_0dea112b090073317d4: C145 || CT.C145}), $creationLocationd_0dea112b090073317d4: C148 || CT.C148});
     }
     [_getMonth]() {
       switch (dart.toString(new core.DateTime.now().month)) {
@@ -1431,7 +1563,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
       }
     }
     [_getHeader](context) {
-      return new table_calendar.TableCalendar.new({calendarController: this[_calendarController], $creationLocationd_0dea112b090073317d4: C143 || CT.C143});
+      return new container.Container.new({child: new table_calendar.TableCalendar.new({calendarController: this[_calendarController], $creationLocationd_0dea112b090073317d4: C152 || CT.C152}), $creationLocationd_0dea112b090073317d4: C155 || CT.C155});
     }
   };
   (dashboard._DashboardState.new = function() {
@@ -1454,7 +1586,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/table_cale
   dart.trackLibraries("packages/firststop/utils/dashboard", {
     "package:firststop/utils/dashboard.dart": dashboard
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["dashboard.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAMmC;IAAiB;;;QAFnC;;AAAQ,uDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAUZ;AACxB,YAAW,6CACe,AAAI,wBAAC,WACvB,gCACkB,+BAAI,cACjB,0CACkC,yCACrB,sBAChB,6BAAsB,sBACpB,+BAAgB,6DAChB,gCAAyB,sBACvB,qDACe,oCAAW,wCACJ,AAAG,uBAAC,aACpB,6DAEV,gCAAsB,AAAI,wBAAC,cAAc,6DACzC,kBAAK,wBACM,qCACS,yCACC,eACL,kBACa,+EAE7B,gCAAiB,+DACjB,6BACoB,sBAChB,kBACQ,2BACQ,kFAEhB,+BAAgB,+DAChB,kBAAK,+BACM,qCACS,+BACJ,qBACK,gEAErB,+BAAgB,+DAChB,kBACQ,2BACQ,kFAEhB,+BAAgB,+DAChB,kBAAK,kBACM,qCACS,+BACJ,qBACK,2HAIzB,6BACqB,sBACf,kBACM,oCACQ,kFAEhB,+BAAgB,+DAClB,kBAAK,eACQ,qCACS,+BACJ,qBACK,sLAOzB,+BAAgB,gEAChB,gCAAyB,sBACvB,qDACiB,oCAAW,wCACJ,AAAG,uBAAC,aACpB,+DAEV,gCAAsB,AAAI,wBAAC,cAAc,+DACzC,kBAAK,wBACM,qCACS,yCACC,eACL,kBACa,+EAE7B,gCAAiB,+DACjB,6BACoB,sBAChB,kBACQ,2BACQ,kFAEhB,+BAAgB,+DAChB,kBAAK,+BACM,qCACS,+BACJ,qBACK,gEAErB,+BAAgB,+DAChB,kBACQ,2BACQ,kFAEhB,+BAAgB,iEAChB,kBAAK,wBACM,qCACS,+BACJ,qBACK,+HAIzB,6BACqB,sBACf,kBACM,oCACQ,oFAEhB,+BAAgB,iEAClB,kBAAK,0BACQ,qCACS,+BACJ,qBACK;IAYrC;;AAGE,cAA6B,cAAZ,AAAM;;;AAEnB,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAA4B,eAAZ,AAAM;;;IAE5B;iBAEkB;AAChB,YAAO,2DACe;IAExB;;;IAhLM,4BAAsB;;;EAiL9B","file":"dashboard.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["dashboard.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAMe;;;;;;IACA;;;;;;;AAGoB;IAAiB;;;QANnC;QAAU;QAAW;;IAAX;IAAW;AAApC;;EAA2C;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UAcjB;AACxB,YAAW,6CACe,AAAI,wBAAC,WACnB,+CACJ,SAAc,SAAwB,wBAC3B,+DACkB,gCACX,+BAAI,cAExB,0CACyC,yCACrB,sBAChB,6BAAsB,sBAClB,+BAAgB,6DAChB,gCAAyB,sBACvB,qDACe,oCAAW,wCACJ,AAAG,uBAAC,aACpB,6DAEZ,gCAAsB,AAAI,wBAAC,cAAc,6DACzC,kBAAK,AAAO,0BACC,qCACS,yCACC,eACL,kBACa,+EAE/B,gCAAiB,+DACjB,6BACsB,sBAChB,kBACQ,2BACQ,kFAEhB,+BAAgB,+DAChB,kBAAK,AAAO,2BACD,qCACS,+BACJ,qBACK,gEAErB,+BAAgB,+DAChB,kBACQ,2BACQ,kFAEhB,+BAAgB,+DAChB,kBAAK,kBACM,qCACS,+BACJ,qBACK,2HAI3B,6BACuB,sBACf,kBACM,oCACQ,kFAEhB,+BAAgB,+DAClB,kBAAK,eACQ,qCACS,+BACJ,qBACK,sLAO3B,+BAAgB,gEAChB,gCAAyB,sBACrB,qDACiB,oCAAW,wCACJ,AAAG,uBAAC,aACpB,+DAEZ,gCAAsB,AAAI,wBAAC,cAAc,+DACzC,kBAAK,wBACQ,qCACS,yCACC,eACL,kBACa,+EAE/B,gCAAiB,+DACjB,6BACsB,sBAChB,kBACQ,2BACQ,kFAEhB,+BAAgB,+DAChB,kBAAK,+BACM,qCACS,+BACJ,qBACK,gEAErB,+BAAgB,+DAChB,kBACQ,2BACQ,kFAEhB,+BAAgB,iEAChB,kBAAK,wBACM,qCACS,+BACJ,qBACK,+HAI3B,6BACuB,sBACf,kBACM,oCACQ,oFAEhB,+BAAgB,iEAClB,kBAAK,0BACQ,qCACS,+BACJ,qBACK,yPAM3B,gCAAiB,iEACjB,iBAAW,OAAO;IAO9B;;AAGE,cAA6B,cAAZ,AAAM;;;AAEnB,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAAO;;;;AAEP,gBAA4B,eAAZ,AAAM;;;IAE5B;iBAEkB;AAChB,YAAO,qCACU,0DACW;IAG9B;;;IAxLM,4BAAsB;;;EAyL9B","file":"dashboard.ddc.js"}');
   // Exports:
   return {
     utils__dashboard: dashboard

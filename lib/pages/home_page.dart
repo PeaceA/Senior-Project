@@ -17,6 +17,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  String name = "", email = "";
+  // profilePic = "";
+
+  @override
+  void initState() {
+    super.initState();
+    widget.auth.getCurrentUser().then((user) {
+      setState(() {
+        name = user.displayName;
+        email = user.email;
+        // profilePic = user.photoURL;
+      });
+    });
+  }
   
   signOut() async {
     try {
@@ -101,7 +116,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
-        child: Dashboard(),
+        child: new Dashboard(email: email, name: name,),
       ),
       drawer: Drawer(
         child: SingleChildScrollView(
@@ -117,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.grey[50],
               child: UserAccountsDrawerHeader(
                 accountName: Text(
-                  "Jane Doe",
+                  name,
                   style: TextStyle(
                     color: Colors.redAccent,
                     fontSize: 20.0,
@@ -126,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                  accountEmail: Text(
-                  "jane.doe@example.com",
+                  email,
                   style: TextStyle(
                     color: Colors.redAccent,
                   ),
@@ -141,40 +156,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 title: Text(
                   "Dashboard",
-                  style: TextStyle(
-                    letterSpacing: 1.2,
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.person_outline,
-                  color: Colors.blueAccent,
-                ),
-                title: Text(
-                  "Profile",
-                  style: TextStyle(
-                    letterSpacing: 1.2,
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.chat_bubble_outline,
-                  color: Colors.blueAccent,
-                ),
-                title: Text(
-                  "GPA",
                   style: TextStyle(
                     letterSpacing: 1.2,
                     color: Colors.blueAccent,
@@ -202,8 +183,6 @@ class _HomePageState extends State<HomePage> {
                   Navigator.of(context).pop();
                 },
               ),
-             
-              Divider(),
               ListTile(
                 leading: Icon(
                   Icons.developer_mode,
@@ -241,7 +220,6 @@ class _HomePageState extends State<HomePage> {
                   Navigator.of(context).pop();
                 },
               ),
-               Divider(),
               ListTile(
                 leading: Icon(
                   Icons.settings,
