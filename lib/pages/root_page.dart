@@ -91,6 +91,7 @@ class _RootPageState extends State<RootPage> {
 
   @override
   Widget build(BuildContext context) {
+    // authStatus = AuthStatus.LOGGED_IN;
     switch (authStatus) {
       case AuthStatus.NOT_DETERMINED:
         return buildWaitingScreen();
@@ -111,6 +112,11 @@ class _RootPageState extends State<RootPage> {
           );
         } else
           return buildWaitingScreen();
+          // return new HomePage(
+          //   userId: _userId,
+          //   auth: widget.auth,
+          //   logoutCallback: logoutCallback,
+          // );
         break;
       case AuthStatus.SIGNED_UP:
         return new UserData(

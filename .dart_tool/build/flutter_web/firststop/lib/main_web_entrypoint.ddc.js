@@ -6,7 +6,7 @@ define(['dart_sdk', 'packages/firststop/main'], function(dart_sdk, packages__fir
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
   const main = packages__firststop__main.main;
-  const main_web_entrypoint = Object.create(dart.library);
+  var main_web_entrypoint = Object.create(dart.library);
   const CT = Object.create(null);
   main_web_entrypoint.main = function main$() {
     return async.async(dart.void, function* main$() {

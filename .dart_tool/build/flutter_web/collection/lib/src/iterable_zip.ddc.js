@@ -4,22 +4,22 @@ define(['dart_sdk'], function(dart_sdk) {
   const collection = dart_sdk.collection;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const iterable_zip = Object.create(dart.library);
-  const $iterator = dartx.iterator;
-  const $map = dartx.map;
-  const $toList = dartx.toList;
-  const $isEmpty = dartx.isEmpty;
-  const $length = dartx.length;
-  const $_get = dartx._get;
-  const $_set = dartx._set;
+  var iterable_zip = Object.create(dart.library);
+  var $iterator = dartx.iterator;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $isEmpty = dartx.isEmpty;
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
   const CT = Object.create(null);
-  const _iterables = dart.privateName(iterable_zip, "_iterables");
+  var _iterables = dart.privateName(iterable_zip, "_iterables");
   const _is_IterableZip_default = Symbol('_is_IterableZip_default');
   iterable_zip.IterableZip$ = dart.generic(T => {
-    let IteratorOfT = () => (IteratorOfT = dart.constFn(core.Iterator$(T)))();
-    let IterableOfT = () => (IterableOfT = dart.constFn(core.Iterable$(T)))();
-    let IterableOfTToIteratorOfT = () => (IterableOfTToIteratorOfT = dart.constFn(dart.fnType(IteratorOfT(), [IterableOfT()])))();
-    let _IteratorZipOfT = () => (_IteratorZipOfT = dart.constFn(iterable_zip._IteratorZip$(T)))();
+    var IteratorOfT = () => (IteratorOfT = dart.constFn(core.Iterator$(T)))();
+    var IterableOfT = () => (IterableOfT = dart.constFn(core.Iterable$(T)))();
+    var IterableOfTToIteratorOfT = () => (IterableOfTToIteratorOfT = dart.constFn(dart.fnType(IteratorOfT(), [IterableOfT()])))();
+    var _IteratorZipOfT = () => (_IteratorZipOfT = dart.constFn(iterable_zip._IteratorZip$(T)))();
     class IterableZip extends collection.IterableBase$(core.List$(T)) {
       get iterator() {
         let iterators = this[_iterables][$map](IteratorOfT(), dart.fn(x => x[$iterator], IterableOfTToIteratorOfT()))[$toList]({growable: false});
@@ -48,11 +48,11 @@ define(['dart_sdk'], function(dart_sdk) {
   });
   iterable_zip.IterableZip = iterable_zip.IterableZip$();
   dart.addTypeTests(iterable_zip.IterableZip, _is_IterableZip_default);
-  const _current = dart.privateName(iterable_zip, "_current");
-  const _iterators = dart.privateName(iterable_zip, "_iterators");
+  var _current = dart.privateName(iterable_zip, "_current");
+  var _iterators = dart.privateName(iterable_zip, "_iterators");
   const _is__IteratorZip_default = Symbol('_is__IteratorZip_default');
   iterable_zip._IteratorZip$ = dart.generic(T => {
-    let ListOfT = () => (ListOfT = dart.constFn(core.List$(T)))();
+    var ListOfT = () => (ListOfT = dart.constFn(core.List$(T)))();
     class _IteratorZip extends core.Object {
       moveNext() {
         if (dart.test(this[_iterators][$isEmpty])) return false;

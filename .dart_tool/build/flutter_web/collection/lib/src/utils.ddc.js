@@ -3,12 +3,12 @@ define(['dart_sdk'], function(dart_sdk) {
   const core = dart_sdk.core;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const utils = Object.create(dart.library);
-  const $compareTo = dartx.compareTo;
+  var utils = Object.create(dart.library);
+  var $compareTo = dartx.compareTo;
   const CT = Object.create(null);
   const _is_Pair_default = Symbol('_is_Pair_default');
-  const first$ = dart.privateName(utils, "Pair.first");
-  const last$ = dart.privateName(utils, "Pair.last");
+  var first$ = dart.privateName(utils, "Pair.first");
+  var last$ = dart.privateName(utils, "Pair.last");
   utils.Pair$ = dart.generic((E, F) => {
     class Pair extends core.Object {
       get first() {

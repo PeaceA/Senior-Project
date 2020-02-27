@@ -6,7 +6,7 @@ define(['dart_sdk', 'packages/firebase/firebase', 'packages/firebase/src/app'], 
   const dartx = dart_sdk.dartx;
   const top_level = packages__firebase__firebase.src__top_level;
   const auth = packages__firebase__src__app.src__auth;
-  const auth$ = Object.create(dart.library);
+  var auth$ = Object.create(dart.library);
   const CT = Object.create(null);
   auth$.BaseAuth = class BaseAuth extends core.Object {};
   (auth$.BaseAuth.new = function() {
@@ -14,7 +14,7 @@ define(['dart_sdk', 'packages/firebase/firebase', 'packages/firebase/src/app'], 
   }).prototype = auth$.BaseAuth.prototype;
   dart.addTypeTests(auth$.BaseAuth);
   dart.setLibraryUri(auth$.BaseAuth, "package:firststop/utils/auth.dart");
-  const _firebaseAuth = dart.privateName(auth$, "_firebaseAuth");
+  var _firebaseAuth = dart.privateName(auth$, "_firebaseAuth");
   auth$.FirebaseAuth = class FirebaseAuth extends core.Object {
     googleSignIn() {
       return async.async(core.String, (function* googleSignIn() {

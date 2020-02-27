@@ -17,13 +17,13 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
   const auth_page = packages__firststop__pages__auth_page.pages__auth_page;
   const home_page = packages__firststop__pages__home_page.pages__home_page;
   const data_page = packages__firststop__pages__data_page.pages__data_page;
-  const root_page = Object.create(dart.library);
-  const $toString = dartx.toString;
-  let QueryEventToNull = () => (QueryEventToNull = dart.constFn(dart.fnType(core.Null, [database.QueryEvent])))();
-  let VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
-  let FutureOfNull = () => (FutureOfNull = dart.constFn(async.Future$(core.Null)))();
-  let UserToFutureOfNull = () => (UserToFutureOfNull = dart.constFn(dart.fnType(FutureOfNull(), [auth$.User])))();
-  let UserToNull = () => (UserToNull = dart.constFn(dart.fnType(core.Null, [auth$.User])))();
+  var root_page = Object.create(dart.library);
+  var $toString = dartx.toString;
+  var QueryEventToNull = () => (QueryEventToNull = dart.constFn(dart.fnType(core.Null, [database.QueryEvent])))();
+  var VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
+  var FutureOfNull = () => (FutureOfNull = dart.constFn(async.Future$(core.Null)))();
+  var UserToFutureOfNull = () => (UserToFutureOfNull = dart.constFn(dart.fnType(FutureOfNull(), [auth$.User])))();
+  var UserToNull = () => (UserToNull = dart.constFn(dart.fnType(core.Null, [auth$.User])))();
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C0() {
@@ -132,7 +132,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
         [_Location_parameterLocations]: null,
         [_Location_name]: "auth",
         [_Location_column]: 11,
-        [_Location_line]: 100,
+        [_Location_line]: 102,
         [_Location_file]: null
       });
     },
@@ -142,7 +142,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
         [_Location_parameterLocations]: null,
         [_Location_name]: "loginCallback",
         [_Location_column]: 11,
-        [_Location_line]: 101,
+        [_Location_line]: 103,
         [_Location_file]: null
       });
     },
@@ -152,7 +152,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
         [_Location_parameterLocations]: null,
         [_Location_name]: "signupCallback",
         [_Location_column]: 11,
-        [_Location_line]: 102,
+        [_Location_line]: 104,
         [_Location_file]: null
       });
     },
@@ -165,7 +165,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
         [_Location_parameterLocations]: C15 || CT.C15,
         [_Location_name]: null,
         [_Location_column]: 20,
-        [_Location_line]: 99,
+        [_Location_line]: 101,
         [_Location_file]: "org-dartlang-app:///packages/firststop/pages/root_page.dart"
       });
     },
@@ -175,7 +175,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
         [_Location_parameterLocations]: null,
         [_Location_name]: "userId",
         [_Location_column]: 13,
-        [_Location_line]: 108,
+        [_Location_line]: 110,
         [_Location_file]: null
       });
     },
@@ -185,7 +185,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
         [_Location_parameterLocations]: null,
         [_Location_name]: "auth",
         [_Location_column]: 13,
-        [_Location_line]: 109,
+        [_Location_line]: 111,
         [_Location_file]: null
       });
     },
@@ -195,7 +195,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
         [_Location_parameterLocations]: null,
         [_Location_name]: "logoutCallback",
         [_Location_column]: 13,
-        [_Location_line]: 110,
+        [_Location_line]: 112,
         [_Location_file]: null
       });
     },
@@ -208,7 +208,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
         [_Location_parameterLocations]: C20 || CT.C20,
         [_Location_name]: null,
         [_Location_column]: 22,
-        [_Location_line]: 107,
+        [_Location_line]: 109,
         [_Location_file]: "org-dartlang-app:///packages/firststop/pages/root_page.dart"
       });
     },
@@ -217,8 +217,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
         [_Location_name]: "userId",
-        [_Location_column]: 11,
-        [_Location_line]: 117,
+        [_Location_column]: 13,
+        [_Location_line]: 116,
         [_Location_file]: null
       });
     },
@@ -226,32 +226,75 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
       return C27 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: null,
-        [_Location_name]: "loginCallback",
-        [_Location_column]: 11,
+        [_Location_name]: "auth",
+        [_Location_column]: 13,
+        [_Location_line]: 117,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C28 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "logoutCallback",
+        [_Location_column]: 13,
         [_Location_line]: 118,
         [_Location_file]: null
       });
     },
     get C25() {
-      return C25 = dart.constList([C26 || CT.C26, C27 || CT.C27], widget_inspector._Location);
+      return C25 = dart.constList([C26 || CT.C26, C27 || CT.C27, C28 || CT.C28], widget_inspector._Location);
     },
     get C24() {
       return C24 = dart.const({
         __proto__: widget_inspector._Location.prototype,
         [_Location_parameterLocations]: C25 || CT.C25,
         [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 115,
+        [_Location_file]: "org-dartlang-app:///packages/firststop/pages/root_page.dart"
+      });
+    },
+    get C31() {
+      return C31 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "userId",
+        [_Location_column]: 11,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C32 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "loginCallback",
+        [_Location_column]: 11,
+        [_Location_line]: 124,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C30 = dart.constList([C31 || CT.C31, C32 || CT.C32], widget_inspector._Location);
+    },
+    get C29() {
+      return C29 = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C30 || CT.C30,
+        [_Location_name]: null,
         [_Location_column]: 20,
-        [_Location_line]: 116,
+        [_Location_line]: 122,
         [_Location_file]: "org-dartlang-app:///packages/firststop/pages/root_page.dart"
       });
     }
   });
-  const _name$ = dart.privateName(root_page, "_name");
-  let C0;
-  let C1;
-  let C2;
-  let C3;
-  let C4;
+  var _name$ = dart.privateName(root_page, "_name");
+  var C0;
+  var C1;
+  var C2;
+  var C3;
+  var C4;
   root_page.AuthStatus = class AuthStatus extends core.Object {
     toString() {
       return this[_name$];
@@ -275,7 +318,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
   root_page.AuthStatus.LOGGED_IN = C2 || CT.C2;
   root_page.AuthStatus.SIGNED_UP = C3 || CT.C3;
   root_page.AuthStatus.values = C4 || CT.C4;
-  const auth$0 = dart.privateName(root_page, "RootPage.auth");
+  var auth$0 = dart.privateName(root_page, "RootPage.auth");
   root_page.RootPage = class RootPage extends framework.StatefulWidget {
     get auth() {
       return this[auth$0];
@@ -304,35 +347,40 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
     __proto__: dart.getFields(root_page.RootPage.__proto__),
     auth: dart.finalFieldType(auth.BaseAuth)
   }));
-  const _userId = dart.privateName(root_page, "_userId");
-  let C6;
-  const _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  const _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  const _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  const _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  const _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  let C5;
-  let C9;
-  let C10;
-  let C8;
-  let C7;
-  let C13;
-  let C12;
-  let C11;
-  let C16;
-  let C17;
-  let C18;
-  let C15;
-  let C14;
-  let C21;
-  let C22;
-  let C23;
-  let C20;
-  let C19;
-  let C26;
-  let C27;
-  let C25;
-  let C24;
+  var _userId = dart.privateName(root_page, "_userId");
+  var C6;
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var C5;
+  var C9;
+  var C10;
+  var C8;
+  var C7;
+  var C13;
+  var C12;
+  var C11;
+  var C16;
+  var C17;
+  var C18;
+  var C15;
+  var C14;
+  var C21;
+  var C22;
+  var C23;
+  var C20;
+  var C19;
+  var C26;
+  var C27;
+  var C28;
+  var C25;
+  var C24;
+  var C31;
+  var C32;
+  var C30;
+  var C29;
   root_page._RootPageState = class _RootPageState extends framework.State$(root_page.RootPage) {
     initState() {
       super.initState();
@@ -389,6 +437,8 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
       return new scaffold.Scaffold.new({body: new container.Container.new({alignment: alignment.Alignment.center, child: new progress_indicator.CircularProgressIndicator.new({$creationLocationd_0dea112b090073317d4: C5 || CT.C5}), $creationLocationd_0dea112b090073317d4: C7 || CT.C7}), $creationLocationd_0dea112b090073317d4: C11 || CT.C11});
     }
     build(context) {
+      this.authStatus = root_page.AuthStatus.LOGGED_IN;
+      core.print(this.authStatus);
       switch (this.authStatus) {
         case C0 || CT.C0:
         {
@@ -405,12 +455,12 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
           if (this[_userId].length > 0 && this[_userId] != null) {
             return new home_page.HomePage.new({userId: this[_userId], auth: this.widget.auth, logoutCallback: dart.bind(this, 'logoutCallback'), $creationLocationd_0dea112b090073317d4: C19 || CT.C19});
           } else
-            return this.buildWaitingScreen();
+            return new home_page.HomePage.new({userId: this[_userId], auth: this.widget.auth, logoutCallback: dart.bind(this, 'logoutCallback'), $creationLocationd_0dea112b090073317d4: C24 || CT.C24});
           break;
         }
         case C3 || CT.C3:
         {
-          return new data_page.UserData.new({userId: this[_userId], loginCallback: dart.bind(this, 'loginCallback'), $creationLocationd_0dea112b090073317d4: C24 || CT.C24});
+          return new data_page.UserData.new({userId: this[_userId], loginCallback: dart.bind(this, 'loginCallback'), $creationLocationd_0dea112b090073317d4: C29 || CT.C29});
         }
         default:
         {
@@ -443,7 +493,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/firststop/
   dart.trackLibraries("packages/firststop/pages/root_page", {
     "package:firststop/pages/root_page.dart": root_page
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["root_page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAYA;;8CALK;;;;EAKL;;;;;;;;;;;;;;;;IAKiB;;;;;;;AAGwB,YAAI;IAAgB;;;QAL5C;;;AAAf;;EAAqB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAcF,MAAX;AAqBJ,MApBF,AAAO,AAAK,AAAiB,kDAAK,QAAC;;AAC7B;AACJ,YAAI,IAAI,IAAI;AACS,UAAnB,sBAAU,IAAI,eAAJ,OAAM;AACW,oBAAM,AAAc,yBAAI,AAAS,AAAU,wBAAR,iBAAU;AAStE,UARH,MAAM,AAAI,AAAc,GAAf,MAAM,yBAAc,QAAC;;AACV,YAAjB,OAAO,AAAE,CAAD;AACR,gBAAI,IAAI,IAAI,QAAmB,YAAN,WAAL,IAAI,cAAU;AACG,cAAjC,kBAAwB;;AAG6C,cADrE,kBACY,MAAV,IAAI,eAAJ,OAAM,WAAO,OAAkB,qCAA2B;;;;AAOhE,UAHF,cAAS;;AAEgE,YADvE,kBACc,MAAV,IAAI,eAAJ,OAAM,WAAO,OAAkB,qCAA2B;;;MAGnE;IACH;;AAOI,MAJF,AAAO,AAAK,AAAiB,kDAAK,QAAC;AAG/B,QAFF,cAAS;AACsB,UAA7B,gBAAmB,cAAT,AAAK,IAAD;;;AAKhB,MAFF,cAAS;AAC0B,QAAjC,kBAAwB;;IAE5B;;AAOI,MAJF,AAAO,AAAK,AAAiB,kDAAK,QAAC;AAG/B,QAFF,cAAS;AACsB,UAA7B,gBAAmB,cAAT,AAAK,IAAD;;;AAKhB,MAFF,cAAS;AAC0B,QAAjC,kBAAwB;;IAE5B;;AAMI,MAHF,cAAS;AAC8B,QAArC,kBAAwB;AACZ,QAAZ,gBAAU;;IAEd;;AAGE,YAAO,kCACC,wCACiB,mCACd;IAGb;UAG0B;AACxB,cAAQ;;;AAEJ,gBAAO;AACP;;;;AAEA,gBAAW,mCACH,AAAO,2CACE,kDACC;AAElB;;;;AAEA,cAAI,AAAQ,AAAO,uBAAE,KAAK,iBAAW;AACnC,kBAAW,qCACD,qBACF,AAAO,4CACG;;AAGlB,kBAAO;AACT;;;;AAEA,gBAAW,qCACD,wCACO;;;;AAGjB,gBAAO;;;IAEb;;;IAlGW,kBAAwB;IAC5B,gBAAU;;;EAkGnB","file":"root_page.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["root_page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAYA;;8CALK;;;;EAKL;;;;;;;;;;;;;;;;IAKiB;;;;;;;AAGwB,YAAI;IAAgB;;;QAL5C;;;AAAf;;EAAqB;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAcF,MAAX;AAqBJ,MApBF,AAAO,AAAK,AAAiB,kDAAK,QAAC;;AAC7B;AACJ,YAAI,IAAI,IAAI;AACS,UAAnB,sBAAU,IAAI,eAAJ,OAAM;AACW,oBAAM,AAAc,yBAAI,AAAS,AAAU,wBAAR,iBAAU;AAStE,UARH,MAAM,AAAI,AAAc,GAAf,MAAM,yBAAc,QAAC;;AACV,YAAjB,OAAO,AAAE,CAAD;AACR,gBAAI,IAAI,IAAI,QAAmB,YAAN,WAAL,IAAI,cAAU;AACG,cAAjC,kBAAwB;;AAG6C,cADrE,kBACY,MAAV,IAAI,eAAJ,OAAM,WAAO,OAAkB,qCAA2B;;;;AAOhE,UAHF,cAAS;;AAEgE,YADvE,kBACc,MAAV,IAAI,eAAJ,OAAM,WAAO,OAAkB,qCAA2B;;;MAGnE;IACH;;AAOI,MAJF,AAAO,AAAK,AAAiB,kDAAK,QAAC;AAG/B,QAFF,cAAS;AACsB,UAA7B,gBAAmB,cAAT,AAAK,IAAD;;;AAKhB,MAFF,cAAS;AAC0B,QAAjC,kBAAwB;;IAE5B;;AAOI,MAJF,AAAO,AAAK,AAAiB,kDAAK,QAAC;AAG/B,QAFF,cAAS;AACsB,UAA7B,gBAAmB,cAAT,AAAK,IAAD;;;AAKhB,MAFF,cAAS;AAC0B,QAAjC,kBAAwB;;IAE5B;;AAMI,MAHF,cAAS;AAC8B,QAArC,kBAAwB;AACZ,QAAZ,gBAAU;;IAEd;;AAGE,YAAO,kCACC,wCACiB,mCACd;IAGb;UAG0B;AACS,MAAjC,kBAAwB;AACP,MAAjB,WAAM;AACN,cAAQ;;;AAEJ,gBAAO;AACP;;;;AAEA,gBAAW,mCACH,AAAO,2CACE,kDACC;AAElB;;;;AAEA,cAAI,AAAQ,AAAO,uBAAE,KAAK,iBAAW;AACnC,kBAAW,qCACD,qBACF,AAAO,4CACG;;AAGlB,kBAAW,qCACD,qBACF,AAAO,4CACG;AAEpB;;;;AAEA,gBAAW,qCACD,wCACO;;;;AAGjB,gBAAO;;;IAEb;;;IAxGW,kBAAwB;IAC5B,gBAAU;;;EAwGnB","file":"root_page.ddc.js"}');
   // Exports:
   return {
     pages__root_page: root_page

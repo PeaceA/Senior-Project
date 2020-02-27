@@ -6,33 +6,33 @@ define(['dart_sdk'], function(dart_sdk) {
   const _native_typed_data = dart_sdk._native_typed_data;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const typed_buffers = Object.create(dart.library);
-  const $length = dartx.length;
-  const $_get = dartx._get;
-  const $_set = dartx._set;
-  const $setRange = dartx.setRange;
-  const $elementSizeInBytes = dartx.elementSizeInBytes;
-  const $offsetInBytes = dartx.offsetInBytes;
-  const $buffer = dartx.buffer;
-  const $addAll = dartx.addAll;
-  const $insertAll = dartx.insertAll;
+  var typed_buffers = Object.create(dart.library);
+  var $length = dartx.length;
+  var $_get = dartx._get;
+  var $_set = dartx._set;
+  var $setRange = dartx.setRange;
+  var $elementSizeInBytes = dartx.elementSizeInBytes;
+  var $offsetInBytes = dartx.offsetInBytes;
+  var $buffer = dartx.buffer;
+  var $addAll = dartx.addAll;
+  var $insertAll = dartx.insertAll;
   const CT = Object.create(null);
-  const _buffer = dart.privateName(typed_buffers, "_buffer");
-  const _length = dart.privateName(typed_buffers, "_length");
-  const _typedBuffer = dart.privateName(typed_buffers, "_typedBuffer");
-  const _defaultValue = dart.privateName(typed_buffers, "_defaultValue");
-  const _createBuffer = dart.privateName(typed_buffers, "_createBuffer");
-  const _createBiggerBuffer = dart.privateName(typed_buffers, "_createBiggerBuffer");
-  const _grow = dart.privateName(typed_buffers, "_grow");
-  const _add = dart.privateName(typed_buffers, "_add");
-  const _addAll = dart.privateName(typed_buffers, "_addAll");
-  const _insertKnownLength = dart.privateName(typed_buffers, "_insertKnownLength");
-  const _ensureCapacity = dart.privateName(typed_buffers, "_ensureCapacity");
-  const _setRange = dart.privateName(typed_buffers, "_setRange");
+  var _buffer = dart.privateName(typed_buffers, "_buffer");
+  var _length = dart.privateName(typed_buffers, "_length");
+  var _typedBuffer = dart.privateName(typed_buffers, "_typedBuffer");
+  var _defaultValue = dart.privateName(typed_buffers, "_defaultValue");
+  var _createBuffer = dart.privateName(typed_buffers, "_createBuffer");
+  var _createBiggerBuffer = dart.privateName(typed_buffers, "_createBiggerBuffer");
+  var _grow = dart.privateName(typed_buffers, "_grow");
+  var _add = dart.privateName(typed_buffers, "_add");
+  var _addAll = dart.privateName(typed_buffers, "_addAll");
+  var _insertKnownLength = dart.privateName(typed_buffers, "_insertKnownLength");
+  var _ensureCapacity = dart.privateName(typed_buffers, "_ensureCapacity");
+  var _setRange = dart.privateName(typed_buffers, "_setRange");
   const _is__TypedDataBuffer_default = Symbol('_is__TypedDataBuffer_default');
   typed_buffers._TypedDataBuffer$ = dart.generic(E => {
-    let IterableOfE = () => (IterableOfE = dart.constFn(core.Iterable$(E)))();
-    let _TypedDataBufferOfE = () => (_TypedDataBufferOfE = dart.constFn(typed_buffers._TypedDataBuffer$(E)))();
+    var IterableOfE = () => (IterableOfE = dart.constFn(core.Iterable$(E)))();
+    var _TypedDataBufferOfE = () => (_TypedDataBufferOfE = dart.constFn(typed_buffers._TypedDataBuffer$(E)))();
     class _TypedDataBuffer extends collection.ListBase$(E) {
       get [_typedBuffer]() {
         return typed_data.TypedData.as(this[_buffer]);
@@ -78,21 +78,17 @@ define(['dart_sdk'], function(dart_sdk) {
         E._check(value);
         this[_add](value);
       }
-      addAll(values, start, end) {
+      addAll(values, start = 0, end = null) {
         IterableOfE()._check(values);
-        if (start === void 0) start = 0;
-        if (end === void 0) end = null;
         core.RangeError.checkNotNegative(start, "start");
         if (end != null && dart.notNull(start) > dart.notNull(end)) {
           dart.throw(new core.RangeError.range(end, start, null, "end"));
         }
         this[_addAll](values, start, end);
       }
-      insertAll(index, values, start, end) {
+      insertAll(index, values, start = 0, end = null) {
         let t0;
         IterableOfE()._check(values);
-        if (start === void 0) start = 0;
-        if (end === void 0) end = null;
         core.RangeError.checkValidIndex(index, this, "index", dart.notNull(this[_length]) + 1);
         core.RangeError.checkNotNegative(start, "start");
         if (end != null) {
@@ -147,9 +143,7 @@ define(['dart_sdk'], function(dart_sdk) {
           end = dart.notNull(end) - 1;
         }
       }
-      [_addAll](values, start, end) {
-        if (start === void 0) start = 0;
-        if (end === void 0) end = null;
+      [_addAll](values, start = 0, end = null) {
         if (core.List.is(values)) end == null ? end = values[$length] : null;
         if (end != null) {
           this[_insertKnownLength](this[_length], values, start, end);
@@ -215,9 +209,8 @@ define(['dart_sdk'], function(dart_sdk) {
         let t0;
         this[_buffer] = (t0 = this[_createBiggerBuffer](null), t0[$setRange](0, length, this[_buffer]), t0);
       }
-      setRange(start, end, source, skipCount) {
+      setRange(start, end, source, skipCount = 0) {
         IterableOfE()._check(source);
-        if (skipCount === void 0) skipCount = 0;
         if (dart.notNull(end) > dart.notNull(this[_length])) dart.throw(new core.RangeError.range(end, 0, this[_length]));
         this[_setRange](start, end, source, skipCount);
       }
@@ -341,8 +334,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return _native_typed_data.NativeUint8List.new(size);
     }
   };
-  (typed_buffers.Uint8Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Uint8Buffer.new = function(initialLength = 0) {
     typed_buffers.Uint8Buffer.__proto__.new.call(this, _native_typed_data.NativeUint8List.new(initialLength));
     ;
   }).prototype = typed_buffers.Uint8Buffer.prototype;
@@ -357,8 +349,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return _native_typed_data.NativeInt8List.new(size);
     }
   };
-  (typed_buffers.Int8Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Int8Buffer.new = function(initialLength = 0) {
     typed_buffers.Int8Buffer.__proto__.new.call(this, _native_typed_data.NativeInt8List.new(initialLength));
     ;
   }).prototype = typed_buffers.Int8Buffer.prototype;
@@ -373,8 +364,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return _native_typed_data.NativeUint8ClampedList.new(size);
     }
   };
-  (typed_buffers.Uint8ClampedBuffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Uint8ClampedBuffer.new = function(initialLength = 0) {
     typed_buffers.Uint8ClampedBuffer.__proto__.new.call(this, _native_typed_data.NativeUint8ClampedList.new(initialLength));
     ;
   }).prototype = typed_buffers.Uint8ClampedBuffer.prototype;
@@ -389,8 +379,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return _native_typed_data.NativeUint16List.new(size);
     }
   };
-  (typed_buffers.Uint16Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Uint16Buffer.new = function(initialLength = 0) {
     typed_buffers.Uint16Buffer.__proto__.new.call(this, _native_typed_data.NativeUint16List.new(initialLength));
     ;
   }).prototype = typed_buffers.Uint16Buffer.prototype;
@@ -405,8 +394,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return _native_typed_data.NativeInt16List.new(size);
     }
   };
-  (typed_buffers.Int16Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Int16Buffer.new = function(initialLength = 0) {
     typed_buffers.Int16Buffer.__proto__.new.call(this, _native_typed_data.NativeInt16List.new(initialLength));
     ;
   }).prototype = typed_buffers.Int16Buffer.prototype;
@@ -421,8 +409,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return _native_typed_data.NativeUint32List.new(size);
     }
   };
-  (typed_buffers.Uint32Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Uint32Buffer.new = function(initialLength = 0) {
     typed_buffers.Uint32Buffer.__proto__.new.call(this, _native_typed_data.NativeUint32List.new(initialLength));
     ;
   }).prototype = typed_buffers.Uint32Buffer.prototype;
@@ -437,8 +424,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return _native_typed_data.NativeInt32List.new(size);
     }
   };
-  (typed_buffers.Int32Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Int32Buffer.new = function(initialLength = 0) {
     typed_buffers.Int32Buffer.__proto__.new.call(this, _native_typed_data.NativeInt32List.new(initialLength));
     ;
   }).prototype = typed_buffers.Int32Buffer.prototype;
@@ -453,8 +439,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return typed_data.Uint64List.new(size);
     }
   };
-  (typed_buffers.Uint64Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Uint64Buffer.new = function(initialLength = 0) {
     typed_buffers.Uint64Buffer.__proto__.new.call(this, typed_data.Uint64List.new(initialLength));
     ;
   }).prototype = typed_buffers.Uint64Buffer.prototype;
@@ -469,8 +454,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return typed_data.Int64List.new(size);
     }
   };
-  (typed_buffers.Int64Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Int64Buffer.new = function(initialLength = 0) {
     typed_buffers.Int64Buffer.__proto__.new.call(this, typed_data.Int64List.new(initialLength));
     ;
   }).prototype = typed_buffers.Int64Buffer.prototype;
@@ -485,8 +469,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return _native_typed_data.NativeFloat32List.new(size);
     }
   };
-  (typed_buffers.Float32Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Float32Buffer.new = function(initialLength = 0) {
     typed_buffers.Float32Buffer.__proto__.new.call(this, _native_typed_data.NativeFloat32List.new(initialLength));
     ;
   }).prototype = typed_buffers.Float32Buffer.prototype;
@@ -501,8 +484,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return _native_typed_data.NativeFloat64List.new(size);
     }
   };
-  (typed_buffers.Float64Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Float64Buffer.new = function(initialLength = 0) {
     typed_buffers.Float64Buffer.__proto__.new.call(this, _native_typed_data.NativeFloat64List.new(initialLength));
     ;
   }).prototype = typed_buffers.Float64Buffer.prototype;
@@ -520,8 +502,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return new _native_typed_data.NativeInt32x4List.new(size);
     }
   };
-  (typed_buffers.Int32x4Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Int32x4Buffer.new = function(initialLength = 0) {
     typed_buffers.Int32x4Buffer.__proto__.new.call(this, new _native_typed_data.NativeInt32x4List.new(initialLength));
     ;
   }).prototype = typed_buffers.Int32x4Buffer.prototype;
@@ -549,8 +530,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return new _native_typed_data.NativeFloat32x4List.new(size);
     }
   };
-  (typed_buffers.Float32x4Buffer.new = function(initialLength) {
-    if (initialLength === void 0) initialLength = 0;
+  (typed_buffers.Float32x4Buffer.new = function(initialLength = 0) {
     typed_buffers.Float32x4Buffer.__proto__.new.call(this, new _native_typed_data.NativeFloat32x4List.new(initialLength));
     ;
   }).prototype = typed_buffers.Float32x4Buffer.prototype;
@@ -567,7 +547,7 @@ define(['dart_sdk'], function(dart_sdk) {
   dart.trackLibraries("packages/typed_data/typed_buffers", {
     "package:typed_data/typed_buffers.dart": typed_buffers
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["typed_buffers.dart"],"names":[],"mappings":"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","file":"typed_buffers.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["typed_buffers.dart"],"names":[],"mappings":"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","file":"typed_buffers.ddc.js"}');
   // Exports:
   return {
     typed_buffers: typed_buffers

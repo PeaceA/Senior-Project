@@ -3,11 +3,11 @@ define(['dart_sdk'], function(dart_sdk) {
   const core = dart_sdk.core;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const User = Object.create(dart.library);
+  var User = Object.create(dart.library);
   const CT = Object.create(null);
-  const firstName = dart.privateName(User, "User.firstName");
-  const lastName = dart.privateName(User, "User.lastName");
-  const role = dart.privateName(User, "User.role");
+  var firstName = dart.privateName(User, "User.firstName");
+  var lastName = dart.privateName(User, "User.lastName");
+  var role = dart.privateName(User, "User.role");
   User.User = class User extends core.Object {
     get firstName() {
       return this[firstName];

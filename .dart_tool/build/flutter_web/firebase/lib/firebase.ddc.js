@@ -13,27 +13,27 @@ define(['dart_sdk', 'packages/firebase/src/app'], function(dart_sdk, packages__f
   const firestore = packages__firebase__src__app.src__firestore;
   const utils = packages__firebase__src__app.src__utils;
   const js$ = packages__firebase__src__app.src__js;
-  const top_level = Object.create(dart.library);
-  const messaging = Object.create(dart.library);
-  const firebase = Object.create(dart.library);
-  const $map = dartx.map;
-  const $toList = dartx.toList;
-  let dynamicToApp = () => (dynamicToApp = dart.constFn(dart.fnType(app.App, [dart.dynamic])))();
-  let ObjectTodynamic = () => (ObjectTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.Object])))();
-  let StreamControllerOfPayload = () => (StreamControllerOfPayload = dart.constFn(async.StreamController$(messaging.Payload)))();
-  let dynamicToNull = () => (dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))();
-  let VoidTovoid = () => (VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))();
-  let StreamControllerOfNull = () => (StreamControllerOfNull = dart.constFn(async.StreamController$(core.Null)))();
-  let StreamOfNull = () => (StreamOfNull = dart.constFn(async.Stream$(core.Null)))();
-  let ExpandoOfMessaging = () => (ExpandoOfMessaging = dart.constFn(core.Expando$(messaging.Messaging)))();
-  let MapOfString$dynamic = () => (MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))();
+  var top_level = Object.create(dart.library);
+  var messaging = Object.create(dart.library);
+  var firebase = Object.create(dart.library);
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var dynamicToApp = () => (dynamicToApp = dart.constFn(dart.fnType(app.App, [dart.dynamic])))();
+  var ObjectTodynamic = () => (ObjectTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.Object])))();
+  var StreamControllerOfPayload = () => (StreamControllerOfPayload = dart.constFn(async.StreamController$(messaging.Payload)))();
+  var dynamicToNull = () => (dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))();
+  var VoidTovoid = () => (VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))();
+  var StreamControllerOfNull = () => (StreamControllerOfNull = dart.constFn(async.StreamController$(core.Null)))();
+  var StreamOfNull = () => (StreamOfNull = dart.constFn(async.Stream$(core.Null)))();
+  var ExpandoOfMessaging = () => (ExpandoOfMessaging = dart.constFn(core.Expando$(messaging.Messaging)))();
+  var MapOfString$dynamic = () => (MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))();
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C0() {
       return C0 = dart.fn(utils.dartify, ObjectTodynamic());
     }
   });
-  const message$ = dart.privateName(top_level, "FirebaseJsNotLoadedException.message");
+  var message$ = dart.privateName(top_level, "FirebaseJsNotLoadedException.message");
   top_level.FirebaseJsNotLoadedException = class FirebaseJsNotLoadedException extends core.Object {
     get message() {
       return this[message$];
@@ -76,33 +76,27 @@ define(['dart_sdk', 'packages/firebase/src/app'], function(dart_sdk, packages__f
       dart.rethrow(e$);
     }
   };
-  top_level.app = function app$(name) {
-    if (name === void 0) name = null;
+  top_level.app = function app$(name = null) {
     let jsObject = name != null ? dart.global.firebase.app(name) : dart.global.firebase.app();
     return app.App.getInstance(jsObject);
   };
-  top_level.auth = function auth$(app) {
-    if (app === void 0) app = null;
+  top_level.auth = function auth$(app = null) {
     let jsObject = app != null ? dart.global.firebase.auth(app.jsObject) : dart.global.firebase.auth();
     return auth.Auth.getInstance(jsObject);
   };
-  top_level.database = function database$(app) {
-    if (app === void 0) app = null;
+  top_level.database = function database$(app = null) {
     let jsObject = app != null ? dart.global.firebase.database(app.jsObject) : dart.global.firebase.database();
     return database.Database.getInstance(jsObject);
   };
-  top_level.storage = function storage$(app) {
-    if (app === void 0) app = null;
+  top_level.storage = function storage$(app = null) {
     let jsObject = app != null ? dart.global.firebase.storage(app.jsObject) : dart.global.firebase.storage();
     return storage.Storage.getInstance(jsObject);
   };
-  top_level.firestore = function firestore$(app) {
-    if (app === void 0) app = null;
+  top_level.firestore = function firestore$(app = null) {
     let jsObject = app != null ? dart.global.firebase.firestore(app.jsObject) : dart.global.firebase.firestore();
     return firestore.Firestore.getInstance(jsObject);
   };
-  top_level.messaging = function messaging$(app) {
-    if (app === void 0) app = null;
+  top_level.messaging = function messaging$(app = null) {
     let jsObject = app != null ? dart.global.firebase.messaging(app.jsObject) : dart.global.firebase.messaging();
     return messaging.Messaging.getInstance(jsObject);
   };
@@ -110,7 +104,7 @@ define(['dart_sdk', 'packages/firebase/src/app'], function(dart_sdk, packages__f
     if (core.NoSuchMethodError.is(error)) {
       return true;
     }
-    if (dart.dtest(js_util.hasProperty(error, "message"))) {
+    if (dart.test(js_util.hasProperty(error, "message"))) {
       let message = js_util.getProperty(error, "message");
       return dart.equals(message, "firebase is not defined") || dart.equals(message, "Can't find variable: firebase");
     }
@@ -126,13 +120,13 @@ define(['dart_sdk', 'packages/firebase/src/app'], function(dart_sdk, packages__f
       return "[DEFAULT]";
     }
   });
-  const _onMessageController = dart.privateName(messaging, "_onMessageController");
-  const _onTokenRefresh = dart.privateName(messaging, "_onTokenRefresh");
-  const _onBackgroundMessage = dart.privateName(messaging, "_onBackgroundMessage");
-  let C0;
-  const _createOnMessageStream = dart.privateName(messaging, "_createOnMessageStream");
-  const _createBackgroundMessagedStream = dart.privateName(messaging, "_createBackgroundMessagedStream");
-  const _createNullStream = dart.privateName(messaging, "_createNullStream");
+  var _onMessageController = dart.privateName(messaging, "_onMessageController");
+  var _onTokenRefresh = dart.privateName(messaging, "_onTokenRefresh");
+  var _onBackgroundMessage = dart.privateName(messaging, "_onBackgroundMessage");
+  var C0;
+  var _createOnMessageStream = dart.privateName(messaging, "_createOnMessageStream");
+  var _createBackgroundMessagedStream = dart.privateName(messaging, "_createBackgroundMessagedStream");
+  var _createNullStream = dart.privateName(messaging, "_createNullStream");
   messaging.Messaging = class Messaging extends js$.JsObjectWrapper$(dart.lazyJSType(() => dart.global.firebase.messaging.Messaging, "firebase.messaging.Messaging")) {
     static getInstance(jsObject) {
       let t4, t3, t2, t1;
@@ -182,7 +176,7 @@ define(['dart_sdk', 'packages/firebase/src/app'], function(dart_sdk, packages__f
         let errorWrapper = js.allowInterop(dynamicToNull(), dart.fn(e => {
           controller.addError(e);
         }, dynamicToNull()));
-        this.jsObject.onMessage(nextWrapper, errorWrapper);
+        this.jsObject.onMessage(dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper));
       }
       return controller.stream;
     }
@@ -192,7 +186,7 @@ define(['dart_sdk', 'packages/firebase/src/app'], function(dart_sdk, packages__f
         let nextWrapper = js.allowInterop(dynamicToNull(), dart.fn(payload => {
           controller.add(new messaging.Payload._fromJsObject(dart.anonymousJSType("PayloadJsImpl")._check(payload)));
         }, dynamicToNull()));
-        this.jsObject.setBackgroundMessageHandler(nextWrapper);
+        this.jsObject.setBackgroundMessageHandler(dart.assertInterop(nextWrapper));
       }
       return controller.stream;
     }
@@ -204,7 +198,7 @@ define(['dart_sdk', 'packages/firebase/src/app'], function(dart_sdk, packages__f
         }, dynamicToNull()));
         let onSnapshotUnsubscribe = null;
         const startListen = () => {
-          onSnapshotUnsubscribe = this.jsObject.onTokenRefresh(nextWrapper, errorWrapper);
+          onSnapshotUnsubscribe = this.jsObject.onTokenRefresh(dart.assertInterop(nextWrapper), dart.assertInterop(errorWrapper));
         };
         dart.fn(startListen, VoidTovoid());
         function stopListen() {
@@ -313,7 +307,7 @@ define(['dart_sdk', 'packages/firebase/src/app'], function(dart_sdk, packages__f
     "package:firebase/src/messaging.dart": messaging,
     "package:firebase/firebase.dart": firebase
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["src/top_level.dart","src/messaging.dart"],"names":[],"mappings":"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","file":"firebase.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["src/top_level.dart","src/messaging.dart"],"names":[],"mappings":"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","file":"firebase.ddc.js"}');
   // Exports:
   return {
     src__top_level: top_level,

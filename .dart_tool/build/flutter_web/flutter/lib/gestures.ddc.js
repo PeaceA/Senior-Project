@@ -12,6 +12,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
   const dartx = dart_sdk.dartx;
   const assertions = packages__flutter__src__foundation___bitfield_web.src__foundation__assertions;
   const diagnostics = packages__flutter__src__foundation___bitfield_web.src__foundation__diagnostics;
+  const object = packages__flutter__src__foundation___bitfield_web.src__foundation__object;
   const print = packages__flutter__src__foundation___bitfield_web.src__foundation__print;
   const debug = packages__flutter__src__foundation___bitfield_web.src__foundation__debug;
   const binding = packages__flutter__src__foundation___bitfield_web.src__foundation__binding;
@@ -24,95 +25,101 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
   const message_codec = packages__flutter__src__gestures__arena.src__services__message_codec;
   const events = packages__flutter__src__gestures__arena.src__gestures__events;
   const pointer_router = packages__flutter__src__gestures__arena.src__gestures__pointer_router;
-  const scheduler = Object.create(dart.library);
-  const ticker$ = Object.create(dart.library);
-  const binding$0 = Object.create(dart.library);
-  const services = Object.create(dart.library);
-  const platform_views = Object.create(dart.library);
-  const gestures = Object.create(dart.library);
-  const mouse_tracking = Object.create(dart.library);
-  const $_equals = dartx._equals;
-  const $runtimeType = dartx.runtimeType;
-  const $trimRight = dartx.trimRight;
-  const $split = dartx.split;
-  const $forEach = dartx.forEach;
-  const $toString = dartx.toString;
-  const $add = dartx.add;
-  const $length = dartx.length;
-  const $contains = dartx.contains;
-  const $remove = dartx.remove;
-  const $isEmpty = dartx.isEmpty;
-  const $compareTo = dartx.compareTo;
-  const $_set = dartx._set;
-  const $keys = dartx.keys;
-  const $_get = dartx._get;
-  const $join = dartx.join;
-  const $round = dartx.round;
-  const $padRight = dartx.padRight;
-  const $padLeft = dartx.padLeft;
-  const $clear = dartx.clear;
-  const $times = dartx['*'];
-  const $containsKey = dartx.containsKey;
-  const $buffer = dartx.buffer;
-  const $lengthInBytes = dartx.lengthInBytes;
-  const $map = dartx.map;
-  const $toList = dartx.toList;
-  const $isNotEmpty = dartx.isNotEmpty;
-  const $reversed = dartx.reversed;
-  let VoidTobool = () => (VoidTobool = dart.constFn(dart.fnType(core.bool, [])))();
-  let JSArrayOfDiagnosticsNode = () => (JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))();
-  let DiagnosticsPropertyOfTicker = () => (DiagnosticsPropertyOfTicker = dart.constFn(diagnostics.DiagnosticsProperty$(ticker$.Ticker)))();
-  let CompleterOfvoid = () => (CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))();
-  let dynamicTovoid = () => (dynamicTovoid = dart.constFn(dart.fnType(dart.void, [dart.dynamic])))();
-  let VoidTodynamic = () => (VoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [])))();
-  let VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
-  let ListOfFrameTiming = () => (ListOfFrameTiming = dart.constFn(core.List$(ui.FrameTiming)))();
-  let ListOfFrameTimingTovoid = () => (ListOfFrameTimingTovoid = dart.constFn(dart.fnType(dart.void, [ListOfFrameTiming()])))();
-  let JSArrayOfListOfFrameTimingTovoid = () => (JSArrayOfListOfFrameTimingTovoid = dart.constFn(_interceptors.JSArray$(ListOfFrameTimingTovoid())))();
-  let __Tobool = () => (__Tobool = dart.constFn(dart.fnType(core.bool, [], {priority: core.int, scheduler: binding$0.SchedulerBinding}, {})))();
-  let HeapPriorityQueueOf_TaskEntry = () => (HeapPriorityQueueOf_TaskEntry = dart.constFn(priority_queue.HeapPriorityQueue$(binding$0._TaskEntry)))();
-  let _TaskEntryAnd_TaskEntryToint = () => (_TaskEntryAnd_TaskEntryToint = dart.constFn(dart.fnType(core.int, [binding$0._TaskEntry, binding$0._TaskEntry])))();
-  let IdentityMapOfint$_FrameCallbackEntry = () => (IdentityMapOfint$_FrameCallbackEntry = dart.constFn(_js_helper.IdentityMap$(core.int, binding$0._FrameCallbackEntry)))();
-  let _IdentityHashSetOfint = () => (_IdentityHashSetOfint = dart.constFn(collection._IdentityHashSet$(core.int)))();
-  let DurationTovoid = () => (DurationTovoid = dart.constFn(dart.fnType(dart.void, [core.Duration])))();
-  let JSArrayOfDurationTovoid = () => (JSArrayOfDurationTovoid = dart.constFn(_interceptors.JSArray$(DurationTovoid())))();
-  let ListOfFrameTimingToNull = () => (ListOfFrameTimingToNull = dart.constFn(dart.fnType(core.Null, [ListOfFrameTiming()])))();
-  let ListOfListOfFrameTimingTovoid = () => (ListOfListOfFrameTimingTovoid = dart.constFn(core.List$(ListOfFrameTimingTovoid())))();
-  let DiagnosticsPropertyOfListOfFrameTimingTovoid = () => (DiagnosticsPropertyOfListOfFrameTimingTovoid = dart.constFn(diagnostics.DiagnosticsProperty$(ListOfFrameTimingTovoid())))();
-  let SyncIterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = () => (SyncIterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = dart.constFn(_js_helper.SyncIterable$(DiagnosticsPropertyOfListOfFrameTimingTovoid())))();
-  let IterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = () => (IterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = dart.constFn(core.Iterable$(DiagnosticsPropertyOfListOfFrameTimingTovoid())))();
-  let VoidToIterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = () => (VoidToIterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = dart.constFn(dart.fnType(IterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid(), [])))();
-  let FutureOfdouble = () => (FutureOfdouble = dart.constFn(async.Future$(core.double)))();
-  let VoidToFutureOfdouble = () => (VoidToFutureOfdouble = dart.constFn(dart.fnType(FutureOfdouble(), [])))();
-  let FutureOfNull = () => (FutureOfNull = dart.constFn(async.Future$(core.Null)))();
-  let doubleToFutureOfNull = () => (doubleToFutureOfNull = dart.constFn(dart.fnType(FutureOfNull(), [core.double])))();
-  let SyncIterableOfDiagnosticsStackTrace = () => (SyncIterableOfDiagnosticsStackTrace = dart.constFn(_js_helper.SyncIterable$(assertions.DiagnosticsStackTrace)))();
-  let IterableOfDiagnosticsStackTrace = () => (IterableOfDiagnosticsStackTrace = dart.constFn(core.Iterable$(assertions.DiagnosticsStackTrace)))();
-  let VoidToIterableOfDiagnosticsStackTrace = () => (VoidToIterableOfDiagnosticsStackTrace = dart.constFn(dart.fnType(IterableOfDiagnosticsStackTrace(), [])))();
-  let LinkedHashMapOfint$_FrameCallbackEntry = () => (LinkedHashMapOfint$_FrameCallbackEntry = dart.constFn(collection.LinkedHashMap$(core.int, binding$0._FrameCallbackEntry)))();
-  let SyncIterableOfDiagnosticsNode = () => (SyncIterableOfDiagnosticsNode = dart.constFn(_js_helper.SyncIterable$(diagnostics.DiagnosticsNode)))();
-  let IterableOfDiagnosticsNode = () => (IterableOfDiagnosticsNode = dart.constFn(core.Iterable$(diagnostics.DiagnosticsNode)))();
-  let VoidToIterableOfDiagnosticsNode = () => (VoidToIterableOfDiagnosticsNode = dart.constFn(dart.fnType(IterableOfDiagnosticsNode(), [])))();
-  let DurationToNull = () => (DurationToNull = dart.constFn(dart.fnType(core.Null, [core.Duration])))();
-  let VoidToFutureOfNull = () => (VoidToFutureOfNull = dart.constFn(dart.fnType(FutureOfNull(), [])))();
-  let intAnd_FrameCallbackEntryToNull = () => (intAnd_FrameCallbackEntryToNull = dart.constFn(dart.fnType(core.Null, [core.int, binding$0._FrameCallbackEntry])))();
-  let ListOfDurationTovoid = () => (ListOfDurationTovoid = dart.constFn(core.List$(DurationTovoid())))();
-  let IdentityMapOfString$dynamic = () => (IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))();
-  let VoidTovoid = () => (VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))();
-  let IdentityMapOfint$VoidTovoid = () => (IdentityMapOfint$VoidTovoid = dart.constFn(_js_helper.IdentityMap$(core.int, VoidTovoid())))();
-  let JSArrayOfint = () => (JSArrayOfint = dart.constFn(_interceptors.JSArray$(core.int)))();
-  let JSArrayOfdouble = () => (JSArrayOfdouble = dart.constFn(_interceptors.JSArray$(core.double)))();
-  let ListOfint = () => (ListOfint = dart.constFn(core.List$(core.int)))();
-  let AndroidPointerPropertiesToListOfint = () => (AndroidPointerPropertiesToListOfint = dart.constFn(dart.fnType(ListOfint(), [platform_views.AndroidPointerProperties])))();
-  let ListOfdouble = () => (ListOfdouble = dart.constFn(core.List$(core.double)))();
-  let AndroidPointerCoordsToListOfdouble = () => (AndroidPointerCoordsToListOfdouble = dart.constFn(dart.fnType(ListOfdouble(), [platform_views.AndroidPointerCoords])))();
-  let intTovoid = () => (intTovoid = dart.constFn(dart.fnType(dart.void, [core.int])))();
-  let JSArrayOfintTovoid = () => (JSArrayOfintTovoid = dart.constFn(_interceptors.JSArray$(intTovoid())))();
-  let JSArrayOfString = () => (JSArrayOfString = dart.constFn(_interceptors.JSArray$(core.String)))();
-  let _HashSetOfMouseTrackerAnnotation = () => (_HashSetOfMouseTrackerAnnotation = dart.constFn(collection._HashSet$(mouse_tracking.MouseTrackerAnnotation)))();
-  let IdentityMapOfint$_MouseState = () => (IdentityMapOfint$_MouseState = dart.constFn(_js_helper.IdentityMap$(core.int, mouse_tracking._MouseState)))();
-  let LinkedHashSetOfMouseTrackerAnnotation = () => (LinkedHashSetOfMouseTrackerAnnotation = dart.constFn(collection.LinkedHashSet$(mouse_tracking.MouseTrackerAnnotation)))();
-  let intAnd_MouseStateToNull = () => (intAnd_MouseStateToNull = dart.constFn(dart.fnType(core.Null, [core.int, mouse_tracking._MouseState])))();
+  var scheduler = Object.create(dart.library);
+  var ticker$ = Object.create(dart.library);
+  var binding$0 = Object.create(dart.library);
+  var services = Object.create(dart.library);
+  var platform_views = Object.create(dart.library);
+  var gestures = Object.create(dart.library);
+  var mouse_tracking = Object.create(dart.library);
+  var $_equals = dartx._equals;
+  var $runtimeType = dartx.runtimeType;
+  var $trimRight = dartx.trimRight;
+  var $split = dartx.split;
+  var $forEach = dartx.forEach;
+  var $toString = dartx.toString;
+  var $add = dartx.add;
+  var $length = dartx.length;
+  var $contains = dartx.contains;
+  var $remove = dartx.remove;
+  var $isEmpty = dartx.isEmpty;
+  var $compareTo = dartx.compareTo;
+  var $_set = dartx._set;
+  var $keys = dartx.keys;
+  var $_get = dartx._get;
+  var $join = dartx.join;
+  var $round = dartx.round;
+  var $padRight = dartx.padRight;
+  var $padLeft = dartx.padLeft;
+  var $clear = dartx.clear;
+  var $times = dartx['*'];
+  var $containsKey = dartx.containsKey;
+  var $buffer = dartx.buffer;
+  var $lengthInBytes = dartx.lengthInBytes;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  var $values = dartx.values;
+  var $where = dartx.where;
+  var $reversed = dartx.reversed;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var VoidTobool = () => (VoidTobool = dart.constFn(dart.fnType(core.bool, [])))();
+  var JSArrayOfDiagnosticsNode = () => (JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))();
+  var DiagnosticsPropertyOfTicker = () => (DiagnosticsPropertyOfTicker = dart.constFn(diagnostics.DiagnosticsProperty$(ticker$.Ticker)))();
+  var CompleterOfvoid = () => (CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))();
+  var dynamicTovoid = () => (dynamicTovoid = dart.constFn(dart.fnType(dart.void, [dart.dynamic])))();
+  var VoidTodynamic = () => (VoidTodynamic = dart.constFn(dart.fnType(dart.dynamic, [])))();
+  var VoidToNull = () => (VoidToNull = dart.constFn(dart.fnType(core.Null, [])))();
+  var ListOfFrameTiming = () => (ListOfFrameTiming = dart.constFn(core.List$(ui.FrameTiming)))();
+  var ListOfFrameTimingTovoid = () => (ListOfFrameTimingTovoid = dart.constFn(dart.fnType(dart.void, [ListOfFrameTiming()])))();
+  var JSArrayOfListOfFrameTimingTovoid = () => (JSArrayOfListOfFrameTimingTovoid = dart.constFn(_interceptors.JSArray$(ListOfFrameTimingTovoid())))();
+  var __Tobool = () => (__Tobool = dart.constFn(dart.fnType(core.bool, [], {priority: core.int, scheduler: binding$0.SchedulerBinding}, {})))();
+  var HeapPriorityQueueOf_TaskEntry = () => (HeapPriorityQueueOf_TaskEntry = dart.constFn(priority_queue.HeapPriorityQueue$(binding$0._TaskEntry)))();
+  var _TaskEntryAnd_TaskEntryToint = () => (_TaskEntryAnd_TaskEntryToint = dart.constFn(dart.fnType(core.int, [binding$0._TaskEntry, binding$0._TaskEntry])))();
+  var IdentityMapOfint$_FrameCallbackEntry = () => (IdentityMapOfint$_FrameCallbackEntry = dart.constFn(_js_helper.IdentityMap$(core.int, binding$0._FrameCallbackEntry)))();
+  var _IdentityHashSetOfint = () => (_IdentityHashSetOfint = dart.constFn(collection._IdentityHashSet$(core.int)))();
+  var DurationTovoid = () => (DurationTovoid = dart.constFn(dart.fnType(dart.void, [core.Duration])))();
+  var JSArrayOfDurationTovoid = () => (JSArrayOfDurationTovoid = dart.constFn(_interceptors.JSArray$(DurationTovoid())))();
+  var ListOfFrameTimingToNull = () => (ListOfFrameTimingToNull = dart.constFn(dart.fnType(core.Null, [ListOfFrameTiming()])))();
+  var ListOfListOfFrameTimingTovoid = () => (ListOfListOfFrameTimingTovoid = dart.constFn(core.List$(ListOfFrameTimingTovoid())))();
+  var DiagnosticsPropertyOfListOfFrameTimingTovoid = () => (DiagnosticsPropertyOfListOfFrameTimingTovoid = dart.constFn(diagnostics.DiagnosticsProperty$(ListOfFrameTimingTovoid())))();
+  var SyncIterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = () => (SyncIterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = dart.constFn(_js_helper.SyncIterable$(DiagnosticsPropertyOfListOfFrameTimingTovoid())))();
+  var IterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = () => (IterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = dart.constFn(core.Iterable$(DiagnosticsPropertyOfListOfFrameTimingTovoid())))();
+  var VoidToIterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = () => (VoidToIterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid = dart.constFn(dart.fnType(IterableOfDiagnosticsPropertyOfListOfFrameTimingTovoid(), [])))();
+  var FutureOfdouble = () => (FutureOfdouble = dart.constFn(async.Future$(core.double)))();
+  var VoidToFutureOfdouble = () => (VoidToFutureOfdouble = dart.constFn(dart.fnType(FutureOfdouble(), [])))();
+  var FutureOfNull = () => (FutureOfNull = dart.constFn(async.Future$(core.Null)))();
+  var doubleToFutureOfNull = () => (doubleToFutureOfNull = dart.constFn(dart.fnType(FutureOfNull(), [core.double])))();
+  var SyncIterableOfDiagnosticsStackTrace = () => (SyncIterableOfDiagnosticsStackTrace = dart.constFn(_js_helper.SyncIterable$(assertions.DiagnosticsStackTrace)))();
+  var IterableOfDiagnosticsStackTrace = () => (IterableOfDiagnosticsStackTrace = dart.constFn(core.Iterable$(assertions.DiagnosticsStackTrace)))();
+  var VoidToIterableOfDiagnosticsStackTrace = () => (VoidToIterableOfDiagnosticsStackTrace = dart.constFn(dart.fnType(IterableOfDiagnosticsStackTrace(), [])))();
+  var LinkedHashMapOfint$_FrameCallbackEntry = () => (LinkedHashMapOfint$_FrameCallbackEntry = dart.constFn(collection.LinkedHashMap$(core.int, binding$0._FrameCallbackEntry)))();
+  var SyncIterableOfDiagnosticsNode = () => (SyncIterableOfDiagnosticsNode = dart.constFn(_js_helper.SyncIterable$(diagnostics.DiagnosticsNode)))();
+  var IterableOfDiagnosticsNode = () => (IterableOfDiagnosticsNode = dart.constFn(core.Iterable$(diagnostics.DiagnosticsNode)))();
+  var VoidToIterableOfDiagnosticsNode = () => (VoidToIterableOfDiagnosticsNode = dart.constFn(dart.fnType(IterableOfDiagnosticsNode(), [])))();
+  var DurationToNull = () => (DurationToNull = dart.constFn(dart.fnType(core.Null, [core.Duration])))();
+  var VoidToFutureOfNull = () => (VoidToFutureOfNull = dart.constFn(dart.fnType(FutureOfNull(), [])))();
+  var intAnd_FrameCallbackEntryToNull = () => (intAnd_FrameCallbackEntryToNull = dart.constFn(dart.fnType(core.Null, [core.int, binding$0._FrameCallbackEntry])))();
+  var ListOfDurationTovoid = () => (ListOfDurationTovoid = dart.constFn(core.List$(DurationTovoid())))();
+  var IdentityMapOfString$dynamic = () => (IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))();
+  var VoidTovoid = () => (VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))();
+  var IdentityMapOfint$VoidTovoid = () => (IdentityMapOfint$VoidTovoid = dart.constFn(_js_helper.IdentityMap$(core.int, VoidTovoid())))();
+  var JSArrayOfint = () => (JSArrayOfint = dart.constFn(_interceptors.JSArray$(core.int)))();
+  var JSArrayOfdouble = () => (JSArrayOfdouble = dart.constFn(_interceptors.JSArray$(core.double)))();
+  var ListOfint = () => (ListOfint = dart.constFn(core.List$(core.int)))();
+  var AndroidPointerPropertiesToListOfint = () => (AndroidPointerPropertiesToListOfint = dart.constFn(dart.fnType(ListOfint(), [platform_views.AndroidPointerProperties])))();
+  var ListOfdouble = () => (ListOfdouble = dart.constFn(core.List$(core.double)))();
+  var AndroidPointerCoordsToListOfdouble = () => (AndroidPointerCoordsToListOfdouble = dart.constFn(dart.fnType(ListOfdouble(), [platform_views.AndroidPointerCoords])))();
+  var intTovoid = () => (intTovoid = dart.constFn(dart.fnType(dart.void, [core.int])))();
+  var JSArrayOfintTovoid = () => (JSArrayOfintTovoid = dart.constFn(_interceptors.JSArray$(intTovoid())))();
+  var FlagsSummaryOfFunction = () => (FlagsSummaryOfFunction = dart.constFn(diagnostics.FlagsSummary$(core.Function)))();
+  var IdentityMapOfString$Function = () => (IdentityMapOfString$Function = dart.constFn(_js_helper.IdentityMap$(core.String, core.Function)))();
+  var _HashSetOfMouseTrackerAnnotation = () => (_HashSetOfMouseTrackerAnnotation = dart.constFn(collection._HashSet$(mouse_tracking.MouseTrackerAnnotation)))();
+  var PointerEventToString = () => (PointerEventToString = dart.constFn(dart.fnType(core.String, [events.PointerEvent])))();
+  var IdentityMapOfint$_MouseState = () => (IdentityMapOfint$_MouseState = dart.constFn(_js_helper.IdentityMap$(core.int, mouse_tracking._MouseState)))();
+  var LinkedHashSetOfMouseTrackerAnnotation = () => (LinkedHashSetOfMouseTrackerAnnotation = dart.constFn(collection.LinkedHashSet$(mouse_tracking.MouseTrackerAnnotation)))();
+  var _MouseStateAndLinkedHashSetOfMouseTrackerAnnotationToNull = () => (_MouseStateAndLinkedHashSetOfMouseTrackerAnnotationToNull = dart.constFn(dart.fnType(core.Null, [mouse_tracking._MouseState, LinkedHashSetOfMouseTrackerAnnotation()])))();
+  var JSArrayOf_MouseState = () => (JSArrayOf_MouseState = dart.constFn(_interceptors.JSArray$(mouse_tracking._MouseState)))();
+  var MouseTrackerAnnotationTobool = () => (MouseTrackerAnnotationTobool = dart.constFn(dart.fnType(core.bool, [mouse_tracking.MouseTrackerAnnotation])))();
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C0() {
@@ -188,41 +195,41 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     },
     get C12() {
       return C12 = dart.const({
-        __proto__: platform_views._AndroidViewState.prototype,
-        [_name$0]: "_AndroidViewState.waitingForSize",
-        index: 0
+        __proto__: ui.AppLifecycleState.prototype,
+        [_name]: "AppLifecycleState.detached",
+        index: 3
       });
     },
     get C13() {
       return C13 = dart.const({
         __proto__: platform_views._AndroidViewState.prototype,
-        [_name$0]: "_AndroidViewState.creating",
-        index: 1
+        [_name$0]: "_AndroidViewState.waitingForSize",
+        index: 0
       });
     },
     get C14() {
       return C14 = dart.const({
         __proto__: platform_views._AndroidViewState.prototype,
-        [_name$0]: "_AndroidViewState.created",
-        index: 2
+        [_name$0]: "_AndroidViewState.creating",
+        index: 1
       });
     },
     get C15() {
       return C15 = dart.const({
         __proto__: platform_views._AndroidViewState.prototype,
-        [_name$0]: "_AndroidViewState.createFailed",
-        index: 3
+        [_name$0]: "_AndroidViewState.created",
+        index: 2
       });
     },
     get C16() {
       return C16 = dart.const({
         __proto__: platform_views._AndroidViewState.prototype,
         [_name$0]: "_AndroidViewState.disposed",
-        index: 4
+        index: 3
       });
     },
     get C17() {
-      return C17 = dart.constList([C12 || CT.C12, C13 || CT.C13, C14 || CT.C14, C15 || CT.C15, C16 || CT.C16], platform_views._AndroidViewState);
+      return C17 = dart.constList([C13 || CT.C13, C14 || CT.C14, C15 || CT.C15, C16 || CT.C16], platform_views._AndroidViewState);
     },
     get C18() {
       return C18 = dart.const({
@@ -245,16 +252,16 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
   }).prototype = ticker$.TickerProvider.prototype;
   dart.addTypeTests(ticker$.TickerProvider);
   dart.setLibraryUri(ticker$.TickerProvider, "package:flutter/src/scheduler/ticker.dart");
-  const _future = dart.privateName(ticker$, "_future");
-  const _muted = dart.privateName(ticker$, "_muted");
-  const _startTime = dart.privateName(ticker$, "_startTime");
-  const _animationId = dart.privateName(ticker$, "_animationId");
-  const _debugCreationStack = dart.privateName(ticker$, "_debugCreationStack");
-  const _onTick$ = dart.privateName(ticker$, "_onTick");
-  const _cancel = dart.privateName(ticker$, "_cancel");
-  const _complete = dart.privateName(ticker$, "_complete");
-  const _tick = dart.privateName(ticker$, "_tick");
-  const debugLabel$ = dart.privateName(ticker$, "Ticker.debugLabel");
+  var _future = dart.privateName(ticker$, "_future");
+  var _muted = dart.privateName(ticker$, "_muted");
+  var _startTime = dart.privateName(ticker$, "_startTime");
+  var _animationId = dart.privateName(ticker$, "_animationId");
+  var _debugCreationStack = dart.privateName(ticker$, "_debugCreationStack");
+  var _onTick$ = dart.privateName(ticker$, "_onTick");
+  var _cancel = dart.privateName(ticker$, "_cancel");
+  var _complete = dart.privateName(ticker$, "_complete");
+  var _tick = dart.privateName(ticker$, "_tick");
+  var debugLabel$ = dart.privateName(ticker$, "Ticker.debugLabel");
   ticker$.Ticker = class Ticker extends core.Object {
     get debugLabel() {
       return this[debugLabel$];
@@ -374,7 +381,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     toString(opts) {
       let debugIncludeStack = opts && 'debugIncludeStack' in opts ? opts.debugIncludeStack : false;
       let buffer = new core.StringBuffer.new();
-      buffer.write(dart.str(this[$runtimeType]) + "(");
+      buffer.write(dart.str(object.objectRuntimeType(this, "Ticker")) + "(");
       if (!dart.test(dart.fn(() => {
         let t0;
         buffer.write((t0 = this.debugLabel, t0 == null ? "" : t0));
@@ -444,11 +451,11 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     [_debugCreationStack]: dart.fieldType(core.StackTrace)
   }));
   dart.defineExtensionMethods(ticker$.Ticker, ['toString']);
-  const _primaryCompleter = dart.privateName(ticker$, "_primaryCompleter");
-  const _secondaryCompleter = dart.privateName(ticker$, "_secondaryCompleter");
-  const _completed = dart.privateName(ticker$, "_completed");
-  const TickerCanceled_ticker = dart.privateName(ticker$, "TickerCanceled.ticker");
-  let C0;
+  var _primaryCompleter = dart.privateName(ticker$, "_primaryCompleter");
+  var _secondaryCompleter = dart.privateName(ticker$, "_secondaryCompleter");
+  var _completed = dart.privateName(ticker$, "_completed");
+  var TickerCanceled_ticker = dart.privateName(ticker$, "TickerCanceled.ticker");
+  var C0;
   ticker$.TickerFuture = class TickerFuture extends core.Object {
     [_complete]() {
       let t0;
@@ -492,9 +499,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       let test = opts && 'test' in opts ? opts.test : null;
       return this[_primaryCompleter].future.catchError(onError, {test: test});
     }
-    then(E, f, opts) {
+    then(R, onValue, opts) {
       let onError = opts && 'onError' in opts ? opts.onError : null;
-      return this[_primaryCompleter].future.then(E, dart.fnType(async.FutureOr$(E), [dart.void])._check(f), {onError: onError});
+      return this[_primaryCompleter].future.then(R, onValue, {onError: onError});
     }
     timeout(timeLimit, opts) {
       let onTimeout = opts && 'onTimeout' in opts ? opts.onTimeout : null;
@@ -530,7 +537,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     whenCompleteOrCancel: dart.fnType(dart.void, [dart.fnType(dart.void, [])]),
     asStream: dart.fnType(async.Stream$(dart.void), []),
     catchError: dart.fnType(async.Future$(dart.void), [core.Function], {test: dart.fnType(core.bool, [dart.dynamic])}, {}),
-    then: dart.gFnType(E => [async.Future$(E), [dart.fnType(dart.dynamic, [dart.void])], {onError: core.Function}, {}]),
+    then: dart.gFnType(R => [async.Future$(R), [dart.fnType(async.FutureOr$(R), [dart.void])], {onError: core.Function}, {}]),
     timeout: dart.fnType(async.Future$(dart.void), [core.Duration], {onTimeout: core.Object}, {}),
     whenComplete: dart.fnType(async.Future$(dart.void), [dart.fnType(dart.dynamic, [])])
   }));
@@ -558,8 +565,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       return "The ticker was canceled before the \"orCancel\" property was first used.";
     }
   };
-  (ticker$.TickerCanceled.new = function(ticker) {
-    if (ticker === void 0) ticker = null;
+  (ticker$.TickerCanceled.new = function(ticker = null) {
     this[ticker$0] = ticker;
     ;
   }).prototype = ticker$.TickerCanceled.prototype;
@@ -573,9 +579,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
   }));
   dart.defineExtensionMethods(ticker$.TickerCanceled, ['toString']);
   const _is__TaskEntry_default = Symbol('_is__TaskEntry_default');
-  const completer = dart.privateName(binding$0, "_TaskEntry.completer");
+  var completer = dart.privateName(binding$0, "_TaskEntry.completer");
   binding$0._TaskEntry$ = dart.generic(T => {
-    let CompleterOfT = () => (CompleterOfT = dart.constFn(async.Completer$(T)))();
+    var CompleterOfT = () => (CompleterOfT = dart.constFn(async.Completer$(T)))();
     class _TaskEntry extends core.Object {
       get completer() {
         return this[completer];
@@ -604,7 +610,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       if (!dart.test(dart.fn(() => {
         this.debugStack = core.StackTrace.current;
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 62, 12, "() {\n      debugStack = StackTrace.current;\n      return true;\n    }()");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 63, 12, "() {\n      debugStack = StackTrace.current;\n      return true;\n    }()");
       this.completer = CompleterOfT().new();
     }).prototype = _TaskEntry.prototype;
     dart.addTypeTests(_TaskEntry);
@@ -639,13 +645,13 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
             dart.throw(new assertions.FlutterError.fromParts(JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("scheduleFrameCallback called with rescheduling true, but no callback is in scope."), new assertions.ErrorDescription.new("The \"rescheduling\" argument should only be set to true if the " + "callback is being reregistered from within the callback itself, " + "and only then if the callback itself is entirely synchronous."), new assertions.ErrorHint.new("If this is the initial registration of the callback, or if the " + "callback is asynchronous, then do not use the \"rescheduling\" " + "argument.")])));
           }
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 95, 16, "() {\n          if (debugCurrentCallbackStack == null) {\n            throw FlutterError.fromParts(<DiagnosticsNode>[\n              ErrorSummary('scheduleFrameCallback called with rescheduling true, but no callback is in scope.'),\n              ErrorDescription(\n                'The \"rescheduling\" argument should only be set to true if the '\n                'callback is being reregistered from within the callback itself, '\n                'and only then if the callback itself is entirely synchronous.'\n              ),\n              ErrorHint(\n                'If this is the initial registration of the callback, or if the '\n                'callback is asynchronous, then do not use the \"rescheduling\" '\n                'argument.'\n              )\n            ]);\n          }\n          return true;\n        }()");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 96, 16, "() {\n          if (debugCurrentCallbackStack == null) {\n            throw FlutterError.fromParts(<DiagnosticsNode>[\n              ErrorSummary('scheduleFrameCallback called with rescheduling true, but no callback is in scope.'),\n              ErrorDescription(\n                'The \"rescheduling\" argument should only be set to true if the '\n                'callback is being reregistered from within the callback itself, '\n                'and only then if the callback itself is entirely synchronous.'\n              ),\n              ErrorHint(\n                'If this is the initial registration of the callback, or if the '\n                'callback is asynchronous, then do not use the \"rescheduling\" '\n                'argument.'\n              )\n            ]);\n          }\n          return true;\n        }()");
         this.debugStack = binding$0._FrameCallbackEntry.debugCurrentCallbackStack;
       } else {
         this.debugStack = core.StackTrace.current;
       }
       return true;
-    }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 93, 12, "() {\n      if (rescheduling) {\n        assert(() {\n          if (debugCurrentCallbackStack == null) {\n            throw FlutterError.fromParts(<DiagnosticsNode>[\n              ErrorSummary('scheduleFrameCallback called with rescheduling true, but no callback is in scope.'),\n              ErrorDescription(\n                'The \"rescheduling\" argument should only be set to true if the '\n                'callback is being reregistered from within the callback itself, '\n                'and only then if the callback itself is entirely synchronous.'\n              ),\n              ErrorHint(\n                'If this is the initial registration of the callback, or if the '\n                'callback is asynchronous, then do not use the \"rescheduling\" '\n                'argument.'\n              )\n            ]);\n          }\n          return true;\n        }());\n        debugStack = debugCurrentCallbackStack;\n      } else {\n        // TODO(ianh): trim the frames from this library, so that the call to scheduleFrameCallback is the top one\n        debugStack = StackTrace.current;\n      }\n      return true;\n    }()");
+    }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 94, 12, "() {\n      if (rescheduling) {\n        assert(() {\n          if (debugCurrentCallbackStack == null) {\n            throw FlutterError.fromParts(<DiagnosticsNode>[\n              ErrorSummary('scheduleFrameCallback called with rescheduling true, but no callback is in scope.'),\n              ErrorDescription(\n                'The \"rescheduling\" argument should only be set to true if the '\n                'callback is being reregistered from within the callback itself, '\n                'and only then if the callback itself is entirely synchronous.'\n              ),\n              ErrorHint(\n                'If this is the initial registration of the callback, or if the '\n                'callback is asynchronous, then do not use the \"rescheduling\" '\n                'argument.'\n              )\n            ]);\n          }\n          return true;\n        }());\n        debugStack = debugCurrentCallbackStack;\n      } else {\n        // TODO(ianh): trim the frames from this library, so that the call to scheduleFrameCallback is the top one\n        debugStack = StackTrace.current;\n      }\n      return true;\n    }()");
   }).prototype = binding$0._FrameCallbackEntry.prototype;
   dart.addTypeTests(binding$0._FrameCallbackEntry);
   dart.setLibraryUri(binding$0._FrameCallbackEntry, "package:flutter/src/scheduler/binding.dart");
@@ -660,13 +666,13 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     },
     set debugCurrentCallbackStack(_) {}
   });
-  const _name$ = dart.privateName(binding$0, "_name");
-  let C1;
-  let C2;
-  let C3;
-  let C4;
-  let C5;
-  let C6;
+  var _name$ = dart.privateName(binding$0, "_name");
+  var C1;
+  var C2;
+  var C3;
+  var C4;
+  var C5;
+  var C6;
   binding$0.SchedulerPhase = class SchedulerPhase extends core.Object {
     toString() {
       return this[_name$];
@@ -691,44 +697,45 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
   binding$0.SchedulerPhase.persistentCallbacks = C4 || CT.C4;
   binding$0.SchedulerPhase.postFrameCallbacks = C5 || CT.C5;
   binding$0.SchedulerPhase.values = C6 || CT.C6;
-  const _timingsCallbacks = dart.privateName(binding$0, "_timingsCallbacks");
-  const _lifecycleState = dart.privateName(binding$0, "_lifecycleState");
-  let C7;
-  const _taskQueue = dart.privateName(binding$0, "_taskQueue");
-  let C8;
-  const _hasRequestedAnEventLoopCallback = dart.privateName(binding$0, "_hasRequestedAnEventLoopCallback");
-  const _nextFrameCallbackId = dart.privateName(binding$0, "_nextFrameCallbackId");
-  const _transientCallbacks = dart.privateName(binding$0, "_transientCallbacks");
-  const _removedIds = dart.privateName(binding$0, "_removedIds");
-  const _persistentCallbacks = dart.privateName(binding$0, "_persistentCallbacks");
-  const _postFrameCallbacks = dart.privateName(binding$0, "_postFrameCallbacks");
-  const _nextFrameCompleter = dart.privateName(binding$0, "_nextFrameCompleter");
-  const _hasScheduledFrame = dart.privateName(binding$0, "_hasScheduledFrame");
-  const _schedulerPhase = dart.privateName(binding$0, "_schedulerPhase");
-  const _framesEnabled = dart.privateName(binding$0, "_framesEnabled");
-  const _warmUpFrame = dart.privateName(binding$0, "_warmUpFrame");
-  const _firstRawTimeStampInEpoch = dart.privateName(binding$0, "_firstRawTimeStampInEpoch");
-  const _epochStart = dart.privateName(binding$0, "_epochStart");
-  const _lastRawTimeStamp = dart.privateName(binding$0, "_lastRawTimeStamp");
-  const _currentFrameTimeStamp = dart.privateName(binding$0, "_currentFrameTimeStamp");
-  const _debugFrameNumber = dart.privateName(binding$0, "_debugFrameNumber");
-  const _debugBanner = dart.privateName(binding$0, "_debugBanner");
-  const _ignoreNextEngineDrawFrame = dart.privateName(binding$0, "_ignoreNextEngineDrawFrame");
-  const _handleLifecycleMessage = dart.privateName(binding$0, "_handleLifecycleMessage");
-  const _profileFramePostEvent = dart.privateName(binding$0, "_profileFramePostEvent");
-  const _executeTimingsCallbacks = dart.privateName(binding$0, "_executeTimingsCallbacks");
-  const _setFramesEnabledState = dart.privateName(binding$0, "_setFramesEnabledState");
-  const _name = dart.privateName(ui, "_name");
-  let C9;
-  let C10;
-  let C11;
-  const _ensureEventLoopCallback = dart.privateName(binding$0, "_ensureEventLoopCallback");
-  const _runTasks = dart.privateName(binding$0, "_runTasks");
-  const _handleBeginFrame = dart.privateName(binding$0, "_handleBeginFrame");
-  const _handleDrawFrame = dart.privateName(binding$0, "_handleDrawFrame");
-  const _adjustForEpoch = dart.privateName(binding$0, "_adjustForEpoch");
-  const _invokeFrameCallback = dart.privateName(binding$0, "_invokeFrameCallback");
-  const schedulingStrategy = dart.privateName(binding$0, "SchedulerBinding.schedulingStrategy");
+  var _timingsCallbacks = dart.privateName(binding$0, "_timingsCallbacks");
+  var _lifecycleState = dart.privateName(binding$0, "_lifecycleState");
+  var C7;
+  var _taskQueue = dart.privateName(binding$0, "_taskQueue");
+  var C8;
+  var _hasRequestedAnEventLoopCallback = dart.privateName(binding$0, "_hasRequestedAnEventLoopCallback");
+  var _nextFrameCallbackId = dart.privateName(binding$0, "_nextFrameCallbackId");
+  var _transientCallbacks = dart.privateName(binding$0, "_transientCallbacks");
+  var _removedIds = dart.privateName(binding$0, "_removedIds");
+  var _persistentCallbacks = dart.privateName(binding$0, "_persistentCallbacks");
+  var _postFrameCallbacks = dart.privateName(binding$0, "_postFrameCallbacks");
+  var _nextFrameCompleter = dart.privateName(binding$0, "_nextFrameCompleter");
+  var _hasScheduledFrame = dart.privateName(binding$0, "_hasScheduledFrame");
+  var _schedulerPhase = dart.privateName(binding$0, "_schedulerPhase");
+  var _framesEnabled = dart.privateName(binding$0, "_framesEnabled");
+  var _warmUpFrame = dart.privateName(binding$0, "_warmUpFrame");
+  var _firstRawTimeStampInEpoch = dart.privateName(binding$0, "_firstRawTimeStampInEpoch");
+  var _epochStart = dart.privateName(binding$0, "_epochStart");
+  var _lastRawTimeStamp = dart.privateName(binding$0, "_lastRawTimeStamp");
+  var _currentFrameTimeStamp = dart.privateName(binding$0, "_currentFrameTimeStamp");
+  var _debugFrameNumber = dart.privateName(binding$0, "_debugFrameNumber");
+  var _debugBanner = dart.privateName(binding$0, "_debugBanner");
+  var _ignoreNextEngineDrawFrame = dart.privateName(binding$0, "_ignoreNextEngineDrawFrame");
+  var _handleLifecycleMessage = dart.privateName(binding$0, "_handleLifecycleMessage");
+  var _profileFramePostEvent = dart.privateName(binding$0, "_profileFramePostEvent");
+  var _executeTimingsCallbacks = dart.privateName(binding$0, "_executeTimingsCallbacks");
+  var _setFramesEnabledState = dart.privateName(binding$0, "_setFramesEnabledState");
+  var _name = dart.privateName(ui, "_name");
+  var C9;
+  var C10;
+  var C11;
+  var C12;
+  var _ensureEventLoopCallback = dart.privateName(binding$0, "_ensureEventLoopCallback");
+  var _runTasks = dart.privateName(binding$0, "_runTasks");
+  var _handleBeginFrame = dart.privateName(binding$0, "_handleBeginFrame");
+  var _handleDrawFrame = dart.privateName(binding$0, "_handleDrawFrame");
+  var _adjustForEpoch = dart.privateName(binding$0, "_adjustForEpoch");
+  var _invokeFrameCallback = dart.privateName(binding$0, "_invokeFrameCallback");
+  var schedulingStrategy = dart.privateName(binding$0, "SchedulerBinding.schedulingStrategy");
   binding$0.SchedulerBinding = class SchedulerBinding extends core.Object {
     static get instance() {
       return binding$0.SchedulerBinding._instance;
@@ -747,6 +754,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
         {
           return ui.AppLifecycleState.inactive;
         }
+        case "AppLifecycleState.detached":
+        {
+          return ui.AppLifecycleState.detached;
+        }
       }
       return null;
     }
@@ -762,7 +773,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
           print.debugPrint("No transient callback is currently executing.");
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 611, 12, "() {\n      if (_FrameCallbackEntry.debugCurrentCallbackStack != null) {\n        debugPrint('When the current transient callback was registered, this was the stack:');\n        debugPrint(\n          FlutterError.defaultStackFilter(\n            _FrameCallbackEntry.debugCurrentCallbackStack.toString().trimRight().split('\\n')\n          ).join('\\n')\n        );\n      } else {\n        debugPrint('No transient callback is currently executing.');\n      }\n      return true;\n    }()");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 612, 12, "() {\n      if (_FrameCallbackEntry.debugCurrentCallbackStack != null) {\n        debugPrint('When the current transient callback was registered, this was the stack:');\n        debugPrint(\n          FlutterError.defaultStackFilter(\n            _FrameCallbackEntry.debugCurrentCallbackStack.toString().trimRight().split('\\n')\n          ).join('\\n')\n        );\n      } else {\n        debugPrint('No transient callback is currently executing.');\n      }\n      return true;\n    }()");
     }
     static _debugDescribeTimeStamp(timeStamp, buffer) {
       if (dart.notNull(timeStamp.inDays) > 0) buffer.write(dart.str(timeStamp.inDays) + "d ");
@@ -800,13 +811,13 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     addTimingsCallback(callback) {
       this[_timingsCallbacks][$add](callback);
       if (this[_timingsCallbacks][$length] === 1) {
-        if (!(this.window.onReportTimings == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 229, 14, "window.onReportTimings == null");
+        if (!(this.window.onReportTimings == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 233, 14, "window.onReportTimings == null");
         this.window.onReportTimings = dart.bind(this, _executeTimingsCallbacks);
       }
-      if (!dart.equals(this.window.onReportTimings, dart.bind(this, _executeTimingsCallbacks))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 232, 12, "window.onReportTimings == _executeTimingsCallbacks");
+      if (!dart.equals(this.window.onReportTimings, dart.bind(this, _executeTimingsCallbacks))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 236, 12, "window.onReportTimings == _executeTimingsCallbacks");
     }
     removeTimingsCallback(callback) {
-      if (!dart.test(this[_timingsCallbacks][$contains](callback))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 237, 12, "_timingsCallbacks.contains(callback)");
+      if (!dart.test(this[_timingsCallbacks][$contains](callback))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 241, 12, "_timingsCallbacks.contains(callback)");
       this[_timingsCallbacks][$remove](callback);
       if (dart.test(this[_timingsCallbacks][$isEmpty])) {
         this.window.onReportTimings = null;
@@ -847,7 +858,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       }
     }
     handleAppLifecycleStateChanged(state) {
-      if (!(state != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 325, 12, "state != null");
+      if (!(state != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 329, 12, "state != null");
       this[_lifecycleState] = state;
       switch (state) {
         case C9 || CT.C9:
@@ -857,19 +868,15 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
           break;
         }
         case C11 || CT.C11:
+        case C12 || CT.C12:
         {
           this[_setFramesEnabledState](false);
-          break;
-        }
-        default:
-        {
           break;
         }
       }
     }
     [_handleLifecycleMessage](message) {
       return async.async(core.String, (function* _handleLifecycleMessage() {
-        if (message === "AppLifecycleState.detached") return null;
         this.handleAppLifecycleStateChanged(binding$0.SchedulerBinding._parseAppLifecycleMessage(message));
         return null;
       }).bind(this));
@@ -888,8 +895,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       if (dart.test(this[_taskQueue].isNotEmpty)) this[_ensureEventLoopCallback]();
     }
     [_ensureEventLoopCallback]() {
-      if (!!dart.test(this.locked)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 422, 12, "!locked");
-      if (!dart.test(this[_taskQueue].isNotEmpty)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 423, 12, "_taskQueue.isNotEmpty");
+      if (!!dart.test(this.locked)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 423, 12, "!locked");
+      if (!dart.test(this[_taskQueue].isNotEmpty)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 424, 12, "_taskQueue.isNotEmpty");
       if (dart.test(this[_hasRequestedAnEventLoopCallback])) return;
       this[_hasRequestedAnEventLoopCallback] = true;
       async.Timer.run(dart.bind(this, _runTasks));
@@ -912,7 +919,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
           if (!dart.test(dart.fn(() => {
             callbackStack = entry.debugStack;
             return true;
-          }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 458, 16, "() {\n          callbackStack = entry.debugStack;\n          return true;\n        }()");
+          }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 459, 16, "() {\n          callbackStack = entry.debugStack;\n          return true;\n        }()");
           assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: exception, stack: exceptionStack, library: "scheduler library", context: new assertions.ErrorDescription.new("during a task callback"), informationCollector: callbackStack == null ? null : dart.fn(() => new (SyncIterableOfDiagnosticsStackTrace()).new(function*() {
               yield new assertions.DiagnosticsStackTrace.new("\nThis exception was thrown in the context of a scheduler callback. " + "When the scheduler callback was _registered_ (as opposed to when the " + "exception was thrown), this was the stack", callbackStack);
             }), VoidToIterableOfDiagnosticsStackTrace())}));
@@ -932,7 +939,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       return this[_nextFrameCallbackId];
     }
     cancelFrameCallbackWithId(id) {
-      if (!(dart.notNull(id) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 530, 12, "id > 0");
+      if (!(dart.notNull(id) > 0)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 531, 12, "id > 0");
       this[_transientCallbacks][$remove](id);
       this[_removedIds].add(id);
     }
@@ -954,7 +961,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
             }), VoidToIterableOfDiagnosticsNode())}));
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 556, 12, "() {\n      if (transientCallbackCount > 0) {\n        // We cache the values so that we can produce them later\n        // even if the information collector is called after\n        // the problem has been resolved.\n        final int count = transientCallbackCount;\n        final Map<int, _FrameCallbackEntry> callbacks = Map<int, _FrameCallbackEntry>.from(_transientCallbacks);\n        FlutterError.reportError(FlutterErrorDetails(\n          exception: reason,\n          library: 'scheduler library',\n          informationCollector: () sync* {\n            if (count == 1) {\n              // TODO(jacobr): I have added an extra line break in this case.\n              yield ErrorDescription(\n                'There was one transient callback left. '\n                'The stack trace for when it was registered is as follows:'\n              );\n            } else {\n              yield ErrorDescription(\n                'There were $count transient callbacks left. '\n                'The stack traces for when they were registered are as follows:'\n              );\n            }\n            for (int id in callbacks.keys) {\n              final _FrameCallbackEntry entry = callbacks[id];\n              yield DiagnosticsStackTrace('── callback $id ──', entry.debugStack, showSeparator: false);\n            }\n          },\n        ));\n      }\n      return true;\n    }()");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 557, 12, "() {\n      if (transientCallbackCount > 0) {\n        // We cache the values so that we can produce them later\n        // even if the information collector is called after\n        // the problem has been resolved.\n        final int count = transientCallbackCount;\n        final Map<int, _FrameCallbackEntry> callbacks = Map<int, _FrameCallbackEntry>.from(_transientCallbacks);\n        FlutterError.reportError(FlutterErrorDetails(\n          exception: reason,\n          library: 'scheduler library',\n          informationCollector: () sync* {\n            if (count == 1) {\n              // TODO(jacobr): I have added an extra line break in this case.\n              yield ErrorDescription(\n                'There was one transient callback left. '\n                'The stack trace for when it was registered is as follows:'\n              );\n            } else {\n              yield ErrorDescription(\n                'There were $count transient callbacks left. '\n                'The stack traces for when they were registered are as follows:'\n              );\n            }\n            for (final int id in callbacks.keys) {\n              final _FrameCallbackEntry entry = callbacks[id];\n              yield DiagnosticsStackTrace('── callback $id ──', entry.debugStack, showSeparator: false);\n            }\n          },\n        ));\n      }\n      return true;\n    }()");
       return true;
     }
     addPersistentFrameCallback(callback) {
@@ -1016,17 +1023,18 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       if (!dart.test(dart.fn(() => {
         if (dart.test(debug$.debugPrintScheduleFrameStacks)) assertions.debugPrintStack({label: "scheduleFrame() called. Current phase is " + dart.str(this.schedulerPhase) + "."});
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 778, 12, "() {\n      if (debugPrintScheduleFrameStacks)\n        debugPrintStack(label: 'scheduleFrame() called. Current phase is $schedulerPhase.');\n      return true;\n    }()");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 779, 12, "() {\n      if (debugPrintScheduleFrameStacks)\n        debugPrintStack(label: 'scheduleFrame() called. Current phase is $schedulerPhase.');\n      return true;\n    }()");
       this.ensureFrameCallbacksRegistered();
       this.window.scheduleFrame();
       this[_hasScheduledFrame] = true;
     }
     scheduleForcedFrame() {
+      if (!dart.test(this[_framesEnabled])) return;
       if (dart.test(this[_hasScheduledFrame])) return;
       if (!dart.test(dart.fn(() => {
         if (dart.test(debug$.debugPrintScheduleFrameStacks)) assertions.debugPrintStack({label: "scheduleForcedFrame() called. Current phase is " + dart.str(this.schedulerPhase) + "."});
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 810, 12, "() {\n      if (debugPrintScheduleFrameStacks)\n        debugPrintStack(label: 'scheduleForcedFrame() called. Current phase is $schedulerPhase.');\n      return true;\n    }()");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 816, 12, "() {\n      if (debugPrintScheduleFrameStacks)\n        debugPrintStack(label: 'scheduleForcedFrame() called. Current phase is $schedulerPhase.');\n      return true;\n    }()");
       this.window.scheduleFrame();
       this[_hasScheduledFrame] = true;
     }
@@ -1036,11 +1044,11 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       developer.Timeline.startSync("Warm-up frame");
       let hadScheduledFrame = this[_hasScheduledFrame];
       async.Timer.run(dart.fn(() => {
-        if (!dart.test(this[_warmUpFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 845, 14, "_warmUpFrame");
+        if (!dart.test(this[_warmUpFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 851, 14, "_warmUpFrame");
         this.handleBeginFrame(null);
       }, VoidToNull()));
       async.Timer.run(dart.fn(() => {
-        if (!dart.test(this[_warmUpFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 849, 14, "_warmUpFrame");
+        if (!dart.test(this[_warmUpFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 855, 14, "_warmUpFrame");
         this.handleDrawFrame();
         this.resetEpoch();
         this[_warmUpFrame] = false;
@@ -1060,16 +1068,16 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       return new core.Duration.new({microseconds: (dart.notNull(rawDurationSinceEpoch.inMicroseconds) / dart.notNull(binding$0.timeDilation))[$round]() + dart.notNull(this[_epochStart].inMicroseconds)});
     }
     get currentFrameTimeStamp() {
-      if (!(this[_currentFrameTimeStamp] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 918, 12, "_currentFrameTimeStamp != null");
+      if (!(this[_currentFrameTimeStamp] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 924, 12, "_currentFrameTimeStamp != null");
       return this[_currentFrameTimeStamp];
     }
     get currentSystemFrameTimeStamp() {
-      if (!(this[_lastRawTimeStamp] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 935, 12, "_lastRawTimeStamp != null");
+      if (!(this[_lastRawTimeStamp] != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 941, 12, "_lastRawTimeStamp != null");
       return this[_lastRawTimeStamp];
     }
     [_handleBeginFrame](rawTimeStamp) {
       if (dart.test(this[_warmUpFrame])) {
-        if (!!dart.test(this[_ignoreNextEngineDrawFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 945, 14, "!_ignoreNextEngineDrawFrame");
+        if (!!dart.test(this[_ignoreNextEngineDrawFrame])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 951, 14, "!_ignoreNextEngineDrawFrame");
         this[_ignoreNextEngineDrawFrame] = true;
         return;
       }
@@ -1101,8 +1109,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
           if (dart.test(debug$.debugPrintBeginFrameBanner)) print.debugPrint(this[_debugBanner]);
         }
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 990, 12, "() {\n      _debugFrameNumber += 1;\n\n      if (debugPrintBeginFrameBanner || debugPrintEndFrameBanner) {\n        final StringBuffer frameTimeStampDescription = StringBuffer();\n        if (rawTimeStamp != null) {\n          _debugDescribeTimeStamp(_currentFrameTimeStamp, frameTimeStampDescription);\n        } else {\n          frameTimeStampDescription.write('(warm-up frame)');\n        }\n        _debugBanner = '▄▄▄▄▄▄▄▄ Frame ${_debugFrameNumber.toString().padRight(7)}   ${frameTimeStampDescription.toString().padLeft(18)} ▄▄▄▄▄▄▄▄';\n        if (debugPrintBeginFrameBanner)\n          debugPrint(_debugBanner);\n      }\n      return true;\n    }()");
-      if (!dart.equals(this.schedulerPhase, binding$0.SchedulerPhase.idle)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1007, 12, "schedulerPhase == SchedulerPhase.idle");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 996, 12, "() {\n      _debugFrameNumber += 1;\n\n      if (debugPrintBeginFrameBanner || debugPrintEndFrameBanner) {\n        final StringBuffer frameTimeStampDescription = StringBuffer();\n        if (rawTimeStamp != null) {\n          _debugDescribeTimeStamp(_currentFrameTimeStamp, frameTimeStampDescription);\n        } else {\n          frameTimeStampDescription.write('(warm-up frame)');\n        }\n        _debugBanner = '▄▄▄▄▄▄▄▄ Frame ${_debugFrameNumber.toString().padRight(7)}   ${frameTimeStampDescription.toString().padLeft(18)} ▄▄▄▄▄▄▄▄';\n        if (debugPrintBeginFrameBanner)\n          debugPrint(_debugBanner);\n      }\n      return true;\n    }()");
+      if (!dart.equals(this.schedulerPhase, binding$0.SchedulerPhase.idle)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1013, 12, "schedulerPhase == SchedulerPhase.idle");
       this[_hasScheduledFrame] = false;
       try {
         developer.Timeline.startSync("Animate", {arguments: debug.timelineWhitelistArguments});
@@ -1118,7 +1126,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       }
     }
     handleDrawFrame() {
-      if (!dart.equals(this[_schedulerPhase], binding$0.SchedulerPhase.midFrameMicrotasks)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1035, 12, "_schedulerPhase == SchedulerPhase.midFrameMicrotasks");
+      if (!dart.equals(this[_schedulerPhase], binding$0.SchedulerPhase.midFrameMicrotasks)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1041, 12, "_schedulerPhase == SchedulerPhase.midFrameMicrotasks");
       developer.Timeline.finishSync();
       try {
         this[_schedulerPhase] = binding$0.SchedulerPhase.persistentCallbacks;
@@ -1136,21 +1144,20 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
           if (dart.test(debug$.debugPrintEndFrameBanner)) print.debugPrint("▀"[$times](this[_debugBanner].length));
           this[_debugBanner] = null;
           return true;
-        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1053, 14, "() {\n        if (debugPrintEndFrameBanner)\n          debugPrint('▀' * _debugBanner.length);\n        _debugBanner = null;\n        return true;\n      }()");
+        }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1059, 14, "() {\n        if (debugPrintEndFrameBanner)\n          debugPrint('▀' * _debugBanner.length);\n        _debugBanner = null;\n        return true;\n      }()");
         this[_currentFrameTimeStamp] = null;
       }
     }
     [_profileFramePostEvent](frameNumber, frameTiming) {
       this.postEvent("Flutter.Frame", new (IdentityMapOfString$dynamic()).from(["number", frameNumber, "startTime", frameTiming.timestampInMicroseconds(ui.FramePhase.buildStart), "elapsed", frameTiming.totalSpan.inMicroseconds, "build", frameTiming.buildDuration.inMicroseconds, "raster", frameTiming.rasterDuration.inMicroseconds]));
     }
-    [_invokeFrameCallback](callback, timeStamp, callbackStack) {
-      if (callbackStack === void 0) callbackStack = null;
-      if (!(callback != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1095, 12, "callback != null");
-      if (!(binding$0._FrameCallbackEntry.debugCurrentCallbackStack == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1096, 12, "_FrameCallbackEntry.debugCurrentCallbackStack == null");
+    [_invokeFrameCallback](callback, timeStamp, callbackStack = null) {
+      if (!(callback != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1101, 12, "callback != null");
+      if (!(binding$0._FrameCallbackEntry.debugCurrentCallbackStack == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1102, 12, "_FrameCallbackEntry.debugCurrentCallbackStack == null");
       if (!dart.test(dart.fn(() => {
         binding$0._FrameCallbackEntry.debugCurrentCallbackStack = callbackStack;
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1097, 12, "() {\n      _FrameCallbackEntry.debugCurrentCallbackStack = callbackStack;\n      return true;\n    }()");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1103, 12, "() {\n      _FrameCallbackEntry.debugCurrentCallbackStack = callbackStack;\n      return true;\n    }()");
       try {
         callback(timeStamp);
       } catch (e) {
@@ -1163,7 +1170,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       if (!dart.test(dart.fn(() => {
         binding$0._FrameCallbackEntry.debugCurrentCallbackStack = null;
         return true;
-      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1119, 12, "() {\n      _FrameCallbackEntry.debugCurrentCallbackStack = null;\n      return true;\n    }()");
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/scheduler/binding.dart", 1125, 12, "() {\n      _FrameCallbackEntry.debugCurrentCallbackStack = null;\n      return true;\n    }()");
     }
   };
   (binding$0.SchedulerBinding[dart.mixinNew] = function() {
@@ -1295,7 +1302,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     },
     set _timeDilation(_) {}
   });
-  const _nextPlatformViewId = dart.privateName(platform_views, "_nextPlatformViewId");
+  var _nextPlatformViewId = dart.privateName(platform_views, "_nextPlatformViewId");
   platform_views.PlatformViewsRegistry = class PlatformViewsRegistry extends core.Object {
     getNextPlatformViewId() {
       let t3;
@@ -1318,8 +1325,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     __proto__: dart.getFields(platform_views.PlatformViewsRegistry.__proto__),
     [_nextPlatformViewId]: dart.fieldType(core.int)
   }));
-  const _focusCallbacks = dart.privateName(platform_views, "_focusCallbacks");
-  const _onMethodCall = dart.privateName(platform_views, "_onMethodCall");
+  var _focusCallbacks = dart.privateName(platform_views, "_focusCallbacks");
+  var _onMethodCall = dart.privateName(platform_views, "_onMethodCall");
   platform_views.PlatformViewsService = class PlatformViewsService extends core.Object {
     static get _instance() {
       platform_views.PlatformViewsService._serviceInstance == null ? platform_views.PlatformViewsService._serviceInstance = new platform_views.PlatformViewsService.__() : null;
@@ -1329,7 +1336,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       switch (call.method) {
         case "viewFocused":
         {
-          let id = core.int._check(call.arguments);
+          let id = core.int.as(call.arguments);
           if (dart.test(this[_focusCallbacks][$containsKey](id))) {
             this[_focusCallbacks][$_get](id)();
           }
@@ -1350,10 +1357,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       let creationParams = opts && 'creationParams' in opts ? opts.creationParams : null;
       let creationParamsCodec = opts && 'creationParamsCodec' in opts ? opts.creationParamsCodec : null;
       let onFocus = opts && 'onFocus' in opts ? opts.onFocus : null;
-      if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 117, 12, "id != null");
-      if (!(viewType != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 118, 12, "viewType != null");
-      if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 119, 12, "layoutDirection != null");
-      if (!(creationParams == null || creationParamsCodec != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 120, 12, "creationParams == null || creationParamsCodec != null");
+      if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 111, 12, "id != null");
+      if (!(viewType != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 112, 12, "viewType != null");
+      if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 113, 12, "layoutDirection != null");
+      if (!(creationParams == null || creationParamsCodec != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 114, 12, "creationParams == null || creationParamsCodec != null");
       let controller = new platform_views.AndroidViewController.__(id, viewType, creationParams, creationParamsCodec, layoutDirection);
       platform_views.PlatformViewsService._instance[_focusCallbacks][$_set](id, (t3 = onFocus, t3 == null ? dart.fn(() => {
       }, VoidToNull()) : t3));
@@ -1366,10 +1373,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       let creationParams = opts && 'creationParams' in opts ? opts.creationParams : null;
       let creationParamsCodec = opts && 'creationParamsCodec' in opts ? opts.creationParamsCodec : null;
       return async.async(platform_views.UiKitViewController, function* initUiKitView() {
-        if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 150, 12, "id != null");
-        if (!(viewType != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 151, 12, "viewType != null");
-        if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 152, 12, "layoutDirection != null");
-        if (!(creationParams == null || creationParamsCodec != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 153, 12, "creationParams == null || creationParamsCodec != null");
+        if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 144, 12, "id != null");
+        if (!(viewType != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 145, 12, "viewType != null");
+        if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 146, 12, "layoutDirection != null");
+        if (!(creationParams == null || creationParamsCodec != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 147, 12, "creationParams == null || creationParamsCodec != null");
         let args = new (IdentityMapOfString$dynamic()).from(["id", id, "viewType", viewType]);
         if (creationParams != null) {
           let paramsByteData = creationParamsCodec.encodeMessage(creationParams);
@@ -1400,9 +1407,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     },
     set _serviceInstance(_) {}
   });
-  const _asList = dart.privateName(platform_views, "_asList");
-  const id$ = dart.privateName(platform_views, "AndroidPointerProperties.id");
-  const toolType$ = dart.privateName(platform_views, "AndroidPointerProperties.toolType");
+  var _asList = dart.privateName(platform_views, "_asList");
+  var id$ = dart.privateName(platform_views, "AndroidPointerProperties.id");
+  var toolType$ = dart.privateName(platform_views, "AndroidPointerProperties.toolType");
   platform_views.AndroidPointerProperties = class AndroidPointerProperties extends core.Object {
     get id() {
       return this[id$];
@@ -1428,8 +1435,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     let toolType = opts && 'toolType' in opts ? opts.toolType : null;
     this[id$] = id;
     this[toolType$] = toolType;
-    if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 183, 15, "id != null");
-    if (!(toolType != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 184, 15, "toolType != null");
+    if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 177, 15, "id != null");
+    if (!(toolType != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 178, 15, "toolType != null");
     ;
   }).prototype = platform_views.AndroidPointerProperties.prototype;
   dart.addTypeTests(platform_views.AndroidPointerProperties);
@@ -1461,15 +1468,15 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       return 4;
     }
   });
-  const orientation$ = dart.privateName(platform_views, "AndroidPointerCoords.orientation");
-  const pressure$ = dart.privateName(platform_views, "AndroidPointerCoords.pressure");
-  const size$ = dart.privateName(platform_views, "AndroidPointerCoords.size");
-  const toolMajor$ = dart.privateName(platform_views, "AndroidPointerCoords.toolMajor");
-  const toolMinor$ = dart.privateName(platform_views, "AndroidPointerCoords.toolMinor");
-  const touchMajor$ = dart.privateName(platform_views, "AndroidPointerCoords.touchMajor");
-  const touchMinor$ = dart.privateName(platform_views, "AndroidPointerCoords.touchMinor");
-  const x$ = dart.privateName(platform_views, "AndroidPointerCoords.x");
-  const y$ = dart.privateName(platform_views, "AndroidPointerCoords.y");
+  var orientation$ = dart.privateName(platform_views, "AndroidPointerCoords.orientation");
+  var pressure$ = dart.privateName(platform_views, "AndroidPointerCoords.pressure");
+  var size$ = dart.privateName(platform_views, "AndroidPointerCoords.size");
+  var toolMajor$ = dart.privateName(platform_views, "AndroidPointerCoords.toolMajor");
+  var toolMinor$ = dart.privateName(platform_views, "AndroidPointerCoords.toolMinor");
+  var touchMajor$ = dart.privateName(platform_views, "AndroidPointerCoords.touchMajor");
+  var touchMinor$ = dart.privateName(platform_views, "AndroidPointerCoords.touchMinor");
+  var x$ = dart.privateName(platform_views, "AndroidPointerCoords.x");
+  var y$ = dart.privateName(platform_views, "AndroidPointerCoords.y");
   platform_views.AndroidPointerCoords = class AndroidPointerCoords extends core.Object {
     get orientation() {
       return this[orientation$];
@@ -1551,15 +1558,15 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     this[touchMinor$] = touchMinor;
     this[x$] = x;
     this[y$] = y;
-    if (!(orientation != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 233, 15, "orientation != null");
-    if (!(pressure != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 234, 15, "pressure != null");
-    if (!(size != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 235, 15, "size != null");
-    if (!(toolMajor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 236, 15, "toolMajor != null");
-    if (!(toolMinor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 237, 15, "toolMinor != null");
-    if (!(touchMajor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 238, 15, "touchMajor != null");
-    if (!(touchMinor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 239, 15, "touchMinor != null");
-    if (!(x != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 240, 15, "x != null");
-    if (!(y != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 241, 15, "y != null");
+    if (!(orientation != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 227, 15, "orientation != null");
+    if (!(pressure != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 228, 15, "pressure != null");
+    if (!(size != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 229, 15, "size != null");
+    if (!(toolMajor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 230, 15, "toolMajor != null");
+    if (!(toolMinor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 231, 15, "toolMinor != null");
+    if (!(touchMajor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 232, 15, "touchMajor != null");
+    if (!(touchMinor != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 233, 15, "touchMinor != null");
+    if (!(x != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 234, 15, "x != null");
+    if (!(y != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 235, 15, "y != null");
     ;
   }).prototype = platform_views.AndroidPointerCoords.prototype;
   dart.addTypeTests(platform_views.AndroidPointerCoords);
@@ -1581,20 +1588,20 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     y: dart.finalFieldType(core.double)
   }));
   dart.defineExtensionMethods(platform_views.AndroidPointerCoords, ['toString']);
-  const downTime$ = dart.privateName(platform_views, "AndroidMotionEvent.downTime");
-  const eventTime$ = dart.privateName(platform_views, "AndroidMotionEvent.eventTime");
-  const action$ = dart.privateName(platform_views, "AndroidMotionEvent.action");
-  const pointerCount$ = dart.privateName(platform_views, "AndroidMotionEvent.pointerCount");
-  const pointerProperties$ = dart.privateName(platform_views, "AndroidMotionEvent.pointerProperties");
-  const pointerCoords$ = dart.privateName(platform_views, "AndroidMotionEvent.pointerCoords");
-  const metaState$ = dart.privateName(platform_views, "AndroidMotionEvent.metaState");
-  const buttonState$ = dart.privateName(platform_views, "AndroidMotionEvent.buttonState");
-  const xPrecision$ = dart.privateName(platform_views, "AndroidMotionEvent.xPrecision");
-  const yPrecision$ = dart.privateName(platform_views, "AndroidMotionEvent.yPrecision");
-  const deviceId$ = dart.privateName(platform_views, "AndroidMotionEvent.deviceId");
-  const edgeFlags$ = dart.privateName(platform_views, "AndroidMotionEvent.edgeFlags");
-  const source$ = dart.privateName(platform_views, "AndroidMotionEvent.source");
-  const flags$ = dart.privateName(platform_views, "AndroidMotionEvent.flags");
+  var downTime$ = dart.privateName(platform_views, "AndroidMotionEvent.downTime");
+  var eventTime$ = dart.privateName(platform_views, "AndroidMotionEvent.eventTime");
+  var action$ = dart.privateName(platform_views, "AndroidMotionEvent.action");
+  var pointerCount$ = dart.privateName(platform_views, "AndroidMotionEvent.pointerCount");
+  var pointerProperties$ = dart.privateName(platform_views, "AndroidMotionEvent.pointerProperties");
+  var pointerCoords$ = dart.privateName(platform_views, "AndroidMotionEvent.pointerCoords");
+  var metaState$ = dart.privateName(platform_views, "AndroidMotionEvent.metaState");
+  var buttonState$ = dart.privateName(platform_views, "AndroidMotionEvent.buttonState");
+  var xPrecision$ = dart.privateName(platform_views, "AndroidMotionEvent.xPrecision");
+  var yPrecision$ = dart.privateName(platform_views, "AndroidMotionEvent.yPrecision");
+  var deviceId$ = dart.privateName(platform_views, "AndroidMotionEvent.deviceId");
+  var edgeFlags$ = dart.privateName(platform_views, "AndroidMotionEvent.edgeFlags");
+  var source$ = dart.privateName(platform_views, "AndroidMotionEvent.source");
+  var flags$ = dart.privateName(platform_views, "AndroidMotionEvent.flags");
   platform_views.AndroidMotionEvent = class AndroidMotionEvent extends core.Object {
     get downTime() {
       return this[downTime$];
@@ -1716,22 +1723,22 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     this[edgeFlags$] = edgeFlags;
     this[source$] = source;
     this[flags$] = flags;
-    if (!(downTime != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 320, 15, "downTime != null");
-    if (!(eventTime != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 321, 15, "eventTime != null");
-    if (!(action != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 322, 15, "action != null");
-    if (!(pointerCount != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 323, 15, "pointerCount != null");
-    if (!(pointerProperties != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 324, 15, "pointerProperties != null");
-    if (!(pointerCoords != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 325, 15, "pointerCoords != null");
-    if (!(metaState != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 326, 15, "metaState != null");
-    if (!(buttonState != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 327, 15, "buttonState != null");
-    if (!(xPrecision != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 328, 15, "xPrecision != null");
-    if (!(yPrecision != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 329, 15, "yPrecision != null");
-    if (!(deviceId != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 330, 15, "deviceId != null");
-    if (!(edgeFlags != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 331, 15, "edgeFlags != null");
-    if (!(source != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 332, 15, "source != null");
-    if (!(flags != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 333, 15, "flags != null");
-    if (!(pointerProperties[$length] == pointerCount)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 334, 15, "pointerProperties.length == pointerCount");
-    if (!(pointerCoords[$length] == pointerCount)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 335, 15, "pointerCoords.length == pointerCount");
+    if (!(downTime != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 314, 15, "downTime != null");
+    if (!(eventTime != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 315, 15, "eventTime != null");
+    if (!(action != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 316, 15, "action != null");
+    if (!(pointerCount != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 317, 15, "pointerCount != null");
+    if (!(pointerProperties != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 318, 15, "pointerProperties != null");
+    if (!(pointerCoords != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 319, 15, "pointerCoords != null");
+    if (!(metaState != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 320, 15, "metaState != null");
+    if (!(buttonState != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 321, 15, "buttonState != null");
+    if (!(xPrecision != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 322, 15, "xPrecision != null");
+    if (!(yPrecision != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 323, 15, "yPrecision != null");
+    if (!(deviceId != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 324, 15, "deviceId != null");
+    if (!(edgeFlags != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 325, 15, "edgeFlags != null");
+    if (!(source != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 326, 15, "source != null");
+    if (!(flags != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 327, 15, "flags != null");
+    if (!(pointerProperties[$length] == pointerCount)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 328, 15, "pointerProperties.length == pointerCount");
+    if (!(pointerCoords[$length] == pointerCount)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 329, 15, "pointerCoords.length == pointerCount");
     ;
   }).prototype = platform_views.AndroidMotionEvent.prototype;
   dart.addTypeTests(platform_views.AndroidMotionEvent);
@@ -1758,13 +1765,12 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     flags: dart.finalFieldType(core.int)
   }));
   dart.defineExtensionMethods(platform_views.AndroidMotionEvent, ['toString']);
-  const _name$0 = dart.privateName(platform_views, "_name");
-  let C12;
-  let C13;
-  let C14;
-  let C15;
-  let C16;
-  let C17;
+  var _name$0 = dart.privateName(platform_views, "_name");
+  var C13;
+  var C14;
+  var C15;
+  var C16;
+  var C17;
   platform_views._AndroidViewState = class _AndroidViewState extends core.Object {
     toString() {
       return this[_name$0];
@@ -1783,23 +1789,22 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     [_name$0]: dart.finalFieldType(core.String)
   }));
   dart.defineExtensionMethods(platform_views._AndroidViewState, ['toString']);
-  platform_views._AndroidViewState.waitingForSize = C12 || CT.C12;
-  platform_views._AndroidViewState.creating = C13 || CT.C13;
-  platform_views._AndroidViewState.created = C14 || CT.C14;
-  platform_views._AndroidViewState.createFailed = C15 || CT.C15;
+  platform_views._AndroidViewState.waitingForSize = C13 || CT.C13;
+  platform_views._AndroidViewState.creating = C14 || CT.C14;
+  platform_views._AndroidViewState.created = C15 || CT.C15;
   platform_views._AndroidViewState.disposed = C16 || CT.C16;
   platform_views._AndroidViewState.values = C17 || CT.C17;
-  const _textureId = dart.privateName(platform_views, "_textureId");
-  const _platformViewCreatedCallbacks = dart.privateName(platform_views, "_platformViewCreatedCallbacks");
-  const _viewType = dart.privateName(platform_views, "_viewType");
-  const _creationParams = dart.privateName(platform_views, "_creationParams");
-  const _creationParamsCodec = dart.privateName(platform_views, "_creationParamsCodec");
-  const _layoutDirection = dart.privateName(platform_views, "_layoutDirection");
-  const _state = dart.privateName(platform_views, "_state");
-  const _create = dart.privateName(platform_views, "_create");
-  let C18;
-  let C19;
-  const id$0 = dart.privateName(platform_views, "AndroidViewController.id");
+  var _textureId = dart.privateName(platform_views, "_textureId");
+  var _platformViewCreatedCallbacks = dart.privateName(platform_views, "_platformViewCreatedCallbacks");
+  var _viewType = dart.privateName(platform_views, "_viewType");
+  var _creationParams = dart.privateName(platform_views, "_creationParams");
+  var _creationParamsCodec = dart.privateName(platform_views, "_creationParamsCodec");
+  var _layoutDirection = dart.privateName(platform_views, "_layoutDirection");
+  var _state = dart.privateName(platform_views, "_state");
+  var _create = dart.privateName(platform_views, "_create");
+  var C18;
+  var C19;
+  var id$0 = dart.privateName(platform_views, "AndroidViewController.id");
   platform_views.AndroidViewController = class AndroidViewController extends core.Object {
     get id() {
       return this[id$0];
@@ -1814,12 +1819,12 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       return dart.equals(this[_state], platform_views._AndroidViewState.created);
     }
     addOnPlatformViewCreatedListener(listener) {
-      if (!(listener != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 521, 12, "listener != null");
-      if (!!dart.equals(this[_state], platform_views._AndroidViewState.disposed)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 522, 12, "_state != _AndroidViewState.disposed");
+      if (!(listener != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 514, 12, "listener != null");
+      if (!!dart.equals(this[_state], platform_views._AndroidViewState.disposed)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 515, 12, "_state != _AndroidViewState.disposed");
       this[_platformViewCreatedCallbacks][$add](listener);
     }
     removeOnPlatformViewCreatedListener(listener) {
-      if (!!dart.equals(this[_state], platform_views._AndroidViewState.disposed)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 528, 12, "_state != _AndroidViewState.disposed");
+      if (!!dart.equals(this[_state], platform_views._AndroidViewState.disposed)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 521, 12, "_state != _AndroidViewState.disposed");
       this[_platformViewCreatedCallbacks][$remove](listener);
     }
     dispose() {
@@ -1831,18 +1836,18 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     }
     setSize(size) {
       return async.async(dart.void, (function* setSize() {
-        if (!!dart.equals(this[_state], platform_views._AndroidViewState.disposed)) dart.assertFailed("trying to size a disposed Android View. View id: " + dart.str(this.id), "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 551, 12, "_state != _AndroidViewState.disposed");
-        if (!(size != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 553, 12, "size != null");
-        if (!!dart.test(size.isEmpty)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 554, 12, "!size.isEmpty");
+        if (!!dart.equals(this[_state], platform_views._AndroidViewState.disposed)) dart.assertFailed("trying to size a disposed Android View. View id: " + dart.str(this.id), "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 544, 12, "_state != _AndroidViewState.disposed");
+        if (!(size != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 546, 12, "size != null");
+        if (!!dart.test(size.isEmpty)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 547, 12, "!size.isEmpty");
         if (dart.equals(this[_state], platform_views._AndroidViewState.waitingForSize)) return this[_create](size);
         yield system_channels.SystemChannels.platform_views.invokeMethod(dart.void, "resize", new (IdentityMapOfString$dynamic()).from(["id", this.id, "width", size.width, "height", size.height]));
       }).bind(this));
     }
     setLayoutDirection(layoutDirection) {
       return async.async(dart.void, (function* setLayoutDirection() {
-        if (!!dart.equals(this[_state], platform_views._AndroidViewState.disposed)) dart.assertFailed("trying to set a layout direction for a disposed UIView. View id: " + dart.str(this.id), "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 568, 12, "_state != _AndroidViewState.disposed");
+        if (!!dart.equals(this[_state], platform_views._AndroidViewState.disposed)) dart.assertFailed("trying to set a layout direction for a disposed UIView. View id: " + dart.str(this.id), "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 561, 12, "_state != _AndroidViewState.disposed");
         if (dart.equals(layoutDirection, this[_layoutDirection])) return;
-        if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 573, 12, "layoutDirection != null");
+        if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 566, 12, "layoutDirection != null");
         this[_layoutDirection] = layoutDirection;
         if (dart.equals(this[_state], platform_views._AndroidViewState.waitingForSize)) return;
         yield system_channels.SystemChannels.platform_views.invokeMethod(dart.void, "setDirection", new (IdentityMapOfString$dynamic()).from(["id", this.id, "direction", platform_views.AndroidViewController._getAndroidDirection(layoutDirection)]));
@@ -1855,7 +1860,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       return system_channels.SystemChannels.platform_views.invokeMethod(dart.void, "clearFocus", this.id);
     }
     static _getAndroidDirection(direction) {
-      if (!(direction != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 596, 12, "direction != null");
+      if (!(direction != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 589, 12, "direction != null");
       switch (direction) {
         case C18 || CT.C18:
         {
@@ -1895,10 +1900,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     this[_textureId] = null;
     this[_platformViewCreatedCallbacks] = JSArrayOfintTovoid().of([]);
     this[id$0] = id;
-    if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 445, 14, "id != null");
-    if (!(viewType != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 446, 14, "viewType != null");
-    if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 447, 14, "layoutDirection != null");
-    if (!(creationParams == null || creationParamsCodec != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 448, 14, "creationParams == null || creationParamsCodec != null");
+    if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 438, 14, "id != null");
+    if (!(viewType != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 439, 14, "viewType != null");
+    if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 440, 14, "layoutDirection != null");
+    if (!(creationParams == null || creationParamsCodec != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 441, 14, "creationParams == null || creationParamsCodec != null");
     this[_viewType] = viewType;
     this[_creationParams] = creationParams;
     this[_creationParamsCodec] = creationParamsCodec;
@@ -1961,8 +1966,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       return 1;
     }
   });
-  const _debugDisposed = dart.privateName(platform_views, "_debugDisposed");
-  const id$1 = dart.privateName(platform_views, "UiKitViewController.id");
+  var _debugDisposed = dart.privateName(platform_views, "_debugDisposed");
+  var id$1 = dart.privateName(platform_views, "UiKitViewController.id");
   platform_views.UiKitViewController = class UiKitViewController extends core.Object {
     get id() {
       return this[id$1];
@@ -1972,9 +1977,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     }
     setLayoutDirection(layoutDirection) {
       return async.async(dart.void, (function* setLayoutDirection() {
-        if (!!dart.test(this[_debugDisposed])) dart.assertFailed("trying to set a layout direction for a disposed iOS UIView. View id: " + dart.str(this.id), "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 672, 12, "!_debugDisposed");
+        if (!!dart.test(this[_debugDisposed])) dart.assertFailed("trying to set a layout direction for a disposed iOS UIView. View id: " + dart.str(this.id), "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 665, 12, "!_debugDisposed");
         if (dart.equals(layoutDirection, this[_layoutDirection])) return;
-        if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 677, 12, "layoutDirection != null");
+        if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 670, 12, "layoutDirection != null");
         this[_layoutDirection] = layoutDirection;
       }).bind(this));
     }
@@ -1996,8 +2001,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
   (platform_views.UiKitViewController.__ = function(id, layoutDirection) {
     this[_debugDisposed] = false;
     this[id$1] = id;
-    if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 655, 14, "id != null");
-    if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 656, 14, "layoutDirection != null");
+    if (!(id != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 648, 14, "id != null");
+    if (!(layoutDirection != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/services/platform_views.dart", 649, 14, "layoutDirection != null");
     this[_layoutDirection] = layoutDirection;
     ;
   }).prototype = platform_views.UiKitViewController.prototype;
@@ -2027,10 +2032,10 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       return new platform_views.PlatformViewsRegistry._instance();
     }
   });
-  const onEnter$ = dart.privateName(mouse_tracking, "MouseTrackerAnnotation.onEnter");
-  const onHover$ = dart.privateName(mouse_tracking, "MouseTrackerAnnotation.onHover");
-  const onExit$ = dart.privateName(mouse_tracking, "MouseTrackerAnnotation.onExit");
-  mouse_tracking.MouseTrackerAnnotation = class MouseTrackerAnnotation extends core.Object {
+  var onEnter$ = dart.privateName(mouse_tracking, "MouseTrackerAnnotation.onEnter");
+  var onHover$ = dart.privateName(mouse_tracking, "MouseTrackerAnnotation.onHover");
+  var onExit$ = dart.privateName(mouse_tracking, "MouseTrackerAnnotation.onExit");
+  mouse_tracking.MouseTrackerAnnotation = class MouseTrackerAnnotation extends diagnostics.Diagnosticable {
     get onEnter() {
       return this[onEnter$];
     }
@@ -2049,13 +2054,9 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     set onExit(value) {
       super.onExit = value;
     }
-    toString() {
-      let callbacks = JSArrayOfString().of([]);
-      if (this.onEnter != null) callbacks[$add]("enter");
-      if (this.onHover != null) callbacks[$add]("hover");
-      if (this.onExit != null) callbacks[$add]("exit");
-      let describeCallbacks = dart.test(callbacks[$isEmpty]) ? "<none>" : callbacks[$join](" ");
-      return dart.str(diagnostics.describeIdentity(this)) + "(callbacks: " + dart.str(describeCallbacks) + ")";
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(new (FlagsSummaryOfFunction()).new("callbacks", new (IdentityMapOfString$Function()).from(["enter", this.onEnter, "hover", this.onHover, "exit", this.onExit]), {ifEmpty: "<none>"}));
     }
   };
   (mouse_tracking.MouseTrackerAnnotation.new = function(opts) {
@@ -2065,6 +2066,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     this[onEnter$] = onEnter;
     this[onHover$] = onHover;
     this[onExit$] = onExit;
+    mouse_tracking.MouseTrackerAnnotation.__proto__.new.call(this);
     ;
   }).prototype = mouse_tracking.MouseTrackerAnnotation.prototype;
   dart.addTypeTests(mouse_tracking.MouseTrackerAnnotation);
@@ -2075,63 +2077,75 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     onHover: dart.finalFieldType(dart.fnType(dart.void, [events.PointerHoverEvent])),
     onExit: dart.finalFieldType(dart.fnType(dart.void, [events.PointerExitEvent]))
   }));
-  dart.defineExtensionMethods(mouse_tracking.MouseTrackerAnnotation, ['toString']);
-  const _mostRecentEvent = dart.privateName(mouse_tracking, "_mostRecentEvent");
+  var _annotations = dart.privateName(mouse_tracking, "_annotations");
+  var _latestEvent = dart.privateName(mouse_tracking, "_latestEvent");
   mouse_tracking._MouseState = class _MouseState extends core.Object {
-    get mostRecentEvent() {
-      return this[_mostRecentEvent];
+    get annotations() {
+      return this[_annotations];
     }
-    set mostRecentEvent(value) {
-      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 93, 12, "value != null");
-      if (!(value.device == this[_mostRecentEvent].device)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 94, 12, "value.device == _mostRecentEvent.device");
-      this[_mostRecentEvent] = value;
+    replaceAnnotations(value) {
+      let previous = this[_annotations];
+      this[_annotations] = value;
+      return previous;
+    }
+    get latestEvent() {
+      return this[_latestEvent];
+    }
+    set latestEvent(value) {
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 128, 12, "value != null");
+      this[_latestEvent] = value;
     }
     get device() {
-      return this[_mostRecentEvent].device;
+      return this.latestEvent.device;
     }
     toString() {
-      let describeEvent = dart.str(dart.runtimeType(this[_mostRecentEvent])) + "(device: " + dart.str(this[_mostRecentEvent].device) + ")";
-      let describeAnnotations = "[list of " + dart.str(this.lastAnnotations[$length]) + "]";
-      return dart.str(diagnostics.describeIdentity(this)) + "(event: " + describeEvent + ", annotations: " + describeAnnotations + ")";
+      function describeEvent(event) {
+        return event == null ? "null" : diagnostics.describeIdentity(event);
+      }
+      dart.fn(describeEvent, PointerEventToString());
+      let describeLatestEvent = "latestEvent: " + dart.str(describeEvent(this.latestEvent));
+      let describeAnnotations = "annotations: [list of " + dart.str(this.annotations[$length]) + "]";
+      return dart.str(diagnostics.describeIdentity(this)) + "(" + describeLatestEvent + ", " + describeAnnotations + ")";
     }
   };
   (mouse_tracking._MouseState.new = function(opts) {
-    let mostRecentEvent = opts && 'mostRecentEvent' in opts ? opts.mostRecentEvent : null;
-    this.lastAnnotations = new (_HashSetOfMouseTrackerAnnotation()).new();
-    if (!(mostRecentEvent != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 79, 15, "mostRecentEvent != null");
-    this[_mostRecentEvent] = mostRecentEvent;
+    let initialEvent = opts && 'initialEvent' in opts ? opts.initialEvent : null;
+    this[_annotations] = new (_HashSetOfMouseTrackerAnnotation()).new();
+    if (!(initialEvent != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 109, 15, "initialEvent != null");
+    this[_latestEvent] = initialEvent;
     ;
   }).prototype = mouse_tracking._MouseState.prototype;
   dart.addTypeTests(mouse_tracking._MouseState);
+  dart.setMethodSignature(mouse_tracking._MouseState, () => ({
+    __proto__: dart.getMethods(mouse_tracking._MouseState.__proto__),
+    replaceAnnotations: dart.fnType(collection.LinkedHashSet$(mouse_tracking.MouseTrackerAnnotation), [collection.LinkedHashSet$(mouse_tracking.MouseTrackerAnnotation)])
+  }));
   dart.setGetterSignature(mouse_tracking._MouseState, () => ({
     __proto__: dart.getGetters(mouse_tracking._MouseState.__proto__),
-    mostRecentEvent: events.PointerEvent,
+    annotations: collection.LinkedHashSet$(mouse_tracking.MouseTrackerAnnotation),
+    latestEvent: events.PointerEvent,
     device: core.int
   }));
   dart.setSetterSignature(mouse_tracking._MouseState, () => ({
     __proto__: dart.getSetters(mouse_tracking._MouseState.__proto__),
-    mostRecentEvent: events.PointerEvent
+    latestEvent: events.PointerEvent
   }));
   dart.setLibraryUri(mouse_tracking._MouseState, "package:flutter/src/gestures/mouse_tracking.dart");
   dart.setFieldSignature(mouse_tracking._MouseState, () => ({
     __proto__: dart.getFields(mouse_tracking._MouseState.__proto__),
-    lastAnnotations: dart.fieldType(collection.LinkedHashSet$(mouse_tracking.MouseTrackerAnnotation)),
-    [_mostRecentEvent]: dart.fieldType(events.PointerEvent)
+    [_annotations]: dart.fieldType(collection.LinkedHashSet$(mouse_tracking.MouseTrackerAnnotation)),
+    [_latestEvent]: dart.fieldType(events.PointerEvent)
   }));
   dart.defineExtensionMethods(mouse_tracking._MouseState, ['toString']);
-  const _mouseStates = dart.privateName(mouse_tracking, "_mouseStates");
-  const _trackedAnnotations = dart.privateName(mouse_tracking, "_trackedAnnotations");
-  const _scheduledPostFramePositionCheck = dart.privateName(mouse_tracking, "_scheduledPostFramePositionCheck");
-  const _router$ = dart.privateName(mouse_tracking, "_router");
-  const _handleEvent = dart.privateName(mouse_tracking, "_handleEvent");
-  const _addMouseDevice = dart.privateName(mouse_tracking, "_addMouseDevice");
-  const _guaranteeMouseState = dart.privateName(mouse_tracking, "_guaranteeMouseState");
-  const _hasAttachedAnnotations = dart.privateName(mouse_tracking, "_hasAttachedAnnotations");
-  const _checkDeviceUpdates = dart.privateName(mouse_tracking, "_checkDeviceUpdates");
-  const _removeMouseDevice = dart.privateName(mouse_tracking, "_removeMouseDevice");
-  const _checkAllDevicesUpdates = dart.privateName(mouse_tracking, "_checkAllDevicesUpdates");
-  const _scheduleMousePositionCheck = dart.privateName(mouse_tracking, "_scheduleMousePositionCheck");
-  const annotationFinder$ = dart.privateName(mouse_tracking, "MouseTracker.annotationFinder");
+  var _mouseStates = dart.privateName(mouse_tracking, "_mouseStates");
+  var _duringDeviceUpdate = dart.privateName(mouse_tracking, "_duringDeviceUpdate");
+  var _hasScheduledPostFrameCheck = dart.privateName(mouse_tracking, "_hasScheduledPostFrameCheck");
+  var _router$ = dart.privateName(mouse_tracking, "_router");
+  var _handleEvent = dart.privateName(mouse_tracking, "_handleEvent");
+  var _updateDevices = dart.privateName(mouse_tracking, "_updateDevices");
+  var _findAnnotations = dart.privateName(mouse_tracking, "_findAnnotations");
+  var _updateAllDevices = dart.privateName(mouse_tracking, "_updateAllDevices");
+  var annotationFinder$ = dart.privateName(mouse_tracking, "MouseTracker.annotationFinder");
   mouse_tracking.MouseTracker = class MouseTracker extends change_notifier.ChangeNotifier {
     get annotationFinder() {
       return this[annotationFinder$];
@@ -2143,161 +2157,149 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
       super.dispose();
       this[_router$].removeGlobalRoute(dart.bind(this, _handleEvent));
     }
-    [_guaranteeMouseState](device, mostRecentEvent) {
-      let t3;
-      let currentState = this[_mouseStates][$_get](device);
-      if (currentState == null) {
-        this[_addMouseDevice](device, mostRecentEvent);
-      }
-      let result = (t3 = currentState, t3 == null ? this[_mouseStates][$_get](device) : t3);
-      if (!(result != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 170, 12, "result != null");
-      return result;
-    }
-    get [_hasAttachedAnnotations]() {
-      return this[_trackedAnnotations][$isNotEmpty];
-    }
-    [_addMouseDevice](device, event) {
-      let wasConnected = this.mouseIsConnected;
-      if (!!dart.test(this[_mouseStates][$containsKey](device))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 181, 12, "!_mouseStates.containsKey(device)");
-      this[_mouseStates][$_set](device, new mouse_tracking._MouseState.new({mostRecentEvent: event}));
-      this[_checkDeviceUpdates]({device: device});
-      if (!dart.equals(this.mouseIsConnected, wasConnected)) {
-        this.notifyListeners();
-      }
-    }
-    [_removeMouseDevice](device, event) {
-      let wasConnected = this.mouseIsConnected;
-      if (!dart.test(this[_mouseStates][$containsKey](device))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 192, 12, "_mouseStates.containsKey(device)");
-      let disconnectedMouseState = this[_mouseStates][$remove](device);
-      disconnectedMouseState.mostRecentEvent = event;
-      this[_checkDeviceUpdates]({device: device, disconnectedMouseState: disconnectedMouseState});
-      if (!dart.equals(this.mouseIsConnected, wasConnected)) {
-        this.notifyListeners();
-      }
+    static _shouldMarkStateDirty(state, value) {
+      if (state == null) return true;
+      if (!(value != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 217, 12, "value != null");
+      let lastEvent = state.latestEvent;
+      if (!(value.device == lastEvent.device)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 219, 12, "value.device == lastEvent.device");
+      if (!events.PointerAddedEvent.is(value)[$_equals](events.PointerRemovedEvent.is(lastEvent))) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 222, 12, "(value is PointerAddedEvent) == (lastEvent is PointerRemovedEvent)");
+      if (events.PointerSignalEvent.is(value)) return false;
+      return events.PointerAddedEvent.is(lastEvent) || events.PointerRemovedEvent.is(value) || !dart.equals(lastEvent.position, value.position);
     }
     [_handleEvent](event) {
-      if (!dart.equals(event.kind, ui.PointerDeviceKind.mouse)) {
-        return;
-      }
+      let t3;
+      if (!dart.equals(event.kind, ui.PointerDeviceKind.mouse)) return;
+      if (events.PointerSignalEvent.is(event)) return;
       let device = event.device;
-      if (events.PointerAddedEvent.is(event)) {
-        this[_addMouseDevice](device, event);
-      } else if (events.PointerRemovedEvent.is(event)) {
-        this[_removeMouseDevice](device, event);
-      } else if (events.PointerHoverEvent.is(event)) {
-        let mouseState = this[_guaranteeMouseState](device, event);
-        let previousEvent = mouseState.mostRecentEvent;
-        mouseState.mostRecentEvent = event;
-        if (events.PointerAddedEvent.is(previousEvent) || !dart.equals(previousEvent.position, event.position)) {
-          this[_checkDeviceUpdates]({device: device});
+      let existingState = this[_mouseStates][$_get](device);
+      if (!dart.test(mouse_tracking.MouseTracker._shouldMarkStateDirty(existingState, event))) return;
+      let previousEvent = (t3 = existingState, t3 == null ? null : t3.latestEvent);
+      this[_updateDevices]({targetEvent: event, handleUpdatedDevice: dart.fn((mouseState, previousAnnotations) => {
+          if (!(mouseState.device == event.device)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 249, 16, "mouseState.device == event.device");
+          mouse_tracking.MouseTracker._dispatchDeviceCallbacks({lastAnnotations: previousAnnotations, nextAnnotations: mouseState.annotations, previousEvent: previousEvent, unhandledEvent: event});
+        }, _MouseStateAndLinkedHashSetOfMouseTrackerAnnotationToNull())});
+    }
+    [_findAnnotations](state) {
+      let globalPosition = state.latestEvent.position;
+      let device = state.device;
+      return dart.test(this[_mouseStates][$containsKey](device)) ? LinkedHashSetOfMouseTrackerAnnotation().from(this.annotationFinder(globalPosition)) : LinkedHashSetOfMouseTrackerAnnotation().as(LinkedHashSetOfMouseTrackerAnnotation().new());
+    }
+    static get _duringBuildPhase() {
+      return dart.equals(binding$0.SchedulerBinding.instance.schedulerPhase, binding$0.SchedulerPhase.persistentCallbacks);
+    }
+    [_updateAllDevices]() {
+      this[_updateDevices]({handleUpdatedDevice: dart.fn((mouseState, previousAnnotations) => {
+          mouse_tracking.MouseTracker._dispatchDeviceCallbacks({lastAnnotations: previousAnnotations, nextAnnotations: mouseState.annotations, previousEvent: mouseState.latestEvent, unhandledEvent: null});
+        }, _MouseStateAndLinkedHashSetOfMouseTrackerAnnotationToNull())});
+    }
+    [_updateDevices](opts) {
+      let targetEvent = opts && 'targetEvent' in opts ? opts.targetEvent : null;
+      let handleUpdatedDevice = opts && 'handleUpdatedDevice' in opts ? opts.handleUpdatedDevice : null;
+      if (!(handleUpdatedDevice != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 328, 12, "handleUpdatedDevice != null");
+      if (!!dart.test(mouse_tracking.MouseTracker._duringBuildPhase)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 329, 12, "!_duringBuildPhase");
+      if (!!dart.test(this[_duringDeviceUpdate])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 330, 12, "!_duringDeviceUpdate");
+      let mouseWasConnected = this.mouseIsConnected;
+      let targetState = null;
+      if (targetEvent != null) {
+        targetState = this[_mouseStates][$_get](targetEvent.device);
+        if (targetState == null) {
+          targetState = new mouse_tracking._MouseState.new({initialEvent: targetEvent});
+          this[_mouseStates][$_set](targetState.device, targetState);
+        } else {
+          if (!!events.PointerAddedEvent.is(targetEvent)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 344, 16, "targetEvent is! PointerAddedEvent");
+          targetState.latestEvent = targetEvent;
+          if (events.PointerRemovedEvent.is(targetEvent)) this[_mouseStates][$remove](targetEvent.device);
         }
       }
-    }
-    [_scheduleMousePositionCheck]() {
-      if (!dart.test(this[_scheduledPostFramePositionCheck])) {
-        this[_scheduledPostFramePositionCheck] = true;
-        binding$0.SchedulerBinding.instance.addPostFrameCallback(dart.fn(duration => {
-          this[_checkAllDevicesUpdates]();
-          this[_scheduledPostFramePositionCheck] = false;
-        }, DurationToNull()));
+      if (!(targetState == null)[$_equals](targetEvent == null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 353, 12, "(targetState == null) == (targetEvent == null)");
+      if (!dart.test(dart.fn(() => {
+        this[_duringDeviceUpdate] = true;
+        return true;
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 355, 12, "() {\n      _duringDeviceUpdate = true;\n      return true;\n    }()");
+      let dirtyStates = targetEvent == null ? this[_mouseStates][$values] : JSArrayOf_MouseState().of([targetState]);
+      for (let dirtyState of dirtyStates) {
+        let nextAnnotations = this[_findAnnotations](dirtyState);
+        let lastAnnotations = dirtyState.replaceAnnotations(nextAnnotations);
+        handleUpdatedDevice(dirtyState, lastAnnotations);
       }
-    }
-    [_checkDeviceUpdates](opts) {
-      let t3;
-      let device = opts && 'device' in opts ? opts.device : null;
-      let disconnectedMouseState = opts && 'disconnectedMouseState' in opts ? opts.disconnectedMouseState : null;
-      let mouseState = (t3 = disconnectedMouseState, t3 == null ? this[_mouseStates][$_get](device) : t3);
-      let thisDeviceIsConnected = !dart.equals(mouseState, disconnectedMouseState);
-      if (!(mouseState != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 260, 12, "mouseState != null");
-      let nextAnnotations = dart.test(this[_hasAttachedAnnotations]) && thisDeviceIsConnected ? LinkedHashSetOfMouseTrackerAnnotation().from(this.annotationFinder(mouseState.mostRecentEvent.position)) : LinkedHashSetOfMouseTrackerAnnotation().as(LinkedHashSetOfMouseTrackerAnnotation().new());
-      mouse_tracking.MouseTracker._dispatchDeviceCallbacks({currentState: mouseState, nextAnnotations: nextAnnotations});
-      mouseState.lastAnnotations = nextAnnotations;
-    }
-    [_checkAllDevicesUpdates]() {
-      for (let device of this[_mouseStates][$keys]) {
-        this[_checkDeviceUpdates]({device: device});
-      }
+      if (!dart.test(dart.fn(() => {
+        this[_duringDeviceUpdate] = false;
+        return true;
+      }, VoidTobool())())) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 367, 12, "() {\n      _duringDeviceUpdate = false;\n      return true;\n    }()");
+      if (!dart.equals(mouseWasConnected, this.mouseIsConnected)) this.notifyListeners();
     }
     static _dispatchDeviceCallbacks(opts) {
+      let t3;
+      let lastAnnotations = opts && 'lastAnnotations' in opts ? opts.lastAnnotations : null;
       let nextAnnotations = opts && 'nextAnnotations' in opts ? opts.nextAnnotations : null;
-      let currentState = opts && 'currentState' in opts ? opts.currentState : null;
-      let mostRecentEvent = currentState.mostRecentEvent;
-      let lastAnnotations = currentState.lastAnnotations;
-      let exitingAnnotations = lastAnnotations.difference(nextAnnotations);
+      let previousEvent = opts && 'previousEvent' in opts ? opts.previousEvent : null;
+      let unhandledEvent = opts && 'unhandledEvent' in opts ? opts.unhandledEvent : null;
+      if (!(lastAnnotations != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 390, 12, "lastAnnotations != null");
+      if (!(nextAnnotations != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 391, 12, "nextAnnotations != null");
+      let latestEvent = (t3 = unhandledEvent, t3 == null ? previousEvent : t3);
+      if (!(latestEvent != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 393, 12, "latestEvent != null");
+      let exitingAnnotations = lastAnnotations[$where](dart.fn(value => !dart.test(nextAnnotations.contains(value)), MouseTrackerAnnotationTobool()));
       for (let annotation of exitingAnnotations) {
         if (annotation.onExit != null) {
-          annotation.onExit(new events.PointerExitEvent.fromMouseEvent(mostRecentEvent));
+          annotation.onExit(new events.PointerExitEvent.fromMouseEvent(latestEvent));
         }
       }
       let enteringAnnotations = nextAnnotations.difference(lastAnnotations)[$toList]()[$reversed];
       for (let annotation of enteringAnnotations) {
         if (annotation.onEnter != null) {
-          annotation.onEnter(new events.PointerEnterEvent.fromMouseEvent(mostRecentEvent));
+          annotation.onEnter(new events.PointerEnterEvent.fromMouseEvent(latestEvent));
         }
       }
-      if (events.PointerHoverEvent.is(mostRecentEvent)) {
-        let hoveringAnnotations = nextAnnotations[$toList]()[$reversed];
+      if (events.PointerHoverEvent.is(unhandledEvent)) {
+        let lastHoverPosition = events.PointerHoverEvent.is(previousEvent) ? previousEvent.position : null;
+        let pointerHasMoved = lastHoverPosition == null || !dart.equals(lastHoverPosition, unhandledEvent.position);
+        let hoveringAnnotations = pointerHasMoved ? nextAnnotations[$toList]()[$reversed] : enteringAnnotations;
         for (let annotation of hoveringAnnotations) {
           if (annotation.onHover != null) {
-            annotation.onHover(mostRecentEvent);
+            annotation.onHover(unhandledEvent);
           }
         }
       }
     }
-    isAnnotationAttached(annotation) {
-      return this[_trackedAnnotations].contains(annotation);
+    schedulePostFrameCheck() {
+      if (!dart.test(mouse_tracking.MouseTracker._duringBuildPhase)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 453, 12, "_duringBuildPhase");
+      if (!!dart.test(this[_duringDeviceUpdate])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 454, 12, "!_duringDeviceUpdate");
+      if (!dart.test(this.mouseIsConnected)) return;
+      if (!dart.test(this[_hasScheduledPostFrameCheck])) {
+        this[_hasScheduledPostFrameCheck] = true;
+        binding$0.SchedulerBinding.instance.addPostFrameCallback(dart.fn(duration => {
+          if (!dart.test(this[_hasScheduledPostFrameCheck])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 460, 16, "_hasScheduledPostFrameCheck");
+          this[_hasScheduledPostFrameCheck] = false;
+          this[_updateAllDevices]();
+        }, DurationToNull()));
+      }
     }
     get mouseIsConnected() {
       return this[_mouseStates][$isNotEmpty];
     }
-    attachAnnotation(annotation) {
-      this[_trackedAnnotations].add(annotation);
-      if (dart.test(this.mouseIsConnected)) {
-        this[_scheduleMousePositionCheck]();
-      }
-    }
-    detachAnnotation(annotation) {
-      this[_mouseStates][$forEach](dart.fn((device, mouseState) => {
-        if (dart.test(mouseState.lastAnnotations.contains(annotation))) {
-          if (annotation.onExit != null) {
-            let event = mouseState.mostRecentEvent;
-            if (!(event != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 397, 18, "event != null");
-            annotation.onExit(new events.PointerExitEvent.fromMouseEvent(event));
-          }
-          mouseState.lastAnnotations.remove(annotation);
-        }
-      }, intAnd_MouseStateToNull()));
-      this[_trackedAnnotations].remove(annotation);
-    }
   };
   (mouse_tracking.MouseTracker.new = function(_router, annotationFinder) {
     this[_mouseStates] = new (IdentityMapOfint$_MouseState()).new();
-    this[_trackedAnnotations] = LinkedHashSetOfMouseTrackerAnnotation().new();
-    this[_scheduledPostFramePositionCheck] = false;
+    this[_duringDeviceUpdate] = false;
+    this[_hasScheduledPostFrameCheck] = false;
     this[_router$] = _router;
     this[annotationFinder$] = annotationFinder;
-    if (!(_router != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 130, 16, "_router != null");
-    if (!(annotationFinder != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 131, 16, "annotationFinder != null");
+    if (!(_router != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 183, 16, "_router != null");
+    if (!(annotationFinder != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/gestures/mouse_tracking.dart", 184, 16, "annotationFinder != null");
     mouse_tracking.MouseTracker.__proto__.new.call(this);
     this[_router$].addGlobalRoute(dart.bind(this, _handleEvent));
   }).prototype = mouse_tracking.MouseTracker.prototype;
   dart.addTypeTests(mouse_tracking.MouseTracker);
   dart.setMethodSignature(mouse_tracking.MouseTracker, () => ({
     __proto__: dart.getMethods(mouse_tracking.MouseTracker.__proto__),
-    [_guaranteeMouseState]: dart.fnType(mouse_tracking._MouseState, [core.int, events.PointerEvent]),
-    [_addMouseDevice]: dart.fnType(dart.void, [core.int, events.PointerEvent]),
-    [_removeMouseDevice]: dart.fnType(dart.void, [core.int, events.PointerEvent]),
     [_handleEvent]: dart.fnType(dart.void, [events.PointerEvent]),
-    [_scheduleMousePositionCheck]: dart.fnType(dart.void, []),
-    [_checkDeviceUpdates]: dart.fnType(dart.void, [], {device: core.int, disconnectedMouseState: mouse_tracking._MouseState}, {}),
-    [_checkAllDevicesUpdates]: dart.fnType(dart.void, []),
-    isAnnotationAttached: dart.fnType(core.bool, [mouse_tracking.MouseTrackerAnnotation]),
-    attachAnnotation: dart.fnType(dart.void, [mouse_tracking.MouseTrackerAnnotation]),
-    detachAnnotation: dart.fnType(dart.void, [mouse_tracking.MouseTrackerAnnotation])
+    [_findAnnotations]: dart.fnType(collection.LinkedHashSet$(mouse_tracking.MouseTrackerAnnotation), [mouse_tracking._MouseState]),
+    [_updateAllDevices]: dart.fnType(dart.void, []),
+    [_updateDevices]: dart.fnType(dart.void, [], {handleUpdatedDevice: dart.fnType(dart.void, [mouse_tracking._MouseState, collection.LinkedHashSet$(mouse_tracking.MouseTrackerAnnotation)]), targetEvent: events.PointerEvent}, {}),
+    schedulePostFrameCheck: dart.fnType(dart.void, [])
   }));
   dart.setGetterSignature(mouse_tracking.MouseTracker, () => ({
     __proto__: dart.getGetters(mouse_tracking.MouseTracker.__proto__),
-    [_hasAttachedAnnotations]: core.bool,
     mouseIsConnected: core.bool
   }));
   dart.setLibraryUri(mouse_tracking.MouseTracker, "package:flutter/src/gestures/mouse_tracking.dart");
@@ -2306,8 +2308,8 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     annotationFinder: dart.finalFieldType(dart.fnType(core.Iterable$(mouse_tracking.MouseTrackerAnnotation), [ui.Offset])),
     [_router$]: dart.finalFieldType(pointer_router.PointerRouter),
     [_mouseStates]: dart.finalFieldType(core.Map$(core.int, mouse_tracking._MouseState)),
-    [_trackedAnnotations]: dart.finalFieldType(core.Set$(mouse_tracking.MouseTrackerAnnotation)),
-    [_scheduledPostFramePositionCheck]: dart.fieldType(core.bool)
+    [_duringDeviceUpdate]: dart.fieldType(core.bool),
+    [_hasScheduledPostFrameCheck]: dart.fieldType(core.bool)
   }));
   dart.trackLibraries("packages/flutter/gestures", {
     "package:flutter/scheduler.dart": scheduler,
@@ -2318,7 +2320,7 @@ define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web', 'packages/c
     "package:flutter/gestures.dart": gestures,
     "package:flutter/src/gestures/mouse_tracking.dart": mouse_tracking
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["src/scheduler/ticker.dart","src/scheduler/binding.dart","src/services/platform_views.dart","src/gestures/mouse_tracking.dart"],"names":[],"mappings":"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","file":"gestures.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["src/scheduler/ticker.dart","src/scheduler/binding.dart","src/services/platform_views.dart","src/gestures/mouse_tracking.dart"],"names":[],"mappings":"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","file":"gestures.ddc.js"}');
   // Exports:
   return {
     scheduler: scheduler,

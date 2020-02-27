@@ -1,12 +1,11 @@
-import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:firststop/utils/auth.dart';
-import 'package:firststop/utils/responsive_widget.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-import 'package:intl/intl.dart';
+import 'package:firststop/utils/boardpopup.dart';
+import 'package:firststop/utils/bugpopup.dart';
+import 'package:firststop/utils/dashboard.dart';
+import 'package:firststop/utils/messagepopup.dart';
 
 class HomePage extends StatefulWidget {
-
   HomePage({Key key, this.auth, this.userId, this.logoutCallback});
   
   final BaseAuth auth;
@@ -14,12 +13,11 @@ class HomePage extends StatefulWidget {
   final String userId;
 
   @override
-  State<StatefulWidget> createState() => new _HomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
+  
   signOut() async {
     try {
       await widget.auth.signOut();
@@ -29,198 +27,272 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  List<Widget> navButtons() => [
-        NavButton(
-          text: "Home",
-          onPressed: () {
-            html.window.open("https://google.com", "CoDiet");
-          },
-        ),
-        NavButton(
-          text: "Logout",
-          onPressed: () {
-            signOut();
-          },
-        ),
-      ];
-
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          elevation: 1.5,
-          backgroundColor: Colors.blue[50],
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Image.asset(
-                'assets/logo.png',
-                width: 80,
-                height: 80,
+    return Scaffold(
+      appBar: AppBar(  
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            FlutterLogo(
+              colors: Colors.amber,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                "First Stop",
+                style: TextStyle(letterSpacing: 1.2),
+              ),
+            ),
+          ],
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          Column(children: <Widget>[
+              SizedBox(height: 20,),
+              Text(
+                _getMonth() +
+                    " " +
+                    DateTime.now().day.toString() +
+                    " " +
+                    DateTime.now().year.toString(),
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 17.0),
               ),
             ],
           ),
-          actions: <Widget> [
-            NavHeader(navButtons: navButtons()),
-          ]
-        ),
-        drawer: ResponsiveWidget.isSmallScreen(context)
-            ? Drawer(
-                child: ListView(
-                  padding: const EdgeInsets.all(20),
-                  children: navButtons(),
-                ),
-              )
-            : null,
-        body: SingleChildScrollView(
-          child: AnimatedPadding(
-            duration: Duration(seconds: 1),
-            padding: EdgeInsets.all(0),
-            child: ResponsiveWidget(
-              largeScreen: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  ProfileInfo(),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.2,
-                  ),
-                ],
-              ),
+          IconButton(
+            icon: Icon(
+              Icons.message,
+              color: Colors.deepPurple,
             ),
+            onPressed: () {
+              messagepopup(context);
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.developer_board,
+              color: Colors.green,
+            ),
+            onPressed: () {
+              boardpopup(context);
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.timer,
+              color: Colors.red,
+            ),
+            onPressed: () {
+              bugpopup(context);
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.exit_to_app,
+              color: Colors.amber,
+            ),
+            onPressed: () {
+              signOut();
+            },
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Dashboard(),
+      ),
+      drawer: Drawer(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+               CircleAvatar(
+                backgroundImage: AssetImage('assets/teacher.png'),
+                backgroundColor: Colors.red[50],
+                radius: 80.0,
+              ),
+              Container(
+                height: 90.0,
+                color: Colors.grey[50],
+              child: UserAccountsDrawerHeader(
+                accountName: Text(
+                  "Jane Doe",
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                    fontSize: 20.0,
+                    letterSpacing: 1.2,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                 accountEmail: Text(
+                  "jane.doe@example.com",
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                  ),
+                ),
+              ),
+              ),
+               
+              ListTile(
+                leading: Icon(
+                  Icons.dashboard,
+                  color: Colors.blueAccent,
+                ),
+                title: Text(
+                  "Dashboard",
+                  style: TextStyle(
+                    letterSpacing: 1.2,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.person_outline,
+                  color: Colors.blueAccent,
+                ),
+                title: Text(
+                  "Profile",
+                  style: TextStyle(
+                    letterSpacing: 1.2,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.chat_bubble_outline,
+                  color: Colors.blueAccent,
+                ),
+                title: Text(
+                  "GPA",
+                  style: TextStyle(
+                    letterSpacing: 1.2,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.developer_board,
+                  color: Colors.blueAccent,
+                ),
+                title: Text(
+                  "Graduation Tracker",
+                  style: TextStyle(
+                    letterSpacing: 1.2,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+             
+              Divider(),
+              ListTile(
+                leading: Icon(
+                  Icons.developer_mode,
+                  color: Colors.blueAccent,
+                ),
+                title: Text(
+
+                  
+                  "Classes",
+                  style: TextStyle(
+                    letterSpacing: 1.2,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.call,
+                  color: Colors.blueAccent,
+                ),
+                title: Text(
+                  "Financial Aid",
+                  style: TextStyle(
+                    letterSpacing: 1.2,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+               Divider(),
+              ListTile(
+                leading: Icon(
+                  Icons.settings,
+                  color: Colors.blueAccent,
+                ),
+                title: Text(
+                  "Settings",
+                  style: TextStyle(
+                    letterSpacing: 1.2,
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 }
-
-class NavHeader extends StatelessWidget {
-  final List<Widget> navButtons;
-
-  const NavHeader({Key key, this.navButtons}) : super(key: key);
-
-  Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: Row(
-        mainAxisAlignment: ResponsiveWidget.isSmallScreen(context)
-            ? MainAxisAlignment.center
-            : MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          if (!ResponsiveWidget.isSmallScreen(context))
-            Row(
-              children: navButtons,
-            )
-        ],
-      ),
-    );
-  }
-}
-
-class NavButton extends StatelessWidget {
-  final text;
-  final onPressed;
-  final Color color;
-
-  const NavButton(
-      {Key key,
-      @required this.text,
-      @required this.onPressed,
-      this.color = Colors.transparent,
-      })
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    if (text == "Home") {
-      return FlatButton(
-        child: Text(text, textScaleFactor: 1.3, style: TextStyle(color: Colors.white)),
-        color: Colors.blue,
-        onPressed: () {
-          html.window.open("https://google.com", "CoDiet");
-        },
-      );
-    } else {
-      return OutlineButton(
-      child: Text(text, textScaleFactor: 1.3,),
-      borderSide: BorderSide(
-        color: color,
-      ),
-      onPressed: onPressed,
-      );
-    }
-  }
-}
-
-class ProfileInfo extends StatelessWidget {
-  final String formattedDate = DateFormat('yMMMd').format(DateTime.now());
-  profileImage(context) => Container(
-        height: ResponsiveWidget.isSmallScreen(context)
-            ? MediaQuery.of(context).size.height * 0.3
-            : MediaQuery.of(context).size.width * 0.3,
-        width: ResponsiveWidget.isSmallScreen(context)
-            ? MediaQuery.of(context).size.height * 0.3
-            : MediaQuery.of(context).size.width * 0.3,
-        child: new CircularPercentIndicator(
-                radius: ResponsiveWidget.isSmallScreen(context)
-                    ? MediaQuery.of(context).size.height * 0.25
-                    : MediaQuery.of(context).size.width * 0.25,
-                lineWidth: 25.0,
-                animation: true,
-                percent: 0.7,
-                center: new Text(
-                  "70.0%",
-                  style:
-                      new TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-                ),
-                footer: new Text(
-                  formattedDate,
-                  style:
-                      new TextStyle(fontWeight: FontWeight.bold, fontSize: 27.0),
-                ),
-                circularStrokeCap: CircularStrokeCap.round,
-                progressColor: Colors.blue,
-              ),
-      );
-
-  final profileData = Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      SizedBox(
-            height: 100,
-      ),
-      Text(
-        "Hi Jane!",
-        textScaleFactor: 4,
-        style: TextStyle(color: Colors.blue),
-      ),
-      SizedBox(
-        height: 10,
-      ),
-    ],
-  );
-
-  @override
-  Widget build(BuildContext context) {
-    return ResponsiveWidget(
-      largeScreen: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[profileImage(context), profileData],
-      ),
-      smallScreen: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          profileImage(context),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.1,
-          ),
-          profileData
-        ],
-      ),
-    );
+String _getMonth() {
+  switch (DateTime.now().month.toString()) {
+    case "1":
+      return "Jan";
+    case "2":
+      return "Feb";
+    case "3":
+      return "Mar";
+    case "4":
+      return "Apr";
+    case "5":
+      return "May";
+    case "6":
+      return "Jun";
+    case "7":
+      return "Jul";
+    case "8":
+      return "Aug";
+    case "9":
+      return "Sep";
+    case "10":
+      return "Oct";
+    case "11":
+      return "Nov";
+    case "12":
+      return "Dec";
+    default:
+      return DateTime.now().month.toString();
   }
 }

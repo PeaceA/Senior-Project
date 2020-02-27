@@ -3,7 +3,7 @@ define(['dart_sdk'], function(dart_sdk) {
   const core = dart_sdk.core;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const meta = Object.create(dart.library);
+  var meta = Object.create(dart.library);
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C0() {
@@ -94,7 +94,7 @@ define(['dart_sdk'], function(dart_sdk) {
       });
     }
   });
-  const reason$ = dart.privateName(meta, "Immutable.reason");
+  var reason$ = dart.privateName(meta, "Immutable.reason");
   meta.Immutable = class Immutable extends core.Object {
     get reason() {
       return this[reason$];
@@ -103,8 +103,7 @@ define(['dart_sdk'], function(dart_sdk) {
       super.reason = value;
     }
   };
-  (meta.Immutable.new = function(reason) {
-    if (reason === void 0) reason = "";
+  (meta.Immutable.new = function(reason = "") {
     this[reason$] = reason;
     ;
   }).prototype = meta.Immutable.prototype;
@@ -114,7 +113,7 @@ define(['dart_sdk'], function(dart_sdk) {
     __proto__: dart.getFields(meta.Immutable.__proto__),
     reason: dart.finalFieldType(core.String)
   }));
-  const reason$0 = dart.privateName(meta, "Required.reason");
+  var reason$0 = dart.privateName(meta, "Required.reason");
   meta.Required = class Required extends core.Object {
     get reason() {
       return this[reason$0];
@@ -123,8 +122,7 @@ define(['dart_sdk'], function(dart_sdk) {
       super.reason = value;
     }
   };
-  (meta.Required.new = function(reason) {
-    if (reason === void 0) reason = "";
+  (meta.Required.new = function(reason = "") {
     this[reason$0] = reason;
     ;
   }).prototype = meta.Required.prototype;
@@ -224,23 +222,23 @@ define(['dart_sdk'], function(dart_sdk) {
   }).prototype = meta._VisibleForTesting.prototype;
   dart.addTypeTests(meta._VisibleForTesting);
   dart.setLibraryUri(meta._VisibleForTesting, "package:meta/meta.dart");
-  let C0;
-  let C1;
-  let C2;
-  let C3;
-  let C4;
-  let C5;
-  let C6;
-  let C7;
-  let C8;
-  let C9;
-  let C10;
-  let C11;
-  let C12;
-  let C13;
-  let C14;
-  let C15;
-  let C16;
+  var C0;
+  var C1;
+  var C2;
+  var C3;
+  var C4;
+  var C5;
+  var C6;
+  var C7;
+  var C8;
+  var C9;
+  var C10;
+  var C11;
+  var C12;
+  var C13;
+  var C14;
+  var C15;
+  var C16;
   dart.defineLazy(meta, {
     /*meta.alwaysThrows*/get alwaysThrows() {
       return C0 || CT.C0;
@@ -297,7 +295,7 @@ define(['dart_sdk'], function(dart_sdk) {
   dart.trackLibraries("packages/meta/meta", {
     "package:meta/meta.dart": meta
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["meta.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAgQe;;;;;;;iCAGS;;;;EAAa;;;;;;;;;IAgBtB;;;;;;;gCAGQ;;;;EAAa;;;;;;;;;;EAIb;;;;;;EAIL;;;;;;EAIK;;;;;;EAIL;;;;;;EAID;;;;;;EAIK;;;;;;EAIJ;;;;;;EAIM;;;;;;EAIH;;;;;;EAIM;;;;;;EAIP;;;;;;EAIH;;;;;;EAKC;;;;;;EAIa;;;;;;EAIH;;;;;;;;;;;;;;;;;;;;;MAnSR,iBAAY;;;MAWjB,YAAO;;;MAsBF,iBAAY;;;MAYjB,YAAO;;;MAYN,cAAS;;;MAQX,WAAM;;;MAQD,gBAAW;;;MAaf,YAAO;;;MAeD,kBAAa;;;MAehB,eAAU;;;MAMJ,qBAAgB;;;MAmBvB,cAAS;;;MAeX,aAAQ;;;MAaT,WAAM;;;MAQL,YAAO;;;MAWM,yBAAoB;;;MAavB,sBAAiB","file":"meta.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["meta.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAgQe;;;;;;;;IAGS;;EAAa;;;;;;;;;IAgBtB;;;;;;;;IAGQ;;EAAa;;;;;;;;;;EAIb;;;;;;EAIL;;;;;;EAIK;;;;;;EAIL;;;;;;EAID;;;;;;EAIK;;;;;;EAIJ;;;;;;EAIM;;;;;;EAIH;;;;;;EAIM;;;;;;EAIP;;;;;;EAIH;;;;;;EAKC;;;;;;EAIa;;;;;;EAIH;;;;;;;;;;;;;;;;;;;;;MAnSR,iBAAY;;;MAWjB,YAAO;;;MAsBF,iBAAY;;;MAYjB,YAAO;;;MAYN,cAAS;;;MAQX,WAAM;;;MAQD,gBAAW;;;MAaf,YAAO;;;MAeD,kBAAa;;;MAehB,eAAU;;;MAMJ,qBAAgB;;;MAmBvB,cAAS;;;MAeX,aAAQ;;;MAaT,WAAM;;;MAQL,YAAO;;;MAWM,yBAAoB;;;MAavB,sBAAiB","file":"meta.ddc.js"}');
   // Exports:
   return {
     meta: meta

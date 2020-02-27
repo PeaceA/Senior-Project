@@ -3,11 +3,11 @@ define(['dart_sdk'], function(dart_sdk) {
   const core = dart_sdk.core;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const hash = Object.create(dart.library);
-  const $hashCode = dartx.hashCode;
-  const $fold = dartx.fold;
-  const $rightShift = dartx['>>'];
-  let intAndObjectToint = () => (intAndObjectToint = dart.constFn(dart.fnType(core.int, [core.int, core.Object])))();
+  var hash = Object.create(dart.library);
+  var $hashCode = dartx.hashCode;
+  var $fold = dartx.fold;
+  var $rightShift = dartx['>>'];
+  var intAndObjectToint = () => (intAndObjectToint = dart.constFn(dart.fnType(core.int, [core.int, core.Object])))();
   const CT = Object.create(null);
   hash.hashObjects = function hashObjects(objects) {
     return hash._finish(objects[$fold](core.int, 0, dart.fn((h, i) => hash._combine(h, dart.hashCode(i)), intAndObjectToint())));

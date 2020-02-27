@@ -3,7 +3,7 @@ define(['dart_sdk'], function(dart_sdk) {
   const core = dart_sdk.core;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const js = Object.create(dart.library);
+  var js = Object.create(dart.library);
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C0() {
@@ -12,7 +12,7 @@ define(['dart_sdk'], function(dart_sdk) {
       });
     }
   });
-  const name$ = dart.privateName(js, "JS.name");
+  var name$ = dart.privateName(js, "JS.name");
   js.JS = class JS extends core.Object {
     get name() {
       return this[name$];
@@ -21,8 +21,7 @@ define(['dart_sdk'], function(dart_sdk) {
       super.name = value;
     }
   };
-  (js.JS.new = function(name) {
-    if (name === void 0) name = null;
+  (js.JS.new = function(name = null) {
     this[name$] = name;
     ;
   }).prototype = js.JS.prototype;
@@ -38,7 +37,7 @@ define(['dart_sdk'], function(dart_sdk) {
   }).prototype = js._Anonymous.prototype;
   dart.addTypeTests(js._Anonymous);
   dart.setLibraryUri(js._Anonymous, "package:js/js.dart");
-  let C0;
+  var C0;
   dart.defineLazy(js, {
     /*js.anonymous*/get anonymous() {
       return C0 || CT.C0;
@@ -47,7 +46,7 @@ define(['dart_sdk'], function(dart_sdk) {
   dart.trackLibraries("packages/js/js", {
     "package:js/js.dart": js
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["js.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;IAiBe;;;;;;;wBACE;;;;EAAM;;;;;;;;;;EAIH;;;;;MASH,YAAS","file":"js.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["js.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;IAiBe;;;;;;;;IACE;;EAAM;;;;;;;;;;EAIH;;;;;MASH,YAAS","file":"js.ddc.js"}');
   // Exports:
   return {
     js: js

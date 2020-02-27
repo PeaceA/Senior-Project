@@ -3,7 +3,7 @@ define(['dart_sdk'], function(dart_sdk) {
   const core = dart_sdk.core;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const animation = Object.create(dart.library);
+  var animation = Object.create(dart.library);
   const CT = Object.create(null);
   dart.trackLibraries("packages/flutter/animation", {
     "package:flutter/animation.dart": animation

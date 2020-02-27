@@ -1,21 +1,21 @@
-define(['dart_sdk'], function(dart_sdk) {
+define(['dart_sdk', 'packages/flutter/src/foundation/_bitfield_web'], function(dart_sdk, packages__flutter__src__foundation___bitfield_web) {
   'use strict';
   const core = dart_sdk.core;
   const math = dart_sdk.math;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const spring_simulation = Object.create(dart.library);
-  const utils = Object.create(dart.library);
-  const tolerance = Object.create(dart.library);
-  const simulation = Object.create(dart.library);
-  const friction_simulation = Object.create(dart.library);
-  const gravity_simulation = Object.create(dart.library);
-  const clamped_simulation = Object.create(dart.library);
-  const $runtimeType = dartx.runtimeType;
-  const $toStringAsFixed = dartx.toStringAsFixed;
-  const $sign = dartx.sign;
-  const $abs = dartx.abs;
-  const $clamp = dartx.clamp;
+  const object = packages__flutter__src__foundation___bitfield_web.src__foundation__object;
+  var spring_simulation = Object.create(dart.library);
+  var utils = Object.create(dart.library);
+  var tolerance = Object.create(dart.library);
+  var simulation = Object.create(dart.library);
+  var friction_simulation = Object.create(dart.library);
+  var gravity_simulation = Object.create(dart.library);
+  var clamped_simulation = Object.create(dart.library);
+  var $toStringAsFixed = dartx.toStringAsFixed;
+  var $sign = dartx.sign;
+  var $abs = dartx.abs;
+  var $clamp = dartx.clamp;
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C0() {
@@ -51,9 +51,9 @@ define(['dart_sdk'], function(dart_sdk) {
       });
     }
   });
-  const mass$ = dart.privateName(spring_simulation, "SpringDescription.mass");
-  const stiffness$ = dart.privateName(spring_simulation, "SpringDescription.stiffness");
-  const damping$ = dart.privateName(spring_simulation, "SpringDescription.damping");
+  var mass$ = dart.privateName(spring_simulation, "SpringDescription.mass");
+  var stiffness$ = dart.privateName(spring_simulation, "SpringDescription.stiffness");
+  var damping$ = dart.privateName(spring_simulation, "SpringDescription.damping");
   spring_simulation.SpringDescription = class SpringDescription extends core.Object {
     get mass() {
       return this[mass$];
@@ -74,7 +74,7 @@ define(['dart_sdk'], function(dart_sdk) {
       super.damping = value;
     }
     toString() {
-      return dart.str(this[$runtimeType]) + "(mass: " + this.mass[$toStringAsFixed](1) + ", stiffness: " + this.stiffness[$toStringAsFixed](1) + ", damping: " + this.damping[$toStringAsFixed](1) + ")";
+      return dart.str(object.objectRuntimeType(this, "SpringDescription")) + "(mass: " + this.mass[$toStringAsFixed](1) + ", stiffness: " + this.stiffness[$toStringAsFixed](1) + ", damping: " + this.damping[$toStringAsFixed](1) + ")";
     }
   };
   (spring_simulation.SpringDescription.new = function(opts) {
@@ -104,11 +104,11 @@ define(['dart_sdk'], function(dart_sdk) {
     damping: dart.finalFieldType(core.double)
   }));
   dart.defineExtensionMethods(spring_simulation.SpringDescription, ['toString']);
-  const _name$ = dart.privateName(spring_simulation, "_name");
-  let C0;
-  let C1;
-  let C2;
-  let C3;
+  var _name$ = dart.privateName(spring_simulation, "_name");
+  var C0;
+  var C1;
+  var C2;
+  var C3;
   spring_simulation.SpringType = class SpringType extends core.Object {
     toString() {
       return this[_name$];
@@ -131,13 +131,13 @@ define(['dart_sdk'], function(dart_sdk) {
   spring_simulation.SpringType.underDamped = C1 || CT.C1;
   spring_simulation.SpringType.overDamped = C2 || CT.C2;
   spring_simulation.SpringType.values = C3 || CT.C3;
-  const Tolerance_velocity = dart.privateName(tolerance, "Tolerance.velocity");
-  const Tolerance_time = dart.privateName(tolerance, "Tolerance.time");
-  const Tolerance_distance = dart.privateName(tolerance, "Tolerance.distance");
-  let C4;
-  const _endPosition = dart.privateName(spring_simulation, "_endPosition");
-  const _solution = dart.privateName(spring_simulation, "_solution");
-  const tolerance$ = dart.privateName(simulation, "Simulation.tolerance");
+  var Tolerance_velocity = dart.privateName(tolerance, "Tolerance.velocity");
+  var Tolerance_time = dart.privateName(tolerance, "Tolerance.time");
+  var Tolerance_distance = dart.privateName(tolerance, "Tolerance.distance");
+  var C4;
+  var _endPosition = dart.privateName(spring_simulation, "_endPosition");
+  var _solution = dart.privateName(spring_simulation, "_solution");
+  var tolerance$ = dart.privateName(simulation, "Simulation.tolerance");
   simulation.Simulation = class Simulation extends core.Object {
     get tolerance() {
       return this[tolerance$];
@@ -146,7 +146,7 @@ define(['dart_sdk'], function(dart_sdk) {
       this[tolerance$] = value;
     }
     toString() {
-      return dart.str(this[$runtimeType]);
+      return object.objectRuntimeType(this, "Simulation");
     }
   };
   (simulation.Simulation.new = function(opts) {
@@ -175,7 +175,7 @@ define(['dart_sdk'], function(dart_sdk) {
       return dart.test(utils.nearZero(this[_solution].x(time), this.tolerance.distance)) && dart.test(utils.nearZero(this[_solution].dx(time), this.tolerance.velocity));
     }
     toString() {
-      return dart.str(this[$runtimeType]) + "(end: " + dart.str(this[_endPosition]) + ", " + dart.str(this.type) + ")";
+      return dart.str(object.objectRuntimeType(this, "SpringSimulation")) + "(end: " + dart.str(this[_endPosition]) + ", " + dart.str(this.type) + ")";
     }
   };
   (spring_simulation.SpringSimulation.new = function(spring, start, end, velocity, opts) {
@@ -217,12 +217,12 @@ define(['dart_sdk'], function(dart_sdk) {
   dart.setLibraryUri(spring_simulation.ScrollSpringSimulation, "package:flutter/src/physics/spring_simulation.dart");
   spring_simulation._SpringSolution = class _SpringSolution extends core.Object {
     static new(spring, initialPosition, initialVelocity) {
-      if (!(spring != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 154, 12, "spring != null");
-      if (!(spring.mass != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 155, 12, "spring.mass != null");
-      if (!(spring.stiffness != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 156, 12, "spring.stiffness != null");
-      if (!(spring.damping != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 157, 12, "spring.damping != null");
-      if (!(initialPosition != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 158, 12, "initialPosition != null");
-      if (!(initialVelocity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 159, 12, "initialVelocity != null");
+      if (!(spring != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 156, 12, "spring != null");
+      if (!(spring.mass != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 157, 12, "spring.mass != null");
+      if (!(spring.stiffness != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 158, 12, "spring.stiffness != null");
+      if (!(spring.damping != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 159, 12, "spring.damping != null");
+      if (!(initialPosition != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 160, 12, "initialPosition != null");
+      if (!(initialVelocity != null)) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/spring_simulation.dart", 161, 12, "initialVelocity != null");
       let cmk = dart.notNull(spring.damping) * dart.notNull(spring.damping) - 4 * dart.notNull(spring.mass) * dart.notNull(spring.stiffness);
       if (cmk === 0.0) return spring_simulation._CriticalSolution.new(spring, initialPosition, initialVelocity);
       if (cmk > 0.0) return spring_simulation._OverdampedSolution.new(spring, initialPosition, initialVelocity);
@@ -233,9 +233,9 @@ define(['dart_sdk'], function(dart_sdk) {
   }).prototype = spring_simulation._SpringSolution.prototype;
   dart.addTypeTests(spring_simulation._SpringSolution);
   dart.setLibraryUri(spring_simulation._SpringSolution, "package:flutter/src/physics/spring_simulation.dart");
-  const _r = dart.privateName(spring_simulation, "_r");
-  const _c1 = dart.privateName(spring_simulation, "_c1");
-  const _c2 = dart.privateName(spring_simulation, "_c2");
+  var _r = dart.privateName(spring_simulation, "_r");
+  var _c1 = dart.privateName(spring_simulation, "_c1");
+  var _c2 = dart.privateName(spring_simulation, "_c2");
   spring_simulation._CriticalSolution = class _CriticalSolution extends core.Object {
     static new(spring, distance, velocity) {
       let r = -dart.notNull(spring.damping) / (2.0 * dart.notNull(spring.mass));
@@ -278,8 +278,8 @@ define(['dart_sdk'], function(dart_sdk) {
     [_c1]: dart.finalFieldType(core.double),
     [_c2]: dart.finalFieldType(core.double)
   }));
-  const _r1 = dart.privateName(spring_simulation, "_r1");
-  const _r2 = dart.privateName(spring_simulation, "_r2");
+  var _r1 = dart.privateName(spring_simulation, "_r1");
+  var _r2 = dart.privateName(spring_simulation, "_r2");
   spring_simulation._OverdampedSolution = class _OverdampedSolution extends core.Object {
     static new(spring, distance, velocity) {
       let cmk = dart.notNull(spring.damping) * dart.notNull(spring.damping) - 4 * dart.notNull(spring.mass) * dart.notNull(spring.stiffness);
@@ -325,7 +325,7 @@ define(['dart_sdk'], function(dart_sdk) {
     [_c1]: dart.finalFieldType(core.double),
     [_c2]: dart.finalFieldType(core.double)
   }));
-  const _w = dart.privateName(spring_simulation, "_w");
+  var _w = dart.privateName(spring_simulation, "_w");
   spring_simulation._UnderdampedSolution = class _UnderdampedSolution extends core.Object {
     static new(spring, distance, velocity) {
       let w = math.sqrt(4.0 * dart.notNull(spring.mass) * dart.notNull(spring.stiffness) - dart.notNull(spring.damping) * dart.notNull(spring.damping)) / (2.0 * dart.notNull(spring.mass));
@@ -434,10 +434,10 @@ define(['dart_sdk'], function(dart_sdk) {
       return C4 || CT.C4;
     }
   });
-  const _drag = dart.privateName(friction_simulation, "_drag");
-  const _dragLog = dart.privateName(friction_simulation, "_dragLog");
-  const _x = dart.privateName(friction_simulation, "_x");
-  const _v = dart.privateName(friction_simulation, "_v");
+  var _drag = dart.privateName(friction_simulation, "_drag");
+  var _dragLog = dart.privateName(friction_simulation, "_dragLog");
+  var _x = dart.privateName(friction_simulation, "_x");
+  var _v = dart.privateName(friction_simulation, "_v");
   friction_simulation.FrictionSimulation = class FrictionSimulation extends simulation.Simulation {
     static through(startPosition, endPosition, startVelocity, endVelocity) {
       if (!(startVelocity === 0.0 || endVelocity === 0.0 || startVelocity[$sign] === endVelocity[$sign])) dart.assertFailed(null, "org-dartlang-app:///packages/flutter/src/physics/friction_simulation.dart", 44, 12, "startVelocity == 0.0 || endVelocity == 0.0 || startVelocity.sign == endVelocity.sign");
@@ -495,8 +495,8 @@ define(['dart_sdk'], function(dart_sdk) {
     [_x]: dart.finalFieldType(core.double),
     [_v]: dart.finalFieldType(core.double)
   }));
-  const _minX$ = dart.privateName(friction_simulation, "_minX");
-  const _maxX$ = dart.privateName(friction_simulation, "_maxX");
+  var _minX$ = dart.privateName(friction_simulation, "_minX");
+  var _maxX$ = dart.privateName(friction_simulation, "_maxX");
   friction_simulation.BoundedFrictionSimulation = class BoundedFrictionSimulation extends friction_simulation.FrictionSimulation {
     x(time) {
       return super.x(time)[$clamp](this[_minX$], this[_maxX$]);
@@ -519,10 +519,10 @@ define(['dart_sdk'], function(dart_sdk) {
     [_minX$]: dart.finalFieldType(core.double),
     [_maxX$]: dart.finalFieldType(core.double)
   }));
-  const _a = dart.privateName(gravity_simulation, "_a");
-  const _x$ = dart.privateName(gravity_simulation, "_x");
-  const _v$ = dart.privateName(gravity_simulation, "_v");
-  const _end = dart.privateName(gravity_simulation, "_end");
+  var _a = dart.privateName(gravity_simulation, "_a");
+  var _x$ = dart.privateName(gravity_simulation, "_x");
+  var _v$ = dart.privateName(gravity_simulation, "_v");
+  var _end = dart.privateName(gravity_simulation, "_end");
   gravity_simulation.GravitySimulation = class GravitySimulation extends simulation.Simulation {
     x(time) {
       return dart.notNull(this[_x$]) + dart.notNull(this[_v$]) * dart.notNull(time) + 0.5 * dart.notNull(this[_a]) * dart.notNull(time) * dart.notNull(time);
@@ -562,11 +562,11 @@ define(['dart_sdk'], function(dart_sdk) {
     [_a]: dart.finalFieldType(core.double),
     [_end]: dart.finalFieldType(core.double)
   }));
-  const simulation$ = dart.privateName(clamped_simulation, "ClampedSimulation.simulation");
-  const xMin$ = dart.privateName(clamped_simulation, "ClampedSimulation.xMin");
-  const xMax$ = dart.privateName(clamped_simulation, "ClampedSimulation.xMax");
-  const dxMin$ = dart.privateName(clamped_simulation, "ClampedSimulation.dxMin");
-  const dxMax$ = dart.privateName(clamped_simulation, "ClampedSimulation.dxMax");
+  var simulation$ = dart.privateName(clamped_simulation, "ClampedSimulation.simulation");
+  var xMin$ = dart.privateName(clamped_simulation, "ClampedSimulation.xMin");
+  var xMax$ = dart.privateName(clamped_simulation, "ClampedSimulation.xMax");
+  var dxMin$ = dart.privateName(clamped_simulation, "ClampedSimulation.dxMin");
+  var dxMax$ = dart.privateName(clamped_simulation, "ClampedSimulation.dxMax");
   clamped_simulation.ClampedSimulation = class ClampedSimulation extends simulation.Simulation {
     get simulation() {
       return this[simulation$];
@@ -649,7 +649,7 @@ define(['dart_sdk'], function(dart_sdk) {
     "package:flutter/src/physics/gravity_simulation.dart": gravity_simulation,
     "package:flutter/src/physics/clamped_simulation.dart": clamped_simulation
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["spring_simulation.dart","simulation.dart","utils.dart","tolerance.dart","friction_simulation.dart","gravity_simulation.dart","clamped_simulation.dart"],"names":[],"mappings":"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","file":"clamped_simulation.ddc.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["spring_simulation.dart","simulation.dart","utils.dart","tolerance.dart","friction_simulation.dart","gravity_simulation.dart","clamped_simulation.dart"],"names":[],"mappings":"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","file":"clamped_simulation.ddc.js"}');
   // Exports:
   return {
     src__physics__spring_simulation: spring_simulation,
