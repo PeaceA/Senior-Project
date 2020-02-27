@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>FirstStop</title>
-    <!-- <meta name="google-signin-client_id" content="1090070391523-im15egbt9i6ksbtshjrjsv4cur3f9cai.apps.googleusercontent.com"> -->
-    <!-- <link rel="icon" href="assets/assets/favicon.ico"> -->
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="last_stop">
+  <link rel="apple-touch-icon" href="/icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
+  <title>last_stop</title>
+  <link rel="manifest" href="/manifest.json">
 </head>
-
 <body>
-    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-database.js"></script>
-    <script>
-        var config = {
-            apiKey: "AIzaSyCQq0J_PtjALMVcTT_KpNaIdM3Ift71PBw",
-            authDomain: "seniorproject-6bd62.firebaseapp.com",
-            databaseURL: "https://seniorproject-6bd62.firebaseio.com",
-            projectId: "seniorproject-6bd62",
-            storageBucket: "seniorproject-6bd62.appspot.com",
-            messagingSenderId: "11861620658",
-            appId: "1:11861620658:web:2b13aa9731372a4c6596ab",
-            measurementId: "G-RTJ9TCZJ22",
-        };
-        firebase.initializeApp(config);
-    </script>
-    <script src="main.dart.js" type="application/javascript"></script>
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/flutter_service_worker.js');
+      });
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
 </body>
-
 </html>
