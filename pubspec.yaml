@@ -1,4 +1,4 @@
-name: last_stop
+name: firststop
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -19,6 +19,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  percent_indicator: ^2.1.1+1
+  intl: ^0.16.0
+  firebase: ^6.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,7 +45,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
+   - assets/logo.png
+   - assets/name.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -69,3 +73,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+assets:
+  - name.jpg
+fonts:
+  - family: Montserrat
+    fonts:
+      - asset: fonts/Montserrat-Regular.ttf
