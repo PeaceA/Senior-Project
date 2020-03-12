@@ -1,1 +1,1 @@
-{"p":["firststop","lib/utils/auth.dart"],"s":[["firststop","lib/utils/auth.dart"]],"d":[["firebase","lib/firebase.dart"]],"m":false,"is":true,"pf":"flutter_web"}
+{"p":["firststop","lib/utils/auth.dart"],"s":[["firststop","lib/utils/auth.dart"]],"d":[["firebase","lib/firebase.dart"],["google_sign_in","lib/google_sign_in.dart"]],"m":false,"is":true,"pf":"flutter_web"}

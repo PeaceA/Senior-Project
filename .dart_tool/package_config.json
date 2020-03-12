@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "_discoveryapis_commons",
+      "rootUri": "file:///Users/cicelybeckford/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/_discoveryapis_commons-0.1.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///Users/Sean/flutter/.pub-cache/hosted/pub.dartlang.org/archive-2.0.11",
       "packageUri": "lib/",
@@ -72,6 +78,36 @@
       "rootUri": "file:///Users/Sean/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "2.2"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///Users/cicelybeckford/Desktop/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "google_sign_in",
+      "rootUri": "file:///Users/cicelybeckford/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "google_sign_in_platform_interface",
+      "rootUri": "file:///Users/cicelybeckford/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_platform_interface-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "google_sign_in_web",
+      "rootUri": "file:///Users/cicelybeckford/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.8.3+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "googleapis",
+      "rootUri": "file:///Users/cicelybeckford/Desktop/flutter/.pub-cache/hosted/pub.dartlang.org/googleapis-0.54.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "http",
@@ -224,7 +260,11 @@
       "languageVersion": "2.5"
     }
   ],
+<<<<<<< HEAD
+  "generated": "2020-03-12T10:41:42.919474Z",
+=======
   "generated": "2020-02-27T09:12:01.311651Z",
+>>>>>>> merge-dashboard-login
   "generator": "pub",
   "generatorVersion": "2.8.0-dev.8.0.flutter-514a8d4c84"
 }
