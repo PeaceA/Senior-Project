@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:firststop/utils/auth.dart';
 import 'package:firststop/utils/boardpopup.dart';
 import 'package:firststop/utils/bugpopup.dart';
-import 'package:firststop/utils/dashboard.dart';
+import 'package:firststop/frames/dashboard.dart';
 import 'package:firststop/utils/messagepopup.dart';
 import 'package:googleapis/calendar/v3.dart' as calApi;
 import 'package:firststop/models/GoogleHttpClient.dart';
+import 'package:firststop/models/Event.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.logoutCallback});
@@ -19,6 +20,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  List<Event> calEvents = [];
   
   signOut() async {
     try {
@@ -29,15 +32,33 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  Future<void> getCalendarEvents() async {
+  Future<List<Event>> getCalendarEvents() async {
     Map<String, String> authHeaders = await widget.auth.getAuthHeaders();
+    List<Event> _events = [];
+    DateTime now = DateTime.now();
     final httpClient = GoogleHttpClient(authHeaders);
     var calendar = new calApi.CalendarApi(httpClient);
-    var data = calendar.events.list("cicely.beckford@bison.howard.edu");
-    data.then((calApi.Events events) {
+    var data = calendar.events.list("en.usa#holiday@group.v.calendar.google.com");
+    await data.then((calApi.Events events) {
       events.items.forEach((calApi.Event event) {
-        print(event.start.dateTime);
-        print(event.summary);
+        if (event.start.dateTime != null && event.start.dateTime.isAfter(now)){
+          print(event.summary);
+          _events.add(new Event(status: event.status, summary: event.summary, start: event.start.dateTime, end: event.end.dateTime));
+        } else if (event.start.date != null && event.start.date.isAfter(now)) {
+          _events.add(new Event(status: event.status, summary: event.summary, start: event.start.date, end: event.end.date));
+        }
+      });
+    });
+    return _events;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getCalendarEvents().then((value){
+      setState(() {
+        print(value);
+        calEvents = value;
       });
     });
   }
@@ -109,15 +130,14 @@ class _HomePageState extends State<HomePage> {
               color: Colors.amber,
             ),
             onPressed: () {
-              // signOut();
-              getCalendarEvents();
+              signOut();
             },
           ),
         ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
-        child: Dashboard(),
+        child: Dashboard(events: calEvents),
       ),
       drawer: Drawer(
         child: SingleChildScrollView(
@@ -283,6 +303,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 String _getMonth() {
+  print("widget");
   switch (DateTime.now().month.toString()) {
     case "1":
       return "Jan";

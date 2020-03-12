@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["flutter|lib/material.dart","firststop|lib/models/Event.dart","firststop|lib/utils/eventrow.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:table_calendar/table_calendar.dart';
+import 'package:firststop/models/Event.dart';
+import 'package:firststop/utils/eventrow.dart';
 
 class Dashboard extends StatefulWidget {
-  Dashboard({Key key}) : super(key: key);
+  Dashboard({Key key, this.events});
+
+  final List<Event> events;
 
   _DashboardState createState() => _DashboardState();
 }
 
 class _DashboardState extends State<Dashboard> {
-
-  final _calendarController = CalendarController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +21,9 @@ class _DashboardState extends State<Dashboard> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              SizedBox(width: 50,),
               SizedBox(
-                width: 600,
+                width: 500,
                 child: Column(children: <Widget>[
                   SizedBox(height: 30,),
                   Column(children: <Widget>[
@@ -54,7 +56,7 @@ class _DashboardState extends State<Dashboard> {
                         )),
                     SizedBox(width: 20.0),
                     Icon(
-                      Icons.phone,
+                      Icons.class_,
                       color: Colors.redAccent,
                     ),
                     SizedBox(width: 10.0),
@@ -69,7 +71,7 @@ class _DashboardState extends State<Dashboard> {
                 Row(
                   children: <Widget> [
                       Icon(
-                      Icons.calendar_today,
+                      Icons.assessment,
                       color: Colors.redAccent,
                     ),
                     SizedBox(width: 10.0),
@@ -144,9 +146,24 @@ class _DashboardState extends State<Dashboard> {
                 ],
                 ),
                 ],),
-                // _getHeader(context),
                 ],),
               ),
+              SizedBox(width: 130,),
+              SizedBox(
+                child: Column(children: <Widget>[
+                  SizedBox(height: 40,),
+                  Text('Upcoming Events\n',
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      letterSpacing: 1.5,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                    )),
+                  _getHeader(context),
+                ],),
+                width: 650,
+                height: 700,
+              )
             ],
           )
         ),
@@ -185,8 +202,25 @@ class _DashboardState extends State<Dashboard> {
   }
 
   Widget _getHeader(context) {
-    return TableCalendar(
-      calendarController: _calendarController,
+     return new Expanded(
+      child: new Container(
+        color: Colors.blue[50],
+        child: new CustomScrollView(
+          scrollDirection: Axis.vertical,
+          slivers: <Widget>[
+            new SliverPadding(
+              padding: const EdgeInsets.symmetric(vertical: 24.0),
+              sliver: new SliverFixedExtentList(
+                itemExtent: 152.0,
+                delegate: new SliverChildBuilderDelegate(
+                    (context, index) => new EventRow(widget.events[index]),
+                  childCount: widget.events.length,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   } 
 }
