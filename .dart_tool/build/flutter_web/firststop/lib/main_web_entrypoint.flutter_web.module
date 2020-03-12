@@ -1,1 +1,1 @@
-{"p":["firststop","lib/main_web_entrypoint.dart"],"s":[["firststop","lib/main_web_entrypoint.dart"]],"d":[["firststop","lib/main.dart"]],"m":false,"is":true,"pf":"flutter_web"}
+{"p":["firststop","lib/main_web_entrypoint.dart"],"s":[["firststop","lib/main_web_entrypoint.dart"]],"d":[["firststop","lib/generated_plugin_registrant.dart"],["firststop","lib/main.dart"],["flutter_web_plugins","lib/flutter_web_plugins.dart"]],"m":false,"is":true,"pf":"flutter_web"}

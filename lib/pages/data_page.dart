@@ -18,8 +18,15 @@ class _UserDataState extends State<UserData> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   User newUser = new User();
+  Student student = new Student();
   List<String> _roles = <String>['', 'Student', 'Advisor'];
-  String _role = '';
+  List<String> _semesters = <String>['', 'Fall', 'Spring'];
+  List<String> _classifications = <String>['', 'Freshman', 'Sophomore', 'Junior', 'Senior'];
+  List<String> _majors = <String>['', 'Computer Science', 'Computer Engineering', 'Mechanical Engineering', 'Civil Engineering'];
+  String _role = '';  
+  String _major = '';
+  String _classification = '';
+  String _semester = '';
 
   void showMessage(String message, [MaterialColor color = Colors.red]) {
     _scaffoldKey.currentState
@@ -38,7 +45,14 @@ class _UserDataState extends State<UserData> {
         "completeSignUp": "true",
         'firstName': newUser.firstName,
         'lastName': newUser.lastName,
+        'id': newUser.id,
+        'email': newUser.email,
+        'phoneNumber': newUser.phoneNumber,
         'role': newUser.role,
+        'classification': student.classification,
+        'startSemester': student.startSemester,
+        'major': student.major,
+
       };
       await ref.set(map);
       widget.loginCallback();
@@ -89,6 +103,43 @@ class _UserDataState extends State<UserData> {
                   ],
                   onSaved: (val) => newUser.lastName = val,
                 ),
+                new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.school),
+                    hintText: 'Id',
+                    labelText: 'Id',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[@0123456789]")),
+                    LengthLimitingTextInputFormatter(30),
+                  ],
+                  onSaved: (val) => newUser.id = val,
+                ),
+                new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.email),
+                    hintText: 'Email',
+                    labelText: 'Email',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄ" +
+                      "ĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-@]")),
+                    LengthLimitingTextInputFormatter(30),
+                  ],
+                  onSaved: (val) => newUser.email = val,
+                ),
+                new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.phone),
+                    hintText: 'Phone Number',
+                    labelText: 'Phone Number',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[+-0123456789()]")),
+                    LengthLimitingTextInputFormatter(30),
+                  ],
+                  onSaved: (val) => newUser.phoneNumber = val,
+                ),
                 new FormField(
                   builder: (FormFieldState state) {
                     return InputDecorator(
@@ -122,6 +173,106 @@ class _UserDataState extends State<UserData> {
                     return val != '' ? null : 'Please select an option';
                   },
                 ),
+                // _studentDropDown(),
+                new FormField(
+                  builder: (FormFieldState state) {
+                    return InputDecorator(
+                      decoration: InputDecoration(
+                        icon: const Icon(Icons.local_library),
+                        labelText: 'Major',
+                      ),
+                      isEmpty: _major == '',
+                      child: new DropdownButtonHideUnderline(
+                        child: new DropdownButton(
+                          value: _major,
+                          isDense: true,
+                          onChanged: (String newValue) {
+                            setState(() {
+                              student.major = newValue;
+                              _major = newValue;
+                              state.didChange(newValue);
+                            });
+                          },
+                          items: _majors.map((String value) {
+                            return new DropdownMenuItem(
+                              value: value,
+                              child: new Text(value),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    );
+                  },
+                  validator: (val) {
+                    return val != '' ? null : 'Please select an option';
+                  },
+                ),
+                new FormField(
+                  builder: (FormFieldState state) {
+                    return InputDecorator(
+                      decoration: InputDecoration(
+                        icon: const Icon(Icons.person_pin),
+                        labelText: 'Classification',
+                      ),
+                      isEmpty: _classification == '',
+                      child: new DropdownButtonHideUnderline(
+                        child: new DropdownButton(
+                          value: _classification,
+                          isDense: true,
+                          onChanged: (String newValue) {
+                            setState(() {
+                              student.classification = newValue;
+                              _classification = newValue;
+                              state.didChange(newValue);
+                            });
+                          },
+                          items: _classifications.map((String value) {
+                            return new DropdownMenuItem(
+                              value: value,
+                              child: new Text(value),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    );
+                  },
+                  validator: (val) {
+                    return val != '' ? null : 'Please select an option';
+                  },
+                ),
+                new FormField(
+                  builder: (FormFieldState state) {
+                    return InputDecorator(
+                      decoration: InputDecoration(
+                        icon: const Icon(Icons.near_me),
+                        labelText: 'Start Semester',
+                      ),
+                      isEmpty: _semester == '',
+                      child: new DropdownButtonHideUnderline(
+                        child: new DropdownButton(
+                          value: _semester,
+                          isDense: true,
+                          onChanged: (String newValue) {
+                            setState(() {
+                              student.startSemester = newValue;
+                              _semester = newValue;
+                              state.didChange(newValue);
+                            });
+                          },
+                          items: _semesters.map((String value) {
+                            return new DropdownMenuItem(
+                              value: value,
+                              child: new Text(value),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    );
+                  },
+                  validator: (val) {
+                    return val != '' ? null : 'Please select an option';
+                  },
+                ),
                 new Container(
                   padding: const EdgeInsets.only(left: 40.0, top: 20.0),
                   child: new RaisedButton(
@@ -140,4 +291,110 @@ class _UserDataState extends State<UserData> {
       ),
     );
   }
+  // Widget _studentDropDown(){
+  //   return new ListView(
+  //             padding: const EdgeInsets.symmetric(horizontal: 16.0),
+  //             children: <Widget>[
+  //               new FormField(
+  //                 builder: (FormFieldState state) {
+  //                   return InputDecorator(
+  //                     decoration: InputDecoration(
+  //                       icon: const Icon(Icons.fitness_center),
+  //                       labelText: 'Major',
+  //                     ),
+  //                     isEmpty: _major == '',
+  //                     child: new DropdownButtonHideUnderline(
+  //                       child: new DropdownButton(
+  //                         value: _major,
+  //                         isDense: true,
+  //                         onChanged: (String newValue) {
+  //                           setState(() {
+  //                             student.major = newValue;
+  //                             _major = newValue;
+  //                             state.didChange(newValue);
+  //                           });
+  //                         },
+  //                         items: _majors.map((String value) {
+  //                           return new DropdownMenuItem(
+  //                             value: value,
+  //                             child: new Text(value),
+  //                           );
+  //                         }).toList(),
+  //                       ),
+  //                     ),
+  //                   );
+  //                 },
+  //                 validator: (val) {
+  //                   return val != '' ? null : 'Please select an option';
+  //                 },
+  //               ),
+  //               new FormField(
+  //                 builder: (FormFieldState state) {
+  //                   return InputDecorator(
+  //                     decoration: InputDecoration(
+  //                       icon: const Icon(Icons.fitness_center),
+  //                       labelText: 'Classification',
+  //                     ),
+  //                     isEmpty: _classification == '',
+  //                     child: new DropdownButtonHideUnderline(
+  //                       child: new DropdownButton(
+  //                         value: _classification,
+  //                         isDense: true,
+  //                         onChanged: (String newValue) {
+  //                           setState(() {
+  //                             student.classification = newValue;
+  //                             _classification = newValue;
+  //                             state.didChange(newValue);
+  //                           });
+  //                         },
+  //                         items: _classifications.map((String value) {
+  //                           return new DropdownMenuItem(
+  //                             value: value,
+  //                             child: new Text(value),
+  //                           );
+  //                         }).toList(),
+  //                       ),
+  //                     ),
+  //                   );
+  //                 },
+  //                 validator: (val) {
+  //                   return val != '' ? null : 'Please select an option';
+  //                 },
+  //               ),
+  //               new FormField(
+  //                 builder: (FormFieldState state) {
+  //                   return InputDecorator(
+  //                     decoration: InputDecoration(
+  //                       icon: const Icon(Icons.fitness_center),
+  //                       labelText: 'Start Semester',
+  //                     ),
+  //                     isEmpty: _semester == '',
+  //                     child: new DropdownButtonHideUnderline(
+  //                       child: new DropdownButton(
+  //                         value: _semester,
+  //                         isDense: true,
+  //                         onChanged: (String newValue) {
+  //                           setState(() {
+  //                             student.startSemester = newValue;
+  //                             _semester = newValue;
+  //                             state.didChange(newValue);
+  //                           });
+  //                         },
+  //                         items: _semesters.map((String value) {
+  //                           return new DropdownMenuItem(
+  //                             value: value,
+  //                             child: new Text(value),
+  //                           );
+  //                         }).toList(),
+  //                       ),
+  //                     ),
+  //                   );
+  //                 },
+  //                 validator: (val) {
+  //                   return val != '' ? null : 'Please select an option';
+  //                 },
+  //               ),
+  //             ]
+  //           );
+  // }
 }

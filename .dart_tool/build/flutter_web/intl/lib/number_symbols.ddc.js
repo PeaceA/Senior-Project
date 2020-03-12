@@ -3,24 +3,24 @@ define(['dart_sdk'], function(dart_sdk) {
   const core = dart_sdk.core;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
-  const number_symbols = Object.create(dart.library);
+  var number_symbols = Object.create(dart.library);
   const CT = Object.create(null);
-  const NAME$ = dart.privateName(number_symbols, "NumberSymbols.NAME");
-  const DECIMAL_SEP$ = dart.privateName(number_symbols, "NumberSymbols.DECIMAL_SEP");
-  const GROUP_SEP$ = dart.privateName(number_symbols, "NumberSymbols.GROUP_SEP");
-  const PERCENT$ = dart.privateName(number_symbols, "NumberSymbols.PERCENT");
-  const ZERO_DIGIT$ = dart.privateName(number_symbols, "NumberSymbols.ZERO_DIGIT");
-  const PLUS_SIGN$ = dart.privateName(number_symbols, "NumberSymbols.PLUS_SIGN");
-  const MINUS_SIGN$ = dart.privateName(number_symbols, "NumberSymbols.MINUS_SIGN");
-  const EXP_SYMBOL$ = dart.privateName(number_symbols, "NumberSymbols.EXP_SYMBOL");
-  const PERMILL$ = dart.privateName(number_symbols, "NumberSymbols.PERMILL");
-  const INFINITY$ = dart.privateName(number_symbols, "NumberSymbols.INFINITY");
-  const NAN$ = dart.privateName(number_symbols, "NumberSymbols.NAN");
-  const DECIMAL_PATTERN$ = dart.privateName(number_symbols, "NumberSymbols.DECIMAL_PATTERN");
-  const SCIENTIFIC_PATTERN$ = dart.privateName(number_symbols, "NumberSymbols.SCIENTIFIC_PATTERN");
-  const PERCENT_PATTERN$ = dart.privateName(number_symbols, "NumberSymbols.PERCENT_PATTERN");
-  const CURRENCY_PATTERN$ = dart.privateName(number_symbols, "NumberSymbols.CURRENCY_PATTERN");
-  const DEF_CURRENCY_CODE$ = dart.privateName(number_symbols, "NumberSymbols.DEF_CURRENCY_CODE");
+  var NAME$ = dart.privateName(number_symbols, "NumberSymbols.NAME");
+  var DECIMAL_SEP$ = dart.privateName(number_symbols, "NumberSymbols.DECIMAL_SEP");
+  var GROUP_SEP$ = dart.privateName(number_symbols, "NumberSymbols.GROUP_SEP");
+  var PERCENT$ = dart.privateName(number_symbols, "NumberSymbols.PERCENT");
+  var ZERO_DIGIT$ = dart.privateName(number_symbols, "NumberSymbols.ZERO_DIGIT");
+  var PLUS_SIGN$ = dart.privateName(number_symbols, "NumberSymbols.PLUS_SIGN");
+  var MINUS_SIGN$ = dart.privateName(number_symbols, "NumberSymbols.MINUS_SIGN");
+  var EXP_SYMBOL$ = dart.privateName(number_symbols, "NumberSymbols.EXP_SYMBOL");
+  var PERMILL$ = dart.privateName(number_symbols, "NumberSymbols.PERMILL");
+  var INFINITY$ = dart.privateName(number_symbols, "NumberSymbols.INFINITY");
+  var NAN$ = dart.privateName(number_symbols, "NumberSymbols.NAN");
+  var DECIMAL_PATTERN$ = dart.privateName(number_symbols, "NumberSymbols.DECIMAL_PATTERN");
+  var SCIENTIFIC_PATTERN$ = dart.privateName(number_symbols, "NumberSymbols.SCIENTIFIC_PATTERN");
+  var PERCENT_PATTERN$ = dart.privateName(number_symbols, "NumberSymbols.PERCENT_PATTERN");
+  var CURRENCY_PATTERN$ = dart.privateName(number_symbols, "NumberSymbols.CURRENCY_PATTERN");
+  var DEF_CURRENCY_CODE$ = dart.privateName(number_symbols, "NumberSymbols.DEF_CURRENCY_CODE");
   number_symbols.NumberSymbols = class NumberSymbols extends core.Object {
     get NAME() {
       return this[NAME$];
@@ -179,9 +179,9 @@ define(['dart_sdk'], function(dart_sdk) {
     DEF_CURRENCY_CODE: dart.finalFieldType(core.String)
   }));
   dart.defineExtensionMethods(number_symbols.NumberSymbols, ['toString']);
-  const COMPACT_DECIMAL_SHORT_PATTERN$ = dart.privateName(number_symbols, "CompactNumberSymbols.COMPACT_DECIMAL_SHORT_PATTERN");
-  const COMPACT_DECIMAL_LONG_PATTERN$ = dart.privateName(number_symbols, "CompactNumberSymbols.COMPACT_DECIMAL_LONG_PATTERN");
-  const COMPACT_DECIMAL_SHORT_CURRENCY_PATTERN$ = dart.privateName(number_symbols, "CompactNumberSymbols.COMPACT_DECIMAL_SHORT_CURRENCY_PATTERN");
+  var COMPACT_DECIMAL_SHORT_PATTERN$ = dart.privateName(number_symbols, "CompactNumberSymbols.COMPACT_DECIMAL_SHORT_PATTERN");
+  var COMPACT_DECIMAL_LONG_PATTERN$ = dart.privateName(number_symbols, "CompactNumberSymbols.COMPACT_DECIMAL_LONG_PATTERN");
+  var COMPACT_DECIMAL_SHORT_CURRENCY_PATTERN$ = dart.privateName(number_symbols, "CompactNumberSymbols.COMPACT_DECIMAL_SHORT_CURRENCY_PATTERN");
   number_symbols.CompactNumberSymbols = class CompactNumberSymbols extends core.Object {
     get COMPACT_DECIMAL_SHORT_PATTERN() {
       return this[COMPACT_DECIMAL_SHORT_PATTERN$];

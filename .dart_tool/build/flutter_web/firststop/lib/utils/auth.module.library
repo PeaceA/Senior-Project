@@ -1,1 +1,1 @@
-{"isEntrypoint":true,"deps":["firebase|lib/firebase.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["async"],"hasMain":false}
+{"isEntrypoint":true,"deps":["firebase|lib/firebase.dart","google_sign_in|lib/google_sign_in.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["async"],"hasMain":false}

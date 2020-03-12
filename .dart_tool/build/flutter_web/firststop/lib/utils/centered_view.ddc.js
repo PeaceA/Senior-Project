@@ -10,7 +10,7 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
   const edge_insets = packages__flutter__src__painting___network_image_web.src__painting__edge_insets;
   const alignment = packages__flutter__src__painting___network_image_web.src__painting__alignment;
   const box = packages__flutter__src__rendering__animated_size.src__rendering__box;
-  const centered_view = Object.create(dart.library);
+  var centered_view = Object.create(dart.library);
   const CT = Object.create(null);
   dart.defineLazy(CT, {
     get C0() {
@@ -99,26 +99,26 @@ define(['dart_sdk', 'packages/flutter/src/widgets/actions', 'packages/flutter/sr
       });
     }
   });
-  const EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
-  const EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
-  const EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
-  const EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
-  let C0;
-  const _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
-  const _Location_name = dart.privateName(widget_inspector, "_Location.name");
-  const _Location_column = dart.privateName(widget_inspector, "_Location.column");
-  const _Location_line = dart.privateName(widget_inspector, "_Location.line");
-  const _Location_file = dart.privateName(widget_inspector, "_Location.file");
-  let C3;
-  let C4;
-  let C2;
-  let C1;
-  let C7;
-  let C8;
-  let C9;
-  let C6;
-  let C5;
-  const child$ = dart.privateName(centered_view, "CenteredView.child");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var C0;
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var C3;
+  var C4;
+  var C2;
+  var C1;
+  var C7;
+  var C8;
+  var C9;
+  var C6;
+  var C5;
+  var child$ = dart.privateName(centered_view, "CenteredView.child");
   centered_view.CenteredView = class CenteredView extends framework.StatelessWidget {
     get child() {
       return this[child$];
