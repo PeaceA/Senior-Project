@@ -3,9 +3,11 @@ import 'package:firststop/models/Event.dart';
 import 'package:firststop/utils/eventrow.dart';
 
 class Dashboard extends StatefulWidget {
-  Dashboard({Key key, this.events});
+  Dashboard({Key key, this.name, this.email, this.events});
 
   final List<Event> events;
+  final String name;
+  final String email;
 
   _DashboardState createState() => _DashboardState();
 }
@@ -33,7 +35,7 @@ class _DashboardState extends State<Dashboard> {
                   radius: 80.0,
                 ),
                 Divider(color: Colors.blue[600], height: 20.0),
-                Text('Student Name',
+                Text(widget.name,
                     style: TextStyle(
                       color: Colors.blueAccent,
                       letterSpacing: 1.5,
@@ -48,7 +50,7 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.redAccent
                     ),
                     SizedBox(width: 10.0),
-                    Text('student@example.com',
+                    Text(widget.email,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 20.0,
