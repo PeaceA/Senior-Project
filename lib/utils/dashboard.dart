@@ -17,133 +17,136 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: Colors.grey[50],
       body: Padding(
           padding: EdgeInsets.all(10.0),
-          child: Column(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Row(children: <Widget>[
-                SizedBox(width: 80,),
+              SizedBox(
+                width: 600,
+                child: Column(children: <Widget>[
+                  SizedBox(height: 30,),
+                  Column(children: <Widget>[
+                    CircleAvatar(
+                  backgroundImage: AssetImage('assets/student.png'),
+                  backgroundColor: Colors.red[50],
+                  radius: 80.0,
+                ),
+                Divider(color: Colors.blue[600], height: 20.0),
+                Text('Student Name',
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      letterSpacing: 1.5,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                    )),
+                SizedBox(height: 10.0),
+                Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.email,
+                      color: Colors.redAccent
+                    ),
+                    SizedBox(width: 10.0),
+                    Text('student@example.com',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        )),
+                    SizedBox(width: 20.0),
+                    Icon(
+                      Icons.phone,
+                      color: Colors.redAccent,
+                    ),
+                    SizedBox(width: 10.0),
+                    Text('Junior',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        ))
+                  ],
+                ),
+                Row(
+                  children: <Widget> [
+                      Icon(
+                      Icons.calendar_today,
+                      color: Colors.redAccent,
+                    ),
+                    SizedBox(width: 10.0),
+                  Text('3.5',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        )
+                    )
+                ],
+                ),
+                  ],
+                ),
+                SizedBox(height: 30.0),
                 Column(children: <Widget>[
                   CircleAvatar(
-                backgroundImage: AssetImage('assets/student.png'),
-                backgroundColor: Colors.red[50],
-                radius: 80.0,
-              ),
-              Divider(color: Colors.blue[600], height: 20.0),
-              Text('Student Name',
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    letterSpacing: 1.5,
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                  )),
-              SizedBox(height: 10.0),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.email,
-                    color: Colors.redAccent
-                  ),
-                  SizedBox(width: 10.0),
-                  Text('student@example.com',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      )),
-                  SizedBox(width: 20.0),
-                  Icon(
-                    Icons.phone,
-                    color: Colors.redAccent,
-                  ),
-                  SizedBox(width: 10.0),
-                  Text('Junior',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      ))
-                ],
-              ),
-              Row(
-                children: <Widget> [
+                  backgroundImage: AssetImage('assets/teacher.png'),
+                  backgroundColor: Colors.red[50],
+                  radius: 80.0,
+                ),
+                Divider(color: Colors.blue[600], height: 20.0),
+                Text('Advisor Name',
+                    style: TextStyle(
+                      color: Colors.blueAccent,
+                      letterSpacing: 1.5,
+                      fontSize: 30.0,
+                      fontWeight: FontWeight.bold,
+                    )),
+                SizedBox(height: 10.0),
+                Row(
+                  children: <Widget>[
                     Icon(
-                    Icons.calendar_today,
-                    color: Colors.redAccent,
-                  ),
-                  SizedBox(width: 10.0),
-                Text('3.5',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      )
-                  )
-              ],
-              ),
-                ],
-              ),
-              SizedBox(width: 150.0),
-              Column(children: <Widget>[
-                CircleAvatar(
-                backgroundImage: AssetImage('assets/teacher.png'),
-                backgroundColor: Colors.red[50],
-                radius: 80.0,
-              ),
-              Divider(color: Colors.blue[600], height: 20.0),
-              Text('Advisor Name',
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    letterSpacing: 1.5,
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                  )),
-              SizedBox(height: 10.0),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.email,
-                    color: Colors.redAccent
-                  ),
-                  SizedBox(width: 10.0),
-                  Text('advisor@example.com',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      )),
-                  SizedBox(width: 20.0),
-                  Icon(
-                    Icons.phone,
-                    color: Colors.redAccent,
-                  ),
-                  SizedBox(width: 10.0),
-                  Text('111-111-2222',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      ))
-                ],
-              ),
-              Row(
-                children: <Widget> [
+                      Icons.email,
+                      color: Colors.redAccent
+                    ),
+                    SizedBox(width: 10.0),
+                    Text('advisor@example.com',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        )),
+                    SizedBox(width: 20.0),
                     Icon(
-                    Icons.calendar_today,
-                    color: Colors.redAccent,
-                  ),
-                  SizedBox(width: 10.0),
-                Text('MWF 12pm - 4pm',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                        letterSpacing: 1.0,
-                      )
-                  )
-              ],
+                      Icons.phone,
+                      color: Colors.redAccent,
+                    ),
+                    SizedBox(width: 10.0),
+                    Text('111-111-2222',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        ))
+                  ],
+                ),
+                Row(
+                  children: <Widget> [
+                      Icon(
+                      Icons.calendar_today,
+                      color: Colors.redAccent,
+                    ),
+                    SizedBox(width: 10.0),
+                  Text('MWF 12pm - 4pm',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                        )
+                    )
+                ],
+                ),
+                ],),
+                // _getHeader(context),
+                ],),
               ),
-              ],),
-              // _getHeader(context),
-              ],),
             ],
           )
         ),

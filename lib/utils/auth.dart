@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:firebase/firebase.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class BaseAuth {
   Future<String> googleSignIn();
@@ -11,17 +12,31 @@ abstract class BaseAuth {
   Future<void> signOut();
 
   Future<bool> isEmailVerified();
+
+  dynamic getAuthHeaders();
 }
 
 class FirebaseAuth implements BaseAuth {
   final Auth _firebaseAuth = auth();
+  final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: [
+      'email',
+      "https://www.googleapis.com/auth/spreadsheets",
+      "https://www.googleapis.com/auth/calendar",
+    ],
+  );
 
   Future<String> googleSignIn() async {
     try {
-      var provider = new GoogleAuthProvider().addScope("email");
-      var result = await _firebaseAuth.signInWithPopup(provider);
-      User user = result.user;
+      final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+      final AuthCredential credential = GoogleAuthProvider.credential(googleAuth.idToken, googleAuth.accessToken);
 
+      var result = await _firebaseAuth.signInWithCredential(credential);
+
+      // var headers = _googleSignIn.currentUser.authHeaders;
+
+      User user = result.user;
       assert(!user.isAnonymous);
       assert(await user.getIdToken() != null);
 
@@ -33,7 +48,16 @@ class FirebaseAuth implements BaseAuth {
     }
   }
 
+  Future<Map<String, String>> getAuthHeaders() async {
+    return _googleSignIn.currentUser.authHeaders;
+  }
+
   Future<User> getCurrentUser() async {
+    print(_firebaseAuth.currentUser);
+    if (_firebaseAuth.currentUser != null) {
+      await _googleSignIn.signInSilently();
+    }
+    print(_googleSignIn.currentUser);
     return _firebaseAuth.currentUser;
   }
 

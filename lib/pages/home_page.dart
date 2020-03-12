@@ -4,6 +4,8 @@ import 'package:firststop/utils/boardpopup.dart';
 import 'package:firststop/utils/bugpopup.dart';
 import 'package:firststop/utils/dashboard.dart';
 import 'package:firststop/utils/messagepopup.dart';
+import 'package:googleapis/calendar/v3.dart' as calApi;
+import 'package:firststop/models/GoogleHttpClient.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.logoutCallback});
@@ -25,6 +27,19 @@ class _HomePageState extends State<HomePage> {
     } catch (e) {
       print(e);
     }
+  }
+
+  Future<void> getCalendarEvents() async {
+    Map<String, String> authHeaders = await widget.auth.getAuthHeaders();
+    final httpClient = GoogleHttpClient(authHeaders);
+    var calendar = new calApi.CalendarApi(httpClient);
+    var data = calendar.events.list("cicely.beckford@bison.howard.edu");
+    data.then((calApi.Events events) {
+      events.items.forEach((calApi.Event event) {
+        print(event.start.dateTime);
+        print(event.summary);
+      });
+    });
   }
 
   @override
@@ -94,7 +109,8 @@ class _HomePageState extends State<HomePage> {
               color: Colors.amber,
             ),
             onPressed: () {
-              signOut();
+              // signOut();
+              getCalendarEvents();
             },
           ),
         ],
