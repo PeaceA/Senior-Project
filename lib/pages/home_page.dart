@@ -35,6 +35,12 @@ class _HomePageState extends State<HomePage> {
         // profilePic = user.photoURL;
       });
     });
+    getCalendarEvents().then((value){
+      setState(() {
+        print(value);
+        calEvents = value;
+      });
+    });
   }
   
   signOut() async {
@@ -66,6 +72,7 @@ class _HomePageState extends State<HomePage> {
     return _events;
   }
 
+/*
   @override
   void initState() {
     super.initState();
@@ -75,7 +82,7 @@ class _HomePageState extends State<HomePage> {
         calEvents = value;
       });
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
