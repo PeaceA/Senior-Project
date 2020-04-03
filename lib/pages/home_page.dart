@@ -267,6 +267,23 @@ class _HomePageState extends State<HomePage> {
                   Navigator.of(context).pop();
                 },
               ),
+              ListTile(
+                leading: Icon(
+                  Icons.person,
+                  color: Colors.blueAccent,
+                ),
+                title: Text(
+                  "Advisor",
+                  style: TextStyle(
+                    letterSpacing: 1.2,
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              ),
             ],
           ),
         ),
@@ -304,4 +321,4 @@ String _getMonth() {
     default:
       return DateTime.now().month.toString();
   }
-}
+}  
