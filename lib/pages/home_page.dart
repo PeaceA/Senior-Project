@@ -20,7 +20,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   List<Event> calEvents = [];
   String name = "", email = "";
   // profilePic = "";
@@ -106,6 +105,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+          /*
+            Navigation Bar
+          */
           IconButton(
             icon: Icon(
               Icons.message,
@@ -144,10 +146,17 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+
+      /*
+          Home Dashboard
+      */
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: new Dashboard(email: email, name: name, events: calEvents),
       ),
+      /*
+            Side Bar Drawer
+          */
       drawer: Drawer(
         child: SingleChildScrollView(
           child: Column(
@@ -218,9 +227,7 @@ class _HomePageState extends State<HomePage> {
                   Icons.developer_mode,
                   color: Colors.blueAccent,
                 ),
-                title: Text(
-
-                  
+                title: Text( 
                   "Classes",
                   style: TextStyle(
                     letterSpacing: 1.2,
@@ -244,8 +251,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.blueAccent,
                     fontWeight: FontWeight.bold,
                   ),
-                ),
-                
+                ), 
                 onTap: () {
                   Navigator.of(context).pop();
                 },
