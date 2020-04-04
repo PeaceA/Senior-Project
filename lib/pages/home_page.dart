@@ -89,6 +89,7 @@ Top Navigation Bar
     // var accountName;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.yellow[800],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -128,7 +129,7 @@ Top Navigation Bar
           IconButton(
             icon: Icon(
               Icons.message,
-              color: Colors.deepPurple,
+              color: Colors.blueAccent[900],
             ),
             onPressed: () {
               messagepopup(context);
@@ -137,7 +138,7 @@ Top Navigation Bar
           IconButton(
             icon: Icon(
               Icons.developer_board,
-              color: Colors.green,
+              color: Colors.blueAccent[900],
             ),
             onPressed: () {
               boardpopup(context);
@@ -146,7 +147,7 @@ Top Navigation Bar
           IconButton(
             icon: Icon(
               Icons.timer,
-              color: Colors.red,
+              color: Colors.blueAccent[900],
             ),
             onPressed: () {
               bugpopup(context);
@@ -155,7 +156,7 @@ Top Navigation Bar
           IconButton(
             icon: Icon(
               Icons.exit_to_app,
-              color: Colors.amber,
+              color: Colors.blueAccent[900],
             ),
             onPressed: () {
               signOut();

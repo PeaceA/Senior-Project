@@ -86,7 +86,7 @@ class EventRow extends StatelessWidget {
               margin: new EdgeInsets.symmetric(vertical: 8.0),
               height: 2.0,
               width: 48.0,
-              color: Colors.white,
+              color: Colors.yellow[800],
             ),
             Expanded(
                           child: new Row(

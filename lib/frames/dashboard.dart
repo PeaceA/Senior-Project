@@ -25,7 +25,7 @@ class _DashboardState extends State<Dashboard> {
             children: <Widget>[
               SizedBox(width: 50,),
               SizedBox(
-                width: 500,
+                width: 520,
                 child: Column(children: <Widget>[
                   SizedBox(height: 30),
                   Column(children: <Widget>[
@@ -95,7 +95,7 @@ class _DashboardState extends State<Dashboard> {
                   backgroundColor: Colors.blueAccent[900],
                   radius: 80.0,
                 ),
-                Divider(color: Colors.blue[600], height: 20.0),
+                Divider(color: Colors.black, height: 20.0),
                 Text('Advisor Name',
                     style: TextStyle(
                       color: Colors.blueAccent[900],
