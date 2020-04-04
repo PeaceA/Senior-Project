@@ -7,6 +7,7 @@ import 'package:firststop/utils/messagepopup.dart';
 import 'package:googleapis/calendar/v3.dart' as calApi;
 import 'package:firststop/models/GoogleHttpClient.dart';
 import 'package:firststop/models/Event.dart';
+// import 'package:firststop/main.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.logoutCallback});
@@ -162,12 +163,11 @@ Top Navigation Bar
           ),
         ],
       ),
-
       /*
               Home Dashboard
           */
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.symmetric(),
         child: new Dashboard(email: email, name: name, events: calEvents),
       ),
       /*
@@ -178,8 +178,11 @@ Top Navigation Bar
           children: <Widget>[
             DrawerHeader(
                 decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: <Color>[Colors.indigoAccent, Colors.white])),
+                    gradient: RadialGradient(
+                        colors: <Color>[ Colors.grey[350], Colors.lightBlue[900],])),
+                /*
+                    Student Profile Image
+                */
                 child: Container(
                   child: Column(
                     children: <Widget>[
@@ -195,7 +198,7 @@ Top Navigation Bar
                       Text(
                         name,
                         style: TextStyle(
-                          color: Colors.redAccent,
+                          color: Colors.white,
                           fontSize: 20.0,
                           letterSpacing: 1.2,
                           fontWeight: FontWeight.bold,
@@ -204,7 +207,7 @@ Top Navigation Bar
                       Text(
                         email,
                         style: TextStyle(
-                          color: Colors.redAccent,
+                          color: Colors.white,
                         ),
                       ),
                     ],
@@ -228,7 +231,6 @@ class CustomListTile extends StatelessWidget {
   IconData icon;
   String text;
   Function onTap;
-
   CustomListTile(this.icon, this.text, this.onTap);
 
   @override
@@ -248,19 +250,19 @@ class CustomListTile extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Icon(icon, color: Colors.blueAccent),
+                    Icon(icon, color: Colors.lightBlue[900]),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(text,
                           style: TextStyle(
                               fontSize: 16.0,
                               letterSpacing: 1.2,
-                              color: Colors.blueAccent,
+                              color: Colors.lightBlue[900],
                               fontWeight: FontWeight.bold)),
                     ),
                   ],
                 ),
-                Icon(Icons.arrow_right)
+                Icon(Icons.arrow_right,  color: Colors.lightBlue[900])
               ],
             ),
           ),
@@ -301,3 +303,8 @@ String _getMonth() {
       return DateTime.now().month.toString();
   }
 }
+
+
+/*
+Differet Pages from the Side Drawer
+*/
