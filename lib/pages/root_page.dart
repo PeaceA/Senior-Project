@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase/firebase.dart' as fb;
-import 'package:firststop/pages/home_page.dart';
 import 'package:firststop/pages/auth_page.dart';
 import 'package:firststop/pages/data_page.dart';
 import 'package:firststop/utils/auth.dart';
+
+import '../main.dart';
 
 enum AuthStatus {
   NOT_DETERMINED,
