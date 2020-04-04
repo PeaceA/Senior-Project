@@ -3,6 +3,7 @@ import 'package:firststop/models/Event.dart';
 import 'package:firststop/utils/eventrow.dart';
 
 class Dashboard extends StatefulWidget {
+  static const String routeName = '/dashboard';
   Dashboard({Key key, this.name, this.email, this.events});
 
   final List<Event> events;
@@ -111,7 +112,7 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.blueAccent[900]
                     ),
                     SizedBox(width: 10.0),
-                    Text('advisor@example.com',
+                    Text(' @example.com',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 20.0,

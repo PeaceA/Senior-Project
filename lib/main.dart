@@ -1,6 +1,5 @@
   
 import 'package:firststop/pages/home_page.dart';
-// import 'package:firststop/route_generator.dart';
 import 'package:flutter/material.dart';
 import 'package:firststop/pages/root_page.dart';
 import 'package:firststop/utils/auth.dart';
@@ -9,11 +8,9 @@ void main() {
   runApp(new MaterialApp(
     home: new MyApp(), 
 
-    routes: <String, WidgetBuilder>{
-      "/Dashboard": (BuildContext context) => new HomePage(),
-    }
-    //vnew MaterialApp( initialRoute: '/',
-    // onGenerateRoute: RouteGenerator.generateRoute,
+    // routes: <String, WidgetBuilder>{
+    //   "/Dashboard": (BuildContext context) => new HomePage(),
+    // }
   ));
 }
 
