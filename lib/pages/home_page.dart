@@ -10,7 +10,7 @@ import 'package:firststop/models/Event.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.logoutCallback});
-  
+
   final BaseAuth auth;
   final VoidCallback logoutCallback;
   final String userId;
@@ -34,14 +34,14 @@ class _HomePageState extends State<HomePage> {
         // profilePic = user.photoURL;
       });
     });
-    getCalendarEvents().then((value){
+    getCalendarEvents().then((value) {
       setState(() {
         print(value);
         calEvents = value;
       });
     });
   }
-  
+
   signOut() async {
     try {
       await widget.auth.signOut();
@@ -57,158 +57,174 @@ class _HomePageState extends State<HomePage> {
     DateTime now = DateTime.now();
     final httpClient = GoogleHttpClient(authHeaders);
     var calendar = new calApi.CalendarApi(httpClient);
-    var data = calendar.events.list("en.usa#holiday@group.v.calendar.google.com");
+    var data =
+        calendar.events.list("en.usa#holiday@group.v.calendar.google.com");
     await data.then((calApi.Events events) {
       events.items.forEach((calApi.Event event) {
-        if (event.start.dateTime != null && event.start.dateTime.isAfter(now)){
+        if (event.start.dateTime != null && event.start.dateTime.isAfter(now)) {
           print(event.summary);
-          _events.add(new Event(status: event.status, summary: event.summary, start: event.start.dateTime, end: event.end.dateTime));
+          _events.add(new Event(
+              status: event.status,
+              summary: event.summary,
+              start: event.start.dateTime,
+              end: event.end.dateTime));
         } else if (event.start.date != null && event.start.date.isAfter(now)) {
-          _events.add(new Event(status: event.status, summary: event.summary, start: event.start.date, end: event.end.date));
+          _events.add(new Event(
+              status: event.status,
+              summary: event.summary,
+              start: event.start.date,
+              end: event.end.date));
         }
       });
     });
     return _events;
   }
+
 /*
 Top Navigation Bar
 */
   @override
   Widget build(BuildContext context) {
     // var accountName;
-        return Scaffold(
-          appBar: AppBar(  
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                FlutterLogo(
-                  colors: Colors.amber,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
-                  child: Text(
-                    "First Stop",
-                    style: TextStyle(letterSpacing: 1.2),
-                  ),
-                ),
-              ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            FlutterLogo(
+              colors: Colors.amber,
             ),
-            centerTitle: true,
-            actions: <Widget>[
-              Column(children: <Widget>[
-                  SizedBox(height: 20,),
-                  Text(
-                    _getMonth() +
-                        " " +
-                        DateTime.now().day.toString() +
-                        " " +
-                        DateTime.now().year.toString(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 17.0),
-                  ),
-                ],
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                "First Stop",
+                style: TextStyle(letterSpacing: 1.2),
               ),
-              /*
-                Navigation Bar
-              */
-              IconButton(
-                icon: Icon(
-                  Icons.message,
-                  color: Colors.deepPurple,
-                ),
-                onPressed: () {
-                  messagepopup(context);
-                },
+            ),
+          ],
+        ),
+        centerTitle: true,
+        actions: <Widget>[
+          Column(
+            children: <Widget>[
+              SizedBox(
+                height: 20,
               ),
-              IconButton(
-                icon: Icon(
-                  Icons.developer_board,
-                  color: Colors.green,
-                ),
-                onPressed: () {
-                  boardpopup(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.timer,
-                  color: Colors.red,
-                ),
-                onPressed: () {
-                  bugpopup(context);
-                },
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.exit_to_app,
-                  color: Colors.amber,
-                ),
-                onPressed: () {
-                  signOut();
-                },
+              Text(
+                _getMonth() +
+                    " " +
+                    DateTime.now().day.toString() +
+                    " " +
+                    DateTime.now().year.toString(),
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 17.0),
               ),
             ],
           ),
-    
           /*
+                Navigation Bar
+              */
+          IconButton(
+            icon: Icon(
+              Icons.message,
+              color: Colors.deepPurple,
+            ),
+            onPressed: () {
+              messagepopup(context);
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.developer_board,
+              color: Colors.green,
+            ),
+            onPressed: () {
+              boardpopup(context);
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.timer,
+              color: Colors.red,
+            ),
+            onPressed: () {
+              bugpopup(context);
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.exit_to_app,
+              color: Colors.amber,
+            ),
+            onPressed: () {
+              signOut();
+            },
+          ),
+        ],
+      ),
+
+      /*
               Home Dashboard
           */
-          body: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: new Dashboard(email: email, name: name, events: calEvents),
-          ),
-          /*
+      body: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: new Dashboard(email: email, name: name, events: calEvents),
+      ),
+      /*
                 Side Bar Drawer
               */
-          drawer: Drawer(child: ListView(
-            children: <Widget> [
-              DrawerHeader(
-                decoration: BoxDecoration(gradient: LinearGradient(colors: <Color>[
-                  Colors.indigoAccent,
-                  Colors.white
-                ]) 
-                ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: <Color>[Colors.indigoAccent, Colors.white])),
                 child: Container(
                   child: Column(
                     children: <Widget>[
                       Material(
                         borderRadius: BorderRadius.all(Radius.circular(50.0)),
                         elevation: 10,
-                        child: Padding(padding: EdgeInsets.all(8.0),
-                        child: Image.asset('assets/student.png', width: 80, height:80),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Image.asset('assets/student.png',
+                              width: 80, height: 80),
                         ),
+                      ),
+                      Text(
+                        name,
+                        style: TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 20.0,
+                          letterSpacing: 1.2,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Text(             
-                                name,
-                                style: TextStyle(
-                                  color: Colors.redAccent,
-                                  fontSize: 20.0,
-                                  letterSpacing: 1.2,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                               Text(
-                                email,
-                                style: TextStyle(
-                                  color: Colors.redAccent,
-                                ),
-                              ),
-                ],
-              ),
-              )),
-            CustomListTile(Icons.dashboard, "Dashboard", ()=>{} ),
-            CustomListTile(Icons.developer_board, "Graduation Tracker", ()=>{}), 
-            CustomListTile(Icons.developer_mode, "Classes", ()=>{}),
-            CustomListTile(Icons.call, "Financial Aid", ()=>{}),
-            CustomListTile(Icons.settings, "Settings", ()=>{}),
-            CustomListTile(Icons.person, "Advisor", ()=>{})
-        ],
-          ),
+                      ),
+                      Text(
+                        email,
+                        style: TextStyle(
+                          color: Colors.redAccent,
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
+            CustomListTile(Icons.dashboard, "Dashboard", () => {}),
+            CustomListTile(
+                Icons.developer_board, "Graduation Tracker", () => {}),
+            CustomListTile(Icons.developer_mode, "Classes", () => {}),
+            CustomListTile(Icons.call, "Financial Aid", () => {}),
+            CustomListTile(Icons.settings, "Settings", () => {}),
+            CustomListTile(Icons.person, "Advisor", () => {})
+          ],
+        ),
       ),
-      );
+    );
   }
 }
-class CustomListTile extends StatelessWidget{
+
+class CustomListTile extends StatelessWidget {
   IconData icon;
   String text;
   Function onTap;
@@ -221,40 +237,39 @@ class CustomListTile extends StatelessWidget{
       padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
       child: Container(
         decoration: BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.grey) )
-      ),
-      child: InkWell(
-        splashColor: Colors.blueAccent,
-        onTap: onTap,
-        child: Container(
-          height: 50,   
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-          Icon(icon, color: Colors.blueAccent),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: 
-          Text(text, style: TextStyle(
-            fontSize: 16.0,
-              letterSpacing: 1.2,
-              color: Colors.blueAccent,
-              fontWeight: FontWeight.bold)
+            border: Border(bottom: BorderSide(color: Colors.grey))),
+        child: InkWell(
+          splashColor: Colors.blueAccent,
+          onTap: onTap,
+          child: Container(
+            height: 50,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Icon(icon, color: Colors.blueAccent),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(text,
+                          style: TextStyle(
+                              fontSize: 16.0,
+                              letterSpacing: 1.2,
+                              color: Colors.blueAccent,
+                              fontWeight: FontWeight.bold)),
+                    ),
+                  ],
+                ),
+                Icon(Icons.arrow_right)
+              ],
             ),
           ),
-        ],
+        ),
       ),
-      Icon(Icons.arrow_right)
-        ],
-      ),
-    ),
-      ),
-      ),
-    );  
+    );
   }
 }
+
 String _getMonth() {
   print("widget");
   switch (DateTime.now().month.toString()) {
@@ -285,4 +300,4 @@ String _getMonth() {
     default:
       return DateTime.now().month.toString();
   }
-}  
+}
