@@ -3,7 +3,7 @@ import 'package:firststop/models/Event.dart';
 import 'package:firststop/utils/eventrow.dart';
 
 class Dashboard extends StatefulWidget {
-  static const String routeName = '/dashboard';
+  // static const String routeName = '/dashboard';
   Dashboard({Key key, this.name, this.email, this.events});
 
   final List<Event> events;

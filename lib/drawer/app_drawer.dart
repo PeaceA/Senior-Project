@@ -1,4 +1,9 @@
+import 'package:firststop/frames/dashboard.dart';
 import 'package:firststop/pages/advisor_page.dart';
+import 'package:firststop/pages/classes.dart';
+import 'package:firststop/pages/financial_aid.dart';
+import 'package:firststop/pages/graduation_tracker_page.dart';
+import 'package:firststop/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 import '../route_generator.dart';
@@ -47,16 +52,23 @@ class AppDrawer extends StatelessWidget{
                     ],
                   ),
                 )),
-            // CustomListTile(Icons.dashboard, "Dashboard", () => Navigator.pushReplacementNamed(context, RouteGenerator.dashboard)),
+            CustomListTile(Icons.dashboard, "Dashboard", () => Navigator.push(context, new MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                new HomePage()))),
             CustomListTile(
-                Icons.developer_board, "Graduation Tracker", () => {}),
-            CustomListTile(Icons.developer_mode, "Classes", () => {}),
-            CustomListTile(Icons.call, "Financial Aid", () => {}),
+                Icons.developer_board, "Graduation Tracker", () => Navigator.push(context, new MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                new GradTrackerPage()))),
+            CustomListTile(Icons.developer_mode, "Classes", () => Navigator.push(context, new MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                new ClassesPage()))),
+            CustomListTile(Icons.call, "Financial Aid", () =>  Navigator.push(context, new MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                new FinancialAidPage()))),
             CustomListTile(Icons.settings, "Settings", () => {}),
             CustomListTile(Icons.person, "Advisor", () => Navigator.push(context, new MaterialPageRoute(
                                                               builder: (context) =>
                                                                 new AdvisorPage()))),
-            // CustomListTile(Icons.person, "Advisor", () => Navigator.pushReplacementNamed(context, RouteGenerator.advisor)),
             ListTile(
             title: Text(' Version 0.0.1'),
             onTap: () {},

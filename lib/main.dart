@@ -7,10 +7,6 @@ import 'package:firststop/utils/auth.dart';
 void main() {
   runApp(new MaterialApp(
     home: new MyApp(), 
-
-    // routes: <String, WidgetBuilder>{
-    //   "/Dashboard": (BuildContext context) => new HomePage(),
-    // }
   ));
 }
 
