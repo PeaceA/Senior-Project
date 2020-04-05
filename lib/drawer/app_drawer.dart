@@ -1,15 +1,19 @@
 import 'package:firststop/frames/dashboard.dart';
 import 'package:firststop/pages/advisor_page.dart';
 import 'package:firststop/pages/classes.dart';
+import 'package:firststop/pages/faq_page.dart';
 import 'package:firststop/pages/financial_aid.dart';
 import 'package:firststop/pages/graduation_tracker_page.dart';
 import 'package:firststop/pages/home_page.dart';
+import 'package:firststop/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
-import '../route_generator.dart';
-
 class AppDrawer extends StatelessWidget{
-  String name = "", email = "";
+  String userName = "", userEmail = "";
+  AppDrawer(String name, String email) {
+    this.userName = name;
+    this.userEmail = email;
+  }
         @override
       Widget build(BuildContext context) {
         return Drawer(
@@ -35,7 +39,7 @@ class AppDrawer extends StatelessWidget{
                         ),
                       ),
                       Text(
-                        name,
+                        userName,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
@@ -44,7 +48,7 @@ class AppDrawer extends StatelessWidget{
                         ),
                       ),
                       Text(
-                        email,
+                        userEmail,
                         style: TextStyle(
                           color: Colors.white,
                         ),
@@ -65,10 +69,15 @@ class AppDrawer extends StatelessWidget{
             CustomListTile(Icons.call, "Financial Aid", () =>  Navigator.push(context, new MaterialPageRoute(
                                                               builder: (context) =>
                                                                 new FinancialAidPage()))),
-            CustomListTile(Icons.settings, "Settings", () => {}),
+            CustomListTile(Icons.settings, "Settings", () =>  Navigator.push(context, new MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                new SettingsPage()))),
             CustomListTile(Icons.person, "Advisor", () => Navigator.push(context, new MaterialPageRoute(
                                                               builder: (context) =>
                                                                 new AdvisorPage()))),
+             CustomListTile(Icons.person, "FAQ", () => Navigator.push(context, new MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                new FaqPage()))),
             ListTile(
             title: Text(' Version 0.0.1'),
             onTap: () {},

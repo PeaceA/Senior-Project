@@ -10,7 +10,7 @@ class AdvisorPage extends StatelessWidget {
         appBar: AppBar(
           title: Text("Events"),
         ),
-        drawer: AppDrawer(),
+        drawer: AppDrawer("", ""),
     body: Center(
       child: Text('You have pressed the button times.')
     ),
