@@ -1,4 +1,4 @@
-import 'package:firststop/frames/dashboard.dart';
+// import 'package:firststop/frames/dashboard.dart';
 import 'package:firststop/pages/advisor_page.dart';
 import 'package:firststop/pages/classes.dart';
 import 'package:firststop/pages/faq_page.dart';
