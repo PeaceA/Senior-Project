@@ -19,14 +19,17 @@ class _UserDataState extends State<UserData> {
 
   User newUser = new User();
   Student student = new Student();
+  Advisor advisor = new Advisor();
   List<String> _roles = <String>['', 'Student', 'Advisor'];
   List<String> _semesters = <String>['', 'Fall', 'Spring'];
   List<String> _classifications = <String>['', 'Freshman', 'Sophomore', 'Junior', 'Senior'];
   List<String> _majors = <String>['', 'Computer Science', 'Computer Engineering', 'Mechanical Engineering', 'Civil Engineering'];
+  List<String> _officeBuildings = <String>['', 'LKD', 'Mackey', 'LKH', 'SOB'];
   String _role = '';  
   String _major = '';
   String _classification = '';
   String _semester = '';
+  String _officeBuilding = '';
 
   void showMessage(String message, [MaterialColor color = Colors.red]) {
     _scaffoldKey.currentState
@@ -52,6 +55,7 @@ class _UserDataState extends State<UserData> {
         'classification': student.classification,
         'startSemester': student.startSemester,
         'major': student.major,
+        'officeBuilding': advisor.officeBuilding,
 
       };
       await ref.set(map);
@@ -68,7 +72,7 @@ class _UserDataState extends State<UserData> {
         elevation: 1,
       ),
       body: CenteredView(
-              child: new SafeArea(
+          child: new SafeArea(
           top: false,
           bottom: false,
           child: new Form(
@@ -165,6 +169,7 @@ class _UserDataState extends State<UserData> {
                               child: new Text(value),
                             );
                           }).toList(),
+
                         ),
                       ),
                     );
@@ -173,41 +178,74 @@ class _UserDataState extends State<UserData> {
                     return val != '' ? null : 'Please select an option';
                   },
                 ),
-                // _studentDropDown(),
-                new FormField(
-                  builder: (FormFieldState state) {
-                    return InputDecorator(
-                      decoration: InputDecoration(
-                        icon: const Icon(Icons.local_library),
-                        labelText: 'Major',
-                      ),
-                      isEmpty: _major == '',
-                      child: new DropdownButtonHideUnderline(
-                        child: new DropdownButton(
-                          value: _major,
-                          isDense: true,
-                          onChanged: (String newValue) {
-                            setState(() {
-                              student.major = newValue;
-                              _major = newValue;
-                              state.didChange(newValue);
-                            });
-                          },
-                          items: _majors.map((String value) {
-                            return new DropdownMenuItem(
-                              value: value,
-                              child: new Text(value),
-                            );
-                          }).toList(),
+                if (_role == 'Student')
+                  new FormField(
+                    builder: (FormFieldState state) {
+                      return InputDecorator(
+                        decoration: InputDecoration(
+                          icon: const Icon(Icons.local_library),
+                          labelText:'Major',
                         ),
-                      ),
-                    );
-                  },
-                  validator: (val) {
-                    return val != '' ? null : 'Please select an option';
-                  },
-                ),
-                new FormField(
+                        isEmpty: _major == '' ,
+                        child: new DropdownButtonHideUnderline(
+                          child: new DropdownButton(
+                            value:  _major ,
+                            isDense: true,
+                            onChanged: (String newValue) {
+                              setState(() {
+                                  student.major = newValue;
+                                  _major = newValue;
+                              });
+                            },
+                            items:  _majors.map((String value) {
+                              return new DropdownMenuItem(
+                                value: value,
+                                child: new Text(value),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      );
+                    },
+                    validator: (val) {
+                      return val != '' ? null : 'Please select an option';
+                    },
+                  ) 
+                else if (_role == 'Advisor') 
+                  new FormField(
+                    builder: (FormFieldState state) {
+                      return InputDecorator(
+                        decoration: InputDecoration(
+                          icon: const Icon(Icons.local_library),
+                          labelText:'Office Building',
+                        ),
+                        isEmpty: _officeBuilding == '' ,
+                        child: new DropdownButtonHideUnderline(
+                          child: new DropdownButton(
+                            value:  _officeBuilding ,
+                            isDense: true,
+                            onChanged: (String newValue) {
+                              setState(() {
+                                  advisor.officeBuilding = newValue;
+                                  _officeBuilding = newValue;
+                              });
+                            },
+                            items:  _officeBuildings.map((String value) {
+                              return new DropdownMenuItem(
+                                value: value,
+                                child: new Text(value),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      );
+                    },
+                    validator: (val) {
+                      return val != '' ? null : 'Please select an option';
+                    },
+                  ), 
+                if (_role =='Student')
+                  new FormField(
                   builder: (FormFieldState state) {
                     return InputDecorator(
                       decoration: InputDecoration(
@@ -239,8 +277,21 @@ class _UserDataState extends State<UserData> {
                   validator: (val) {
                     return val != '' ? null : 'Please select an option';
                   },
-                ),
-                new FormField(
+                ) else if (_role == 'Advisor') 
+                  new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.phone),
+                    hintText: 'Room Number',
+                    labelText: 'Room Number',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[a-zA-Z 0123456789]")),
+                    LengthLimitingTextInputFormatter(30),
+                  ],
+                  onSaved: (val) => advisor.roomNumber = val,
+                ),  
+                if (_role == 'Student') 
+                  new FormField(
                   builder: (FormFieldState state) {
                     return InputDecorator(
                       decoration: InputDecoration(
@@ -272,7 +323,20 @@ class _UserDataState extends State<UserData> {
                   validator: (val) {
                     return val != '' ? null : 'Please select an option';
                   },
-                ),
+                )
+                else if (_role == 'Advisor') 
+                  new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.phone),
+                    hintText: 'Office Hours',
+                    labelText: 'Office Hours',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[a-zA-Z 0123456789:-]")),
+                    LengthLimitingTextInputFormatter(30),
+                  ],
+                  onSaved: (val) => advisor.officeHours = val,
+                  ),
                 new Container(
                   padding: const EdgeInsets.only(left: 40.0, top: 20.0),
                   child: new RaisedButton(
@@ -291,110 +355,4 @@ class _UserDataState extends State<UserData> {
       ),
     );
   }
-  // Widget _studentDropDown(){
-  //   return new ListView(
-  //             padding: const EdgeInsets.symmetric(horizontal: 16.0),
-  //             children: <Widget>[
-  //               new FormField(
-  //                 builder: (FormFieldState state) {
-  //                   return InputDecorator(
-  //                     decoration: InputDecoration(
-  //                       icon: const Icon(Icons.fitness_center),
-  //                       labelText: 'Major',
-  //                     ),
-  //                     isEmpty: _major == '',
-  //                     child: new DropdownButtonHideUnderline(
-  //                       child: new DropdownButton(
-  //                         value: _major,
-  //                         isDense: true,
-  //                         onChanged: (String newValue) {
-  //                           setState(() {
-  //                             student.major = newValue;
-  //                             _major = newValue;
-  //                             state.didChange(newValue);
-  //                           });
-  //                         },
-  //                         items: _majors.map((String value) {
-  //                           return new DropdownMenuItem(
-  //                             value: value,
-  //                             child: new Text(value),
-  //                           );
-  //                         }).toList(),
-  //                       ),
-  //                     ),
-  //                   );
-  //                 },
-  //                 validator: (val) {
-  //                   return val != '' ? null : 'Please select an option';
-  //                 },
-  //               ),
-  //               new FormField(
-  //                 builder: (FormFieldState state) {
-  //                   return InputDecorator(
-  //                     decoration: InputDecoration(
-  //                       icon: const Icon(Icons.fitness_center),
-  //                       labelText: 'Classification',
-  //                     ),
-  //                     isEmpty: _classification == '',
-  //                     child: new DropdownButtonHideUnderline(
-  //                       child: new DropdownButton(
-  //                         value: _classification,
-  //                         isDense: true,
-  //                         onChanged: (String newValue) {
-  //                           setState(() {
-  //                             student.classification = newValue;
-  //                             _classification = newValue;
-  //                             state.didChange(newValue);
-  //                           });
-  //                         },
-  //                         items: _classifications.map((String value) {
-  //                           return new DropdownMenuItem(
-  //                             value: value,
-  //                             child: new Text(value),
-  //                           );
-  //                         }).toList(),
-  //                       ),
-  //                     ),
-  //                   );
-  //                 },
-  //                 validator: (val) {
-  //                   return val != '' ? null : 'Please select an option';
-  //                 },
-  //               ),
-  //               new FormField(
-  //                 builder: (FormFieldState state) {
-  //                   return InputDecorator(
-  //                     decoration: InputDecoration(
-  //                       icon: const Icon(Icons.fitness_center),
-  //                       labelText: 'Start Semester',
-  //                     ),
-  //                     isEmpty: _semester == '',
-  //                     child: new DropdownButtonHideUnderline(
-  //                       child: new DropdownButton(
-  //                         value: _semester,
-  //                         isDense: true,
-  //                         onChanged: (String newValue) {
-  //                           setState(() {
-  //                             student.startSemester = newValue;
-  //                             _semester = newValue;
-  //                             state.didChange(newValue);
-  //                           });
-  //                         },
-  //                         items: _semesters.map((String value) {
-  //                           return new DropdownMenuItem(
-  //                             value: value,
-  //                             child: new Text(value),
-  //                           );
-  //                         }).toList(),
-  //                       ),
-  //                     ),
-  //                   );
-  //                 },
-  //                 validator: (val) {
-  //                   return val != '' ? null : 'Please select an option';
-  //                 },
-  //               ),
-  //             ]
-  //           );
-  // }
 }
