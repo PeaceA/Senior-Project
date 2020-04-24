@@ -123,12 +123,33 @@ class SettingsPage extends StatelessWidget {
                   title: Text("Receive app updates"),
                   onChanged: (val) {},
                 ),
+                Card(
+                  margin: const EdgeInsets.fromLTRB(0.0, 8.0, 32.0, 16.0),
+                  elevation: 8.0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  child: Column(
+                    children: <Widget>[
+                      ListTile(
+                        leading: Icon(
+                          Icons.power,
+                          color: Colors.blue[600],
+                        ),
+                        title: Text("Log Out"),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                        onTap: () {
+                          //open change password info
+                        },
+                      )
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
+      
         ],
       ),
-      // ),
     );
   }
 }
