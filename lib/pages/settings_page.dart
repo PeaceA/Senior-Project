@@ -7,7 +7,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-       backgroundColor: Colors.white,
+       backgroundColor: Colors.grey.shade200,
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
@@ -20,6 +20,7 @@ class SettingsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Card(
+                elevation: 8.0,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
                 margin: const EdgeInsets.all(8.0),
                 color: Colors.blue[600],
@@ -30,7 +31,9 @@ class SettingsPage extends StatelessWidget {
                   title: Text("Shaunelle Thomas", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500,),),
                   leading: CircleAvatar(
                     backgroundImage: AssetImage('assets/student.png'),),
-                    ),
+                    
+                    trailing: Icon(Icons.edit, color: Colors.white),
+              ),
               ),
               const SizedBox(height: 10.0),
               Card(
@@ -46,13 +49,20 @@ class SettingsPage extends StatelessWidget {
                         //open change password info
                       },),
                       ListTile(
-                        leading: Icon(Icons.language ,color: Colors.blue[600]),
-                        title: Text("Change LAnguage"),
-                        trailing: Icon(Icons.keyboard_arrow_right)),
-                      // ListTile(
-                      //   leading: Icon(Icons.
-                      //    ),
-                      //   trailing: ,)
+                        leading: Icon(Icons.attach_money ,color: Colors.blue[600]),
+                        title: Text("Change Financial Aid"),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                         onTap: (){
+                    //open change financial aid
+                  },),
+                      ListTile(
+                        leading: Icon(Icons.person, color: Colors.blue[600]),
+                        title: Text("Change Classification"),
+                        trailing: Icon(Icons.keyboard_arrow_right),
+                         onTap: (){
+                    //open change classification
+                  },
+                  )
                   ] ,),)
             ],) 
         ,)
