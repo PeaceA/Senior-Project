@@ -9,7 +9,7 @@ import 'package:firststop/pages/home_page.dart';
   Use to navigate to different pages
 */
 class RouteGenerator {
-  static const String dashboard = HomePage.routeName;
+  static const String dashboard = Dashboard.routeName;
   static const String advisor = AdvisorPage.routeName;
   static const String home = HomePage.routeName;
   static const String financialAid = FinancialAidPage.routeName;

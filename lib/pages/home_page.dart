@@ -176,7 +176,6 @@ Top Navigation Bar
                 Side Bar Drawer
               */
       drawer: AppDrawer(name, email)
-      
     );
   }
 }
