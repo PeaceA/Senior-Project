@@ -26,7 +26,7 @@ class EventRow extends StatelessWidget {
       fontFamily: 'Poppins'
     );
     final regularTextStyle = baseTextStyle.copyWith(
-      color: Colors.white,
+      color: Colors.blueAccent[900],
       fontSize: 12.0,
       fontWeight: FontWeight.w400
     );
@@ -34,7 +34,7 @@ class EventRow extends StatelessWidget {
       fontSize: 14.0
     );
     final headerTextStyle = baseTextStyle.copyWith(
-      color: Colors.white,
+      color: Colors.blueAccent[900],
       fontSize: 16.0,
       fontWeight: FontWeight.w500
     );
@@ -85,8 +85,8 @@ class EventRow extends StatelessWidget {
             new Container(
               margin: new EdgeInsets.symmetric(vertical: 8.0),
               height: 2.0,
-              width: 18.0,
-              color: new Color(0xff00c6ff)
+              width: 48.0,
+              color: Colors.yellow[800],
             ),
             Expanded(
                           child: new Row(
@@ -123,7 +123,7 @@ class EventRow extends StatelessWidget {
       child: planetCardContent,
       height: 126.0,
       decoration: new BoxDecoration(
-        color: new Color(0xff003366),
+        color: Colors.white,
         shape: BoxShape.rectangle,
         borderRadius: new BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[

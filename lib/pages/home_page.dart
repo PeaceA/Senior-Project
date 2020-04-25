@@ -7,10 +7,12 @@ import 'package:firststop/utils/messagepopup.dart';
 import 'package:googleapis/calendar/v3.dart' as calApi;
 import 'package:firststop/models/GoogleHttpClient.dart';
 import 'package:firststop/models/Event.dart';
+import 'package:firststop/drawer/app_drawer.dart';
+// import 'package:firststop/main.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.logoutCallback});
-  
+  static const String routeName = '/home';
   final BaseAuth auth;
   final VoidCallback logoutCallback;
   final String userId;
@@ -20,7 +22,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   List<Event> calEvents = [];
   String name = "", email = "";
   // profilePic = "";
@@ -35,14 +36,14 @@ class _HomePageState extends State<HomePage> {
         // profilePic = user.photoURL;
       });
     });
-    getCalendarEvents().then((value){
+    getCalendarEvents().then((value) {
       setState(() {
         print(value);
         calEvents = value;
       });
     });
   }
-  
+
   signOut() async {
     try {
       await widget.auth.signOut();
@@ -58,24 +59,38 @@ class _HomePageState extends State<HomePage> {
     DateTime now = DateTime.now();
     final httpClient = GoogleHttpClient(authHeaders);
     var calendar = new calApi.CalendarApi(httpClient);
-    var data = calendar.events.list("en.usa#holiday@group.v.calendar.google.com");
+    var data =
+        calendar.events.list("en.usa#holiday@group.v.calendar.google.com");
     await data.then((calApi.Events events) {
       events.items.forEach((calApi.Event event) {
-        if (event.start.dateTime != null && event.start.dateTime.isAfter(now)){
+        if (event.start.dateTime != null && event.start.dateTime.isAfter(now)) {
           print(event.summary);
-          _events.add(new Event(status: event.status, summary: event.summary, start: event.start.dateTime, end: event.end.dateTime));
+          _events.add(new Event(
+              status: event.status,
+              summary: event.summary,
+              start: event.start.dateTime,
+              end: event.end.dateTime));
         } else if (event.start.date != null && event.start.date.isAfter(now)) {
-          _events.add(new Event(status: event.status, summary: event.summary, start: event.start.date, end: event.end.date));
+          _events.add(new Event(
+              status: event.status,
+              summary: event.summary,
+              start: event.start.date,
+              end: event.end.date));
         }
       });
     });
     return _events;
   }
 
+/*
+Top Navigation Bar
+*/
   @override
   Widget build(BuildContext context) {
+    // var accountName;
     return Scaffold(
-      appBar: AppBar(  
+      appBar: AppBar(
+        backgroundColor: Colors.yellow[800],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -93,8 +108,11 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
         actions: <Widget>[
-          Column(children: <Widget>[
-              SizedBox(height: 20,),
+          Column(
+            children: <Widget>[
+              SizedBox(
+                height: 20,
+              ),
               Text(
                 _getMonth() +
                     " " +
@@ -106,10 +124,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+          /*
+                Navigation Bar
+              */
           IconButton(
             icon: Icon(
               Icons.message,
-              color: Colors.deepPurple,
+              color: Colors.blueAccent[900],
             ),
             onPressed: () {
               messagepopup(context);
@@ -118,7 +139,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(
               Icons.developer_board,
-              color: Colors.green,
+              color: Colors.blueAccent[900],
             ),
             onPressed: () {
               boardpopup(context);
@@ -127,7 +148,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(
               Icons.timer,
-              color: Colors.red,
+              color: Colors.blueAccent[900],
             ),
             onPressed: () {
               bugpopup(context);
@@ -136,7 +157,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             icon: Icon(
               Icons.exit_to_app,
-              color: Colors.amber,
+              color: Colors.blueAccent[900],
             ),
             onPressed: () {
               signOut();
@@ -144,136 +165,22 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
+      /*
+              Home Dashboard
+          */
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.symmetric(),
         child: new Dashboard(email: email, name: name, events: calEvents),
       ),
-      drawer: Drawer(
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-               CircleAvatar(
-                backgroundImage: AssetImage('assets/teacher.png'),
-                backgroundColor: Colors.red[50],
-                radius: 80.0,
-              ),
-              Container(
-                height: 90.0,
-                color: Colors.grey[50],
-              child: UserAccountsDrawerHeader(
-                accountName: Text(
-                  name,
-                  style: TextStyle(
-                    color: Colors.redAccent,
-                    fontSize: 20.0,
-                    letterSpacing: 1.2,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                 accountEmail: Text(
-                  email,
-                  style: TextStyle(
-                    color: Colors.redAccent,
-                  ),
-                ),
-              ),
-              ),
-               
-              ListTile(
-                leading: Icon(
-                  Icons.dashboard,
-                  color: Colors.blueAccent,
-                ),
-                title: Text(
-                  "Dashboard",
-                  style: TextStyle(
-                    letterSpacing: 1.2,
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.developer_board,
-                  color: Colors.blueAccent,
-                ),
-                title: Text(
-                  "Graduation Tracker",
-                  style: TextStyle(
-                    letterSpacing: 1.2,
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.developer_mode,
-                  color: Colors.blueAccent,
-                ),
-                title: Text(
-
-                  
-                  "Classes",
-                  style: TextStyle(
-                    letterSpacing: 1.2,
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.call,
-                  color: Colors.blueAccent,
-                ),
-                title: Text(
-                  "Financial Aid",
-                  style: TextStyle(
-                    letterSpacing: 1.2,
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.settings,
-                  color: Colors.blueAccent,
-                ),
-                title: Text(
-                  "Settings",
-                  style: TextStyle(
-                    letterSpacing: 1.2,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
+      /*
+                Side Bar Drawer
+              */
+      drawer: AppDrawer(name, email)
     );
   }
 }
+
+
 String _getMonth() {
   print("widget");
   switch (DateTime.now().month.toString()) {
@@ -305,3 +212,8 @@ String _getMonth() {
       return DateTime.now().month.toString();
   }
 }
+
+
+/*
+Differet Pages from the Side Drawer
+*/

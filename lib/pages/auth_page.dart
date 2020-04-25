@@ -21,11 +21,11 @@ class _AuthPage extends State<AuthPage>{
 
   final _formKey = new GlobalKey<FormState>();
 
-  String _email;
-  String _password;
+  // String _email;
+  // String _password;
   String _errorMessage;
 
-  bool _isLoginForm;
+  // bool _isLoginForm;
   bool _isLoading;
 
   // Check if form is valid before perform login or signup
@@ -42,7 +42,7 @@ class _AuthPage extends State<AuthPage>{
   void initState() {
     _errorMessage = "";
     _isLoading = false;
-    _isLoginForm = true;
+    // _isLoginForm = true;
     super.initState();
   }
 

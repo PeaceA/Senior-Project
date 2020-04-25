@@ -1,10 +1,13 @@
   
+import 'package:firststop/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firststop/pages/root_page.dart';
 import 'package:firststop/utils/auth.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(new MaterialApp(
+    home: new MyApp(), 
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,6 +32,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+ Center(
+        child: RaisedButton(
+          child: Text('Open route'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyDashboard()),
+            );
+          }
+        )
+ );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'First Stop',
@@ -39,3 +53,27 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class MyDashboard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // void _myDashboard() {
+    //   Navigator.popAndPushNamed(context, "/Dashboard");
+    // }
+      Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),);
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'My Dashboard',
+      theme: ThemeData(
+        primarySwatch: Colors.grey
+      )
+    );
+  }
+}
+
