@@ -2,19 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:firststop/models/Event.dart';
 import 'package:firststop/utils/eventrow.dart';
 
-class Dashboard extends StatefulWidget {
-  static const String routeName = '/dashboard';
-  Dashboard({Key key, this.name, this.email, this.events});
+class Dashboard extends StatelessWidget {
+  const Dashboard({this.name, this.email, this.events});
 
   final List<Event> events;
   final String name;
   final String email;
-
-  _DashboardState createState() => _DashboardState();
-}
-
-class _DashboardState extends State<Dashboard> {
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -36,7 +29,7 @@ class _DashboardState extends State<Dashboard> {
                   radius: 80.0,
                 ),
                 Divider(color: Colors.black, height: 20.0),
-                Text(widget.name,
+                Text(name,
                     style: TextStyle(
                       color: Colors.blueAccent[900],
                       letterSpacing: 1.5,
@@ -51,7 +44,7 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.blueAccent[900]
                     ),
                     SizedBox(width: 10.0),
-                    Text(widget.email,
+                    Text(email,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 20.0,
@@ -164,8 +157,8 @@ class _DashboardState extends State<Dashboard> {
                     )),
                   _getHeader(context),
                 ],),
-                width: 400,
-                height: 500,
+                width: 500,
+                height: 650,
               )
             ],
           )
@@ -184,8 +177,8 @@ class _DashboardState extends State<Dashboard> {
               sliver: new SliverFixedExtentList(
                 itemExtent: 152.0,
                 delegate: new SliverChildBuilderDelegate(
-                    (context, index) => new EventRow(widget.events[index]),
-                  childCount: widget.events.length,
+                    (context, index) => new EventRow(events[index]),
+                  childCount: events.length,
                 ),
               ),
             ),

@@ -3,12 +3,17 @@ import 'package:firststop/utils/auth.dart';
 import 'package:firststop/utils/boardpopup.dart';
 import 'package:firststop/utils/bugpopup.dart';
 import 'package:firststop/frames/dashboard.dart';
+import 'package:firststop/frames/advisor.dart';
+import 'package:firststop/frames/classes.dart';
+import 'package:firststop/frames/faq.dart';
+import 'package:firststop/frames/financial_aid.dart';
+import 'package:firststop/frames/graduation_tracker.dart';
+import 'package:firststop/frames/settings.dart';
 import 'package:firststop/utils/messagepopup.dart';
 import 'package:googleapis/calendar/v3.dart' as calApi;
 import 'package:firststop/models/GoogleHttpClient.dart';
 import 'package:firststop/models/Event.dart';
-import 'package:firststop/drawer/app_drawer.dart';
-// import 'package:firststop/main.dart';
+import 'package:firststop/utils/app_drawer.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.auth, this.userId, this.logoutCallback});
@@ -16,6 +21,7 @@ class HomePage extends StatefulWidget {
   final BaseAuth auth;
   final VoidCallback logoutCallback;
   final String userId;
+  String frame;
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -36,12 +42,16 @@ class _HomePageState extends State<HomePage> {
         // profilePic = user.photoURL;
       });
     });
-    getCalendarEvents().then((value) {
-      setState(() {
-        print(value);
-        calEvents = value;
-      });
+    setState(() {
+        // print(value);
+        calEvents = [];
     });
+    // getCalendarEvents().then((value) {
+    //   setState(() {
+    //     print(value);
+    //     calEvents = value;
+    //   });
+    // });
   }
 
   signOut() async {
@@ -85,6 +95,7 @@ class _HomePageState extends State<HomePage> {
 /*
 Top Navigation Bar
 */
+  // Widget frame;
   @override
   Widget build(BuildContext context) {
     // var accountName;
@@ -170,19 +181,44 @@ Top Navigation Bar
           */
       body: Padding(
         padding: const EdgeInsets.symmetric(),
-        child: new Dashboard(email: email, name: name, events: calEvents),
+        child: _getFrame(),
       ),
       /*
                 Side Bar Drawer
               */
-      drawer: AppDrawer(name, email)
+      drawer: 
+      AppDrawer(
+        name: name,
+        email: email,
+        onFrameSelect: (String selectedFrame) {
+            Navigator.of(context).pop();
+            setState(() {
+              widget.frame = selectedFrame;
+            });
+        },)
     );
+  }
+
+  Widget _getFrame() {
+    if (widget.frame == "FAQ") {
+      return new FAQ();
+    } else if (widget.frame == "Classes") {
+      return new Classes();
+    } else if (widget.frame == "Aid") {
+      return new FinancialAid();
+    } else if (widget.frame == "Advisor") {
+      return new Advisor(email: email, name: name, events: calEvents);
+    } else if (widget.frame == "Tracker") {
+      return new GraduationTracker();
+    } else if (widget.frame == "Settings") {
+      return new Settings();
+    }
+    return new Dashboard(email: email, name: name, events: calEvents);
   }
 }
 
 
 String _getMonth() {
-  print("widget");
   switch (DateTime.now().month.toString()) {
     case "1":
       return "Jan";
