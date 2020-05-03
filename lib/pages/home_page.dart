@@ -42,16 +42,12 @@ class _HomePageState extends State<HomePage> {
         // profilePic = user.photoURL;
       });
     });
-    setState(() {
-        // print(value);
-        calEvents = [];
+    getCalendarEvents().then((value) {
+      setState(() {
+        print(value);
+        calEvents = value;
+      });
     });
-    // getCalendarEvents().then((value) {
-    //   setState(() {
-    //     print(value);
-    //     calEvents = value;
-    //   });
-    // });
   }
 
   signOut() async {
