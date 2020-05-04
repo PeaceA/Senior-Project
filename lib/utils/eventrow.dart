@@ -10,16 +10,11 @@ class EventRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final eventThumbnail = new Container(
+    final cardThumbnail = new Container(
       margin: new EdgeInsets.symmetric(
         vertical: 16.0
       ),
       alignment: FractionalOffset.centerLeft,
-      // child: new Image(
-      //   image: new AssetImage('assets/event.png'),
-      //   height: 92.0,
-      //   width: 92.0,
-      // ),
     );
 
     final baseTextStyle = const TextStyle(
@@ -36,7 +31,7 @@ class EventRow extends StatelessWidget {
     final headerTextStyle = baseTextStyle.copyWith(
       color: Colors.blueAccent[900],
       fontSize: 16.0,
-      fontWeight: FontWeight.w500
+      fontWeight: FontWeight.w700
     );
 
     Widget date(DateTime value) {
@@ -50,7 +45,7 @@ class EventRow extends StatelessWidget {
 
       return new Row(
         children: <Widget>[
-          new Text(ret, style: regularTextStyle),
+          new Text(ret, style: subHeaderTextStyle),
         ]
       );
     }
@@ -66,32 +61,30 @@ class EventRow extends StatelessWidget {
       }
       return new Row(
         children: <Widget>[
-          new Text(ret, style: regularTextStyle),
+          new Text(ret, style: subHeaderTextStyle),
         ]
       );
     }
 
 
-    final planetCardContent = new Container(
-      margin: new EdgeInsets.fromLTRB(30.0, 16.0, 16.0, 16.0),
+    final cardContent = new Container(
+      margin: new EdgeInsets.fromLTRB(30.0, 8.0, 8.0, 8.0),
       constraints: new BoxConstraints.expand(),
       child: new Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             new Container(height: 4.0),
             new Text(event.summary ?? "N/A", style: headerTextStyle),
-            new Container(height: 10.0),
-            new Text(event.status, style: subHeaderTextStyle),
             new Container(
               margin: new EdgeInsets.symmetric(vertical: 8.0),
               height: 2.0,
-              width: 48.0,
+              width: 400.0,
               color: Colors.yellow[800],
             ),
-            Expanded(
-                          child: new Row(
+            new Container(height: 10.0),
+            Row(
                 children: <Widget>[
-                  new Text("Start: ", style: regularTextStyle),
+                  new Text("Start: ", style: subHeaderTextStyle),
                   new Expanded(
                     child: Row(
                       children: <Widget>[
@@ -101,7 +94,7 @@ class EventRow extends StatelessWidget {
                       ],
                     )
                   ),
-                  new Text("End: ", style: regularTextStyle),
+                  new Text("End: ", style: subHeaderTextStyle),
                   new Expanded(
                     child: Row(
                       children: <Widget>[
@@ -113,17 +106,21 @@ class EventRow extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
+             new Container(height: 10.0),
+             Container(
+              height: 20,
+              child: new Text(event.status, style: subHeaderTextStyle),
+            )
           ],
         ),
     );
 
 
     final eventCard = new Container(
-      child: planetCardContent,
+      child: cardContent,
       height: 126.0,
       decoration: new BoxDecoration(
-        color: Colors.white,
+        color: new Color(0xFFdfe2e0),
         shape: BoxShape.rectangle,
         borderRadius: new BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[
@@ -146,7 +143,7 @@ class EventRow extends StatelessWidget {
       child: new Stack(
         children: <Widget>[
           eventCard,
-          eventThumbnail,
+          cardThumbnail,
         ],
       )
     );

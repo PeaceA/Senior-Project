@@ -53,11 +53,9 @@ class FirebaseAuth implements BaseAuth {
   }
 
   Future<User> getCurrentUser() async {
-    print(_firebaseAuth.currentUser);
     if (_firebaseAuth.currentUser != null) {
       await _googleSignIn.signInSilently();
     }
-    print(_googleSignIn.currentUser);
     return _firebaseAuth.currentUser;
   }
 
