@@ -48,13 +48,13 @@ class _UserDataState extends State<UserData> {
         "completeSignUp": "true",
         'firstName': newUser.firstName,
         'lastName': newUser.lastName,
-        'id': newUser.id,
-        'email': newUser.email,
+        'id': "@" + newUser.id,
         'phoneNumber': newUser.phoneNumber,
         'role': newUser.role,
         'classification': student.classification,
         'startSemester': student.startSemester,
         'major': student.major,
+        'gpa': student.gpa,
         'officeBuilding': advisor.officeBuilding,
 
       };
@@ -69,6 +69,7 @@ class _UserDataState extends State<UserData> {
       key: _scaffoldKey,
       appBar: new AppBar(
         title: new Text('Get Started'),
+        backgroundColor: Colors.lightBlue[900],
         elevation: 1,
       ),
       body: CenteredView(
@@ -114,23 +115,10 @@ class _UserDataState extends State<UserData> {
                     labelText: 'Id',
                   ),
                   inputFormatters: [
-                    WhitelistingTextInputFormatter(RegExp("[@0123456789]")),
+                    WhitelistingTextInputFormatter(RegExp("[0123456789]")),
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.id = val,
-                ),
-                new TextFormField(
-                  decoration: const InputDecoration(
-                    icon: const Icon(Icons.email),
-                    hintText: 'Email',
-                    labelText: 'Email',
-                  ),
-                  inputFormatters: [
-                    WhitelistingTextInputFormatter(RegExp("[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄ" +
-                      "ĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-@]")),
-                    LengthLimitingTextInputFormatter(30),
-                  ],
-                  onSaved: (val) => newUser.email = val,
                 ),
                 new TextFormField(
                   decoration: const InputDecoration(
@@ -139,7 +127,7 @@ class _UserDataState extends State<UserData> {
                     labelText: 'Phone Number',
                   ),
                   inputFormatters: [
-                    WhitelistingTextInputFormatter(RegExp("[+-0123456789()]")),
+                    WhitelistingTextInputFormatter(RegExp("[0123456789]")),
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.phoneNumber = val,
@@ -289,7 +277,19 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => advisor.roomNumber = val,
-                ),  
+                ), 
+                (_role == "Student") ? new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.phone),
+                    hintText: 'GPA',
+                    labelText: 'GPA',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[.0123456789]")),
+                    LengthLimitingTextInputFormatter(4),
+                  ],
+                  onSaved: (val) => student.gpa = val,
+                ) : SizedBox.shrink(),
                 if (_role == 'Student') 
                   new FormField(
                   builder: (FormFieldState state) {
@@ -343,7 +343,7 @@ class _UserDataState extends State<UserData> {
                     elevation: 1.0,
                     shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(30.0)),
-                    color: Colors.blue,
+                    color: Colors.lightBlue[900],
                     child: const Text('Submit', style: const TextStyle(fontSize: 15.0, color: Colors.white)),
                     onPressed: submitForm,
                   ),

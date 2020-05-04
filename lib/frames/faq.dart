@@ -12,7 +12,6 @@ class FAQ extends StatelessWidget {
       child: Text('You have pressed the button times.')
     ),
     backgroundColor: Colors.black,
-    // ),
   );
   }
 }

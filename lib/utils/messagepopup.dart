@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void messagepopup(context) {
+void messagepopup(context, user) {
   showModalBottomSheet(
       context: context,
       builder: (BuildContext bc) {
@@ -9,7 +9,7 @@ void messagepopup(context) {
             children: <Widget>[
               new ListTile(
                   leading: new Icon(Icons.group_add),
-                  title: new Text('Message Advisor'),
+                  title: (user.role == "Student") ? new Text('Email Advisor') : new Text('Email all Advisees'),
                   onTap: () => {}),
               new ListTile(
                 leading: new Icon(Icons.help),
