@@ -1,3 +1,4 @@
+import 'package:firebase/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:firststop/utils/auth.dart';
 import 'package:firststop/utils/centered_view.dart';
@@ -78,9 +79,16 @@ class _AuthPage extends State<AuthPage>{
           e.snapshot.child("completeSignUp").val() == "false") {
             widget.signupCallback();
           } else {
-            var map = {"completeSignUp": "false"};
-            await ref.set(map);
-            widget.signupCallback();
+            widget.auth.getCurrentUser().then((value) async {
+              var tempUser = value;
+              var map = {
+                "completeSignUp": "false",
+                "photo": tempUser.photoURL,
+                "email": tempUser.email,
+              };
+              await ref.set(map);
+              widget.signupCallback();
+            });
           }
       });
     } catch (e) {
@@ -125,8 +133,8 @@ class _AuthPage extends State<AuthPage>{
             shrinkWrap: true,
             children: <Widget>[
               showLogo(),
-              showThirdPartyButtons(),
-              SizedBox(height: 20,),
+              showButton(),
+              Container(height: 20,),
               showErrorMessage(),
             ],
           ),
@@ -140,19 +148,17 @@ class _AuthPage extends State<AuthPage>{
         style: TextStyle(
             fontSize: 13.0,
             color: Colors.red,
-            height: 1.0,
+            height: 2.0,
             fontWeight: FontWeight.w300),
       );
     } else {
-      return new Container(
-        height: 0.0,
-      );
+      return new Text("",);
     }
   }
 
   Widget showLogo() {
     return new Hero(
-      tag: 'hero',
+      tag: 'logo',
       child: Padding(
         padding: EdgeInsets.fromLTRB(0.0, 50.0, 0.0, 0.0),
         child: CircleAvatar(
@@ -164,23 +170,21 @@ class _AuthPage extends State<AuthPage>{
     );
   }
 
-  Widget showThirdPartyButtons() {
+  Widget showButton() {
         return new Padding(
             padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-              SizedBox(
+              Container(
                 width: 300,
                 child: new FlatButton(
                   shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(30.0)),
-                  color: Colors.blue,
+                  color: Colors.lightBlue[900],
                   child: new Text("Bison Login",
                       style: new TextStyle(fontSize: 15.0, color: Colors.white)),
-                  onPressed: (){
-                    signInWithThirdParty();
-                  },
+                  onPressed: (_isLoading) ? null : signInWithThirdParty,
                 ),
               ),
         ],

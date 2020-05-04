@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'First Stop',
       theme: ThemeData(
-        primarySwatch: white,
+        // primarySwatch: white,
       ),
       home: new RootPage(auth: new FirebaseAuth()),
     );

@@ -6,13 +6,12 @@ class GraduationTracker extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: AppBar(
-          title: Text("Financial Aid"),
+          title: Text("Graduation Tracker"),
         ),
     body: Center(
       child: Text('You have pressed the button times.')
     ),
     backgroundColor: Colors.purple,
-    // ),
   );
   }
 }

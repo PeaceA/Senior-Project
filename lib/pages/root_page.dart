@@ -31,12 +31,10 @@ class _RootPageState extends State<RootPage> {
     widget.auth.getCurrentUser().then((user) async {
       var snap;
       if (user != null) {
-        print(user);
         _userId = user?.uid;
         final fb.DatabaseReference ref = fb.database().ref("users/" + _userId + "/completeSignUp");
         await ref.once("value").then((e){
           snap = e.snapshot;
-          print("gets here");
           if (snap != null && snap.val() == "false") {
             setState(() {
               authStatus = AuthStatus.SIGNED_UP;

@@ -13,7 +13,7 @@ void boardpopup(context) {
                   onTap: () => {}),
               new ListTile(
                 leading: new Icon(Icons.subject),
-                title: new Text('Classes'),
+                title: new Text('Set Timetable'),
                 onTap: () => {},
               ),
             ],
