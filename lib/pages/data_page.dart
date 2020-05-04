@@ -56,9 +56,8 @@ class _UserDataState extends State<UserData> {
         'startSemester': student.startSemester,
         'major': student.major,
         'officeBuilding': advisor.officeBuilding,
-
       };
-      await ref.set(map);
+      await ref.update(map);
       widget.loginCallback();
     }
   }
