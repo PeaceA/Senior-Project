@@ -16,6 +16,7 @@ class Student extends User {
   String major;
   String classification;
   String startSemester;
+  String startYear;
   String gpa;
   User advisor;
 }
@@ -24,5 +25,6 @@ class Advisor extends User {
   String officeBuilding;
   String roomNumber;
   String officeHours;
+  String adviseeLastNameRange;
   List<Student> students;
 }

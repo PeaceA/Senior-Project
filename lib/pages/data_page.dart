@@ -55,7 +55,9 @@ class _UserDataState extends State<UserData> {
         'startSemester': student.startSemester,
         'major': student.major,
         'gpa': student.gpa,
+        'startYear': student.startYear,
         'officeBuilding': advisor.officeBuilding,
+        'advisee_last_name_range': advisor.adviseeLastNameRange,
       };
       await ref.update(map);
       widget.loginCallback();
@@ -84,7 +86,7 @@ class _UserDataState extends State<UserData> {
                 new TextFormField(
                   decoration: const InputDecoration(
                     icon: const Icon(Icons.person_outline),
-                    hintText: 'First Name',
+                    hintText: 'Jane',
                     labelText: 'First Name',
                   ),
                   inputFormatters: [
@@ -93,11 +95,14 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.firstName = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ),
                 new TextFormField(
                   decoration: const InputDecoration(
                     icon: const Icon(Icons.person_outline),
-                    hintText: 'Last Name',
+                    hintText: 'Doe',
                     labelText: 'Last Name',
                   ),
                   inputFormatters: [
@@ -106,36 +111,45 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.lastName = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ),
                 new TextFormField(
                   decoration: const InputDecoration(
-                    icon: const Icon(Icons.school),
-                    hintText: 'Id',
+                    icon: const Icon(Icons.fingerprint),
+                    hintText: '@012345678',
                     labelText: 'Id',
                   ),
                   inputFormatters: [
-                    WhitelistingTextInputFormatter(RegExp("[0123456789]")),
+                    WhitelistingTextInputFormatter(RegExp("[@0123456789]")),
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.id = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ),
                 new TextFormField(
                   decoration: const InputDecoration(
                     icon: const Icon(Icons.phone),
-                    hintText: 'Phone Number',
+                    hintText: '123-456-7890',
                     labelText: 'Phone Number',
                   ),
                   inputFormatters: [
-                    WhitelistingTextInputFormatter(RegExp("[0123456789]")),
+                    WhitelistingTextInputFormatter(RegExp("[0123456789-]")),
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.phoneNumber = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ),
                 new FormField(
                   builder: (FormFieldState state) {
                     return InputDecorator(
                       decoration: InputDecoration(
-                        icon: const Icon(Icons.fitness_center),
+                        icon: const Icon(Icons.supervised_user_circle),
                         labelText: 'Role',
                       ),
                       isEmpty: _role == '',
@@ -170,7 +184,7 @@ class _UserDataState extends State<UserData> {
                     builder: (FormFieldState state) {
                       return InputDecorator(
                         decoration: InputDecoration(
-                          icon: const Icon(Icons.local_library),
+                          icon: const Icon(Icons.school),
                           labelText:'Major',
                         ),
                         isEmpty: _major == '' ,
@@ -203,7 +217,7 @@ class _UserDataState extends State<UserData> {
                     builder: (FormFieldState state) {
                       return InputDecorator(
                         decoration: InputDecoration(
-                          icon: const Icon(Icons.local_library),
+                          icon: const Icon(Icons.room),
                           labelText:'Office Building',
                         ),
                         isEmpty: _officeBuilding == '' ,
@@ -236,7 +250,7 @@ class _UserDataState extends State<UserData> {
                   builder: (FormFieldState state) {
                     return InputDecorator(
                       decoration: InputDecoration(
-                        icon: const Icon(Icons.person_pin),
+                        icon: const Icon(Icons.class_),
                         labelText: 'Classification',
                       ),
                       isEmpty: _classification == '',
@@ -267,8 +281,8 @@ class _UserDataState extends State<UserData> {
                 ) else if (_role == 'Advisor') 
                   new TextFormField(
                   decoration: const InputDecoration(
-                    icon: const Icon(Icons.phone),
-                    hintText: 'Room Number',
+                    icon: const Icon(Icons.work),
+                    hintText: '512A',
                     labelText: 'Room Number',
                   ),
                   inputFormatters: [
@@ -276,11 +290,14 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => advisor.roomNumber = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ), 
                 (_role == "Student") ? new TextFormField(
                   decoration: const InputDecoration(
-                    icon: const Icon(Icons.phone),
-                    hintText: 'GPA',
+                    icon: const Icon(Icons.grade),
+                    hintText: '3.50',
                     labelText: 'GPA',
                   ),
                   inputFormatters: [
@@ -288,13 +305,16 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(4),
                   ],
                   onSaved: (val) => student.gpa = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ) : SizedBox.shrink(),
                 if (_role == 'Student') 
                   new FormField(
                   builder: (FormFieldState state) {
                     return InputDecorator(
                       decoration: InputDecoration(
-                        icon: const Icon(Icons.near_me),
+                        icon: const Icon(Icons.turned_in),
                         labelText: 'Start Semester',
                       ),
                       isEmpty: _semester == '',
@@ -326,8 +346,8 @@ class _UserDataState extends State<UserData> {
                 else if (_role == 'Advisor') 
                   new TextFormField(
                   decoration: const InputDecoration(
-                    icon: const Icon(Icons.phone),
-                    hintText: 'Office Hours',
+                    icon: const Icon(Icons.access_time),
+                    hintText: 'MWF 8:00-9:00 / by appointment',
                     labelText: 'Office Hours',
                   ),
                   inputFormatters: [
@@ -335,7 +355,43 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => advisor.officeHours = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                   ),
+                if (_role == 'Advisor') 
+                  new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.person_add),
+                    hintText: 'a-j, j-p, p-z, etc...',
+                    labelText: 'Advisee last name range',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[a-zA-Z-]")),
+                    LengthLimitingTextInputFormatter(3),
+                  ],
+                  onSaved: (val) => advisor.adviseeLastNameRange = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
+                )
+                else if (_role == 'Student') 
+                  new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.person_add),
+                    hintText: '2016',
+                    labelText: 'Start Year',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[0123456789]")),
+                    LengthLimitingTextInputFormatter(4),
+                  ],
+                  onSaved: (val) => student.startYear = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
+                  ),
+
                 new Container(
                   padding: const EdgeInsets.only(left: 40.0, top: 20.0),
                   child: new RaisedButton(
