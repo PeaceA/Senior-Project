@@ -143,6 +143,17 @@ class _StudentRegistrationState extends State<StudentRegistration> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start, 
             children: <Widget>[
+              Text('Enter the classes you want to take next semester.',
+                      style: TextStyle(
+                        color: Colors.blueAccent[900],
+                        letterSpacing: 1.5,
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                      )),
+                SingleChildScrollView(
+                  padding: const EdgeInsets.all(8.0),
+                  scrollDirection: Axis.horizontal,
+                  child: (
                 DataTable(sortColumnIndex: 2, sortAscending: true, columns: [
                     DataColumn(label: Text('CRN Number'), numeric: true),
                     DataColumn(label: Text('Course Number')),
@@ -214,7 +225,8 @@ class _StudentRegistrationState extends State<StudentRegistration> {
                       DataCell(TextFormField(initialValue: courses[6].creditHours), showEditIcon: true),
                       ],  
                     ),
-                  ]),
+                  ])),
+                  ),
 
             Container(
                   padding: const EdgeInsets.only(left: 40.0, top: 20.0),
