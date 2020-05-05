@@ -36,6 +36,87 @@ class _UserDataState extends State<UserData> {
       .showSnackBar(new SnackBar(backgroundColor: color, content: new Text(message))); 
   }
 
+  Map assignChecklist() {
+    var freshman = {
+      "fall": {
+        "course1": {"date": "", "number": "EGPP-101", "title": "Intro to Engineering", "credits": "2", "grade": ""},
+        "course2": {"date": "", "number": "", "title": "Non- Technical Elective", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "", "title": "Science Lec A", "credits": "4", "grade": ""},
+        "course4": {"date": "", "number": "", "title": "Science Lab A", "credits": "0", "grade": ""},
+        "course5": {"date": "", "number": "ENGW-102", "title": "English I", "credits": "3", "grade": ""},
+        "course6": {"date": "", "number": "CSCI-100", "title": "Intro to CS", "credits": "3", "grade": ""},
+      },
+      "spring": {
+        "course1": {"date": "", "number": "CSCI-135", "title": "Computer Science I", "credits": "4", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-211", "title": "UNIX Lab", "credits": "1", "grade": ""},
+        "course3": {"date": "", "number": "MATH-156", "title": "Calculus I", "credits": "4", "grade": ""},
+        "course4": {"date": "", "number": "ENGW", "title": "English II", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "SLMC-101", "title": "Principles of Speech", "credits": "3", "grade": ""},
+      },
+    };
+
+    var sophomore = {
+      "fall": {
+        "course1": {"date": "", "number": "CSCI-136", "title": "Computer Science II", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-201", "title": "Computer Organization I", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "MATH-157", "title": "Calculus II", "credits": "4", "grade": ""},
+        "course4": {"date": "", "number": "", "title": "Science Lec B (1)", "credits": "4", "grade": ""},
+        "course5": {"date": "", "number": "", "title": "Science Lab B (1)", "credits": "0", "grade": ""},
+      },
+      "spring": {
+        "course1": {"date": "", "number": "CSCI-354", "title": "Computer Science III", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-375", "title": "Software Engineering", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "CSCI-202", "title": "Computer Organization II", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "MATH-181", "title": "Discrete Structures", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "", "title": "Science Lec B (2)", "credits": "4", "grade": ""},
+        "course6": {"date": "", "number": "", "title": "Science Lab B (2)", "credits": "0", "grade": ""},
+      },
+    };
+
+    var junior = {
+      "fall": {
+        "course1": {"date": "", "number": "CSCI-341", "title": "Theory of Computation", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-401", "title": "Operating Systems", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "CSCI-470", "title": "Fundamentals of Alg.", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "CSCI-450", "title": "Data Communications and Network Programming", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "CSCI-453", "title": "Intro to Cybersecurity 1", "credits": "3", "grade": ""},
+      },
+      "spring": {
+        "course1": {"date": "", "number": "CSCI-350", "title": "Structure of Programming Languages", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "CSCI-432", "title": "Database Systems", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "ENGL-009", "title": "Technical Writing", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "MATH-180", "title": "Intro to Linear Algebra", "credits": "3", "grade": ""},
+      },
+    };
+
+    var senior = {
+      "fall": {
+        "course1": {"date": "", "number": "CSCI-491", "title": "Senior Project I", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-363", "title": "Large Scale Prog.", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "CSCI-473", "title": "Applied Data Science", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+      },
+      "spring": {
+        "course1": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-492", "title": "Senior Project II", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "", "title": "Non- Technical Elective", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "", "title": "Non- Technical Elective", "credits": "3", "grade": ""},
+      },
+    };
+
+    var map = {
+      "freshman": freshman,
+      "sophomore": sophomore,
+      "junior": junior,
+      "senior": senior,
+    };
+
+    return map;
+  }
+
   void submitForm() async {
     final FormState form = _formKey.currentState;
     if (!form.validate()) {
@@ -58,6 +139,7 @@ class _UserDataState extends State<UserData> {
         'startYear': student.startYear,
         'officeBuilding': advisor.officeBuilding,
         'advisee_last_name_range': advisor.adviseeLastNameRange,
+        'checklist': assignChecklist(),
       };
       await ref.update(map);
       widget.loginCallback();
