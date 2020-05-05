@@ -287,7 +287,7 @@ Top Navigation Bar
     if (frame == "FAQ") {
       return new FAQ();
     } else if (frame == "Registration") {
-      return new Registration();
+      return new Registration(auth: widget.auth, userId: widget.userId);
     } else if (frame == "Aid") {
       return new FinancialAid();
     } else if (frame == "Tracker") {
