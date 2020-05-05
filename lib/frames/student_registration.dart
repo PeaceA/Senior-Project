@@ -74,14 +74,11 @@ class _StudentRegistrationState extends State<StudentRegistration> {
   var creditHours = new List(7);
 
   getUserInfo() async {
-    print(widget.userId);
     final fb.DatabaseReference ref = fb.database().ref("users/" + widget.userId);
     rows = new List<DataRow>(7);
     await ref.once("value").then((e) async {
       var snap = e.snapshot;
-      var pendingClasses = snap.child("pendingClasses").val();
       courses = new List<Course>(7);
-      //print(pendingClasses.toString());
       if (snap.hasChild("pendingClasses") == false) {
         print("clearrr");
         var course = new Course();
@@ -131,6 +128,9 @@ class _StudentRegistrationState extends State<StudentRegistration> {
     return FutureBuilder(
       future: getUserInfo(),
       builder: (context, AsyncSnapshot snapshot) {
+        if (!snapshot.hasData) {
+          return Center(child: CircularProgressIndicator());
+        }else {
         return Scaffold(
       appBar: AppBar(
         title: Text("Registration"),
@@ -234,6 +234,7 @@ class _StudentRegistrationState extends State<StudentRegistration> {
       ),
       ),
       );
+        }
     });
   }
 
