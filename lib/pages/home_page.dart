@@ -355,8 +355,6 @@ Top Navigation Bar
       return new FAQ();
     } else if (frame == "Registration") {
       return new Registration();
-    } else if (frame == "Tracker") {
-      return new GraduationTracker();
     } else if (frame == "Settings") {
       return new Settings(user: current, userId: widget.userId);
     } 
