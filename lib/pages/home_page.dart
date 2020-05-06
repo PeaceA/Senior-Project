@@ -1,10 +1,8 @@
 import 'package:firststop/frames/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:firststop/utils/auth.dart';
-import 'package:firststop/utils/alertpopup.dart';
 import 'package:firststop/frames/dashboard.dart';
 import 'package:firststop/frames/faq.dart';
-import 'package:firststop/frames/graduation_tracker.dart';
 import 'package:firststop/frames/settings.dart';
 import 'package:firststop/utils/messagepopup.dart';
 import 'package:googleapis/calendar/v3.dart' as calApi;
