@@ -36,6 +36,87 @@ class _UserDataState extends State<UserData> {
       .showSnackBar(new SnackBar(backgroundColor: color, content: new Text(message))); 
   }
 
+  Map assignChecklist() {
+    var freshman = {
+      "fall": {
+        "course1": {"date": "", "number": "EGPP-101", "title": "Intro to Engineering", "credits": "2", "grade": ""},
+        "course2": {"date": "", "number": "", "title": "Non- Technical Elective", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "", "title": "Science Lec A", "credits": "4", "grade": ""},
+        "course4": {"date": "", "number": "", "title": "Science Lab A", "credits": "0", "grade": ""},
+        "course5": {"date": "", "number": "ENGW-102", "title": "English I", "credits": "3", "grade": ""},
+        "course6": {"date": "", "number": "CSCI-100", "title": "Intro to CS", "credits": "3", "grade": ""},
+      },
+      "spring": {
+        "course1": {"date": "", "number": "CSCI-135", "title": "Computer Science I", "credits": "4", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-211", "title": "UNIX Lab", "credits": "1", "grade": ""},
+        "course3": {"date": "", "number": "MATH-156", "title": "Calculus I", "credits": "4", "grade": ""},
+        "course4": {"date": "", "number": "ENGW", "title": "English II", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "SLMC-101", "title": "Principles of Speech", "credits": "3", "grade": ""},
+      },
+    };
+
+    var sophomore = {
+      "fall": {
+        "course1": {"date": "", "number": "CSCI-136", "title": "Computer Science II", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-201", "title": "Computer Organization I", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "MATH-157", "title": "Calculus II", "credits": "4", "grade": ""},
+        "course4": {"date": "", "number": "", "title": "Science Lec B (1)", "credits": "4", "grade": ""},
+        "course5": {"date": "", "number": "", "title": "Science Lab B (1)", "credits": "0", "grade": ""},
+      },
+      "spring": {
+        "course1": {"date": "", "number": "CSCI-354", "title": "Computer Science III", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-375", "title": "Software Engineering", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "CSCI-202", "title": "Computer Organization II", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "MATH-181", "title": "Discrete Structures", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "", "title": "Science Lec B (2)", "credits": "4", "grade": ""},
+        "course6": {"date": "", "number": "", "title": "Science Lab B (2)", "credits": "0", "grade": ""},
+      },
+    };
+
+    var junior = {
+      "fall": {
+        "course1": {"date": "", "number": "CSCI-341", "title": "Theory of Computation", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-401", "title": "Operating Systems", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "CSCI-470", "title": "Fundamentals of Alg.", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "CSCI-450", "title": "Data Communications and Network Programming", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "CSCI-453", "title": "Intro to Cybersecurity 1", "credits": "3", "grade": ""},
+      },
+      "spring": {
+        "course1": {"date": "", "number": "CSCI-350", "title": "Structure of Programming Languages", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "CSCI-432", "title": "Database Systems", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "ENGL-009", "title": "Technical Writing", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "MATH-180", "title": "Intro to Linear Algebra", "credits": "3", "grade": ""},
+      },
+    };
+
+    var senior = {
+      "fall": {
+        "course1": {"date": "", "number": "CSCI-491", "title": "Senior Project I", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-363", "title": "Large Scale Prog.", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "CSCI-473", "title": "Applied Data Science", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+      },
+      "spring": {
+        "course1": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+        "course2": {"date": "", "number": "CSCI-492", "title": "Senior Project II", "credits": "3", "grade": ""},
+        "course3": {"date": "", "number": "", "title": "Technical Elective", "credits": "3", "grade": ""},
+        "course4": {"date": "", "number": "", "title": "Non- Technical Elective", "credits": "3", "grade": ""},
+        "course5": {"date": "", "number": "", "title": "Non- Technical Elective", "credits": "3", "grade": ""},
+      },
+    };
+
+    var map = {
+      "freshman": freshman,
+      "sophomore": sophomore,
+      "junior": junior,
+      "senior": senior,
+    };
+
+    return map;
+  }
+
   void submitForm() async {
     final FormState form = _formKey.currentState;
     if (!form.validate()) {
@@ -44,7 +125,6 @@ class _UserDataState extends State<UserData> {
     else { 
       form.save();
       final fb.DatabaseReference ref = fb.database().ref("users/" + widget.userId);
-      
       var map;
 
       if (newUser.role == "Student") {
@@ -101,7 +181,7 @@ class _UserDataState extends State<UserData> {
                 new TextFormField(
                   decoration: const InputDecoration(
                     icon: const Icon(Icons.person_outline),
-                    hintText: 'First Name',
+                    hintText: 'Jane',
                     labelText: 'First Name',
                   ),
                   inputFormatters: [
@@ -110,11 +190,14 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.firstName = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ),
                 new TextFormField(
                   decoration: const InputDecoration(
                     icon: const Icon(Icons.person_outline),
-                    hintText: 'Last Name',
+                    hintText: 'Doe',
                     labelText: 'Last Name',
                   ),
                   inputFormatters: [
@@ -123,36 +206,45 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.lastName = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ),
                 new TextFormField(
                   decoration: const InputDecoration(
-                    icon: const Icon(Icons.school),
-                    hintText: 'Id',
+                    icon: const Icon(Icons.fingerprint),
+                    hintText: '@012345678',
                     labelText: 'Id',
                   ),
                   inputFormatters: [
-                    WhitelistingTextInputFormatter(RegExp("[0123456789]")),
+                    WhitelistingTextInputFormatter(RegExp("[@0123456789]")),
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.id = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ),
                 new TextFormField(
                   decoration: const InputDecoration(
                     icon: const Icon(Icons.phone),
-                    hintText: 'Phone Number',
+                    hintText: '123-456-7890',
                     labelText: 'Phone Number',
                   ),
                   inputFormatters: [
-                    WhitelistingTextInputFormatter(RegExp("[0123456789]")),
+                    WhitelistingTextInputFormatter(RegExp("[0123456789-]")),
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => newUser.phoneNumber = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ),
                 new FormField(
                   builder: (FormFieldState state) {
                     return InputDecorator(
                       decoration: InputDecoration(
-                        icon: const Icon(Icons.fitness_center),
+                        icon: const Icon(Icons.supervised_user_circle),
                         labelText: 'Role',
                       ),
                       isEmpty: _role == '',
@@ -187,7 +279,7 @@ class _UserDataState extends State<UserData> {
                     builder: (FormFieldState state) {
                       return InputDecorator(
                         decoration: InputDecoration(
-                          icon: const Icon(Icons.local_library),
+                          icon: const Icon(Icons.school),
                           labelText:'Major',
                         ),
                         isEmpty: _major == '' ,
@@ -220,7 +312,7 @@ class _UserDataState extends State<UserData> {
                     builder: (FormFieldState state) {
                       return InputDecorator(
                         decoration: InputDecoration(
-                          icon: const Icon(Icons.local_library),
+                          icon: const Icon(Icons.room),
                           labelText:'Office Building',
                         ),
                         isEmpty: _officeBuilding == '' ,
@@ -253,7 +345,7 @@ class _UserDataState extends State<UserData> {
                   builder: (FormFieldState state) {
                     return InputDecorator(
                       decoration: InputDecoration(
-                        icon: const Icon(Icons.person_pin),
+                        icon: const Icon(Icons.class_),
                         labelText: 'Classification',
                       ),
                       isEmpty: _classification == '',
@@ -284,8 +376,8 @@ class _UserDataState extends State<UserData> {
                 ) else if (_role == 'Advisor') 
                   new TextFormField(
                   decoration: const InputDecoration(
-                    icon: const Icon(Icons.phone),
-                    hintText: 'Room Number',
+                    icon: const Icon(Icons.work),
+                    hintText: '512A',
                     labelText: 'Room Number',
                   ),
                   inputFormatters: [
@@ -293,11 +385,14 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => advisor.roomNumber = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ), 
                 (_role == "Student") ? new TextFormField(
                   decoration: const InputDecoration(
-                    icon: const Icon(Icons.phone),
-                    hintText: 'GPA',
+                    icon: const Icon(Icons.grade),
+                    hintText: '3.50',
                     labelText: 'GPA',
                   ),
                   inputFormatters: [
@@ -305,13 +400,16 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(4),
                   ],
                   onSaved: (val) => student.gpa = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                 ) : SizedBox.shrink(),
                 if (_role == 'Student') 
                   new FormField(
                   builder: (FormFieldState state) {
                     return InputDecorator(
                       decoration: InputDecoration(
-                        icon: const Icon(Icons.near_me),
+                        icon: const Icon(Icons.turned_in),
                         labelText: 'Start Semester',
                       ),
                       isEmpty: _semester == '',
@@ -343,8 +441,8 @@ class _UserDataState extends State<UserData> {
                 else if (_role == 'Advisor') 
                   new TextFormField(
                   decoration: const InputDecoration(
-                    icon: const Icon(Icons.phone),
-                    hintText: 'Office Hours',
+                    icon: const Icon(Icons.access_time),
+                    hintText: 'MWF 8:00-9:00 / by appointment',
                     labelText: 'Office Hours',
                   ),
                   inputFormatters: [
@@ -352,7 +450,43 @@ class _UserDataState extends State<UserData> {
                     LengthLimitingTextInputFormatter(30),
                   ],
                   onSaved: (val) => advisor.officeHours = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
                   ),
+                if (_role == 'Advisor') 
+                  new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.person_add),
+                    hintText: 'a-j, j-p, p-z, etc...',
+                    labelText: 'Advisee last name range',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[a-zA-Z-]")),
+                    LengthLimitingTextInputFormatter(3),
+                  ],
+                  onSaved: (val) => advisor.adviseeLastNameRange = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
+                )
+                else if (_role == 'Student') 
+                  new TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.person_add),
+                    hintText: '2016',
+                    labelText: 'Start Year',
+                  ),
+                  inputFormatters: [
+                    WhitelistingTextInputFormatter(RegExp("[0123456789]")),
+                    LengthLimitingTextInputFormatter(4),
+                  ],
+                  onSaved: (val) => student.startYear = val,
+                  validator: (val) {
+                    return val != '' ? null : 'Please enter a value';
+                  },
+                  ),
+
                 new Container(
                   padding: const EdgeInsets.only(left: 40.0, top: 20.0),
                   child: new RaisedButton(

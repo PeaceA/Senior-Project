@@ -352,7 +352,7 @@ Top Navigation Bar
     if (frame == "FAQ") {
       return new FAQ();
     } else if (frame == "Registration") {
-      return new Registration();
+      return new Registration(user: current, auth: widget.auth, userId: widget.userId);
     } else if (frame == "Settings") {
       return new Settings(user: current, userId: widget.userId);
     } 
