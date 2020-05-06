@@ -19,6 +19,7 @@ class Student extends User {
   String startYear;
   String gpa;
   User advisor;
+  String userId;
 }
 
 class Advisor extends User {
