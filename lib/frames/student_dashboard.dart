@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firststop/models/User.dart';
+import 'package:firststop/utils/centered_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firststop/utils/eventrow.dart';
 
@@ -167,7 +168,7 @@ class StudentDashboard extends StatelessWidget {
   }
   Widget _getHeader(context) {
      return new Expanded(
-      child: new Container(
+      child: (user.events.length > 0) ? Container(
         color: Colors.transparent,
         child: new CustomScrollView(
           scrollDirection: Axis.vertical,
@@ -181,6 +182,21 @@ class StudentDashboard extends StatelessWidget {
                   childCount: user.events.length,
                 ),
               ),
+            ),
+          ],
+        ),
+      ) : Container(
+        child: Column(
+          children: <Widget>[
+            new Container(
+              height: 60,
+            ),
+            new Text(
+              "There are no upcoming events.\n" + 
+              "Go to settings and select another calendar.",
+              style: TextStyle(
+                fontSize: 20.0,
+              )
             ),
           ],
         ),

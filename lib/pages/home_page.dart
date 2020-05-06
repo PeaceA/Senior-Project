@@ -1,11 +1,9 @@
 import 'package:firststop/frames/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:firststop/utils/auth.dart';
-import 'package:firststop/utils/boardpopup.dart';
-import 'package:firststop/utils/bugpopup.dart';
+import 'package:firststop/utils/alertpopup.dart';
 import 'package:firststop/frames/dashboard.dart';
 import 'package:firststop/frames/faq.dart';
-import 'package:firststop/frames/financial_aid.dart';
 import 'package:firststop/frames/graduation_tracker.dart';
 import 'package:firststop/frames/settings.dart';
 import 'package:firststop/utils/messagepopup.dart';
@@ -31,15 +29,17 @@ class _HomePageState extends State<HomePage> {
   var current;
   String frame;
 
+  var pendingSnap;
+
   fb.User fbUser;
+
+  var counter = 0;
 
   @override
   void initState() {
     super.initState();
     widget.auth.getCurrentUser().then((user) {
-      setState(() {
-        fbUser = user;
-      });
+      fbUser = user;
     });
   }
 
@@ -90,18 +90,29 @@ class _HomePageState extends State<HomePage> {
       }
       current.fullName = fbUser.displayName;
       current.email = fbUser.email;
-      current.photo = fbUser.photoURL;
+      current.photo = snap.child("photo").val();
       current.role = role;
       current.id = snap.child("id").val();
       current.phoneNumber = snap.child("phoneNumber").val();
+      current.calendar = snap.child("calendar").val();
       
-      await getCalendarEvents().then((value) {
+      await getCalendarEvents(current.calendar).then((value) {
           current.events = value;
+      });
+
+      await getCalendars().then((value) {
+          current.calendars = value;
       });
 
       if (role == "Advisor") {
         await getAdvisees().then((value) {
           current.students = value;
+        }).then((value) async => {
+          for (var st in current.students) {
+            await getPendingItems(st).then((value) {
+              st.pendingItems = value;
+            })
+          }
         });
       }
     });
@@ -115,8 +126,9 @@ class _HomePageState extends State<HomePage> {
     await  sRef.orderByChild("advisor").equalTo(widget.userId).once("value").then((e) {
       var sSnap = e.snapshot;
 
-      sSnap.forEach((st) {
+      sSnap.forEach((st) async {
         Student student = new Student();
+        student.key = st.key;
         student.firstName = st.child("firstName").val();
         student.lastName = st.child("lastName").val();
         student.email = st.child("email").val();
@@ -126,21 +138,63 @@ class _HomePageState extends State<HomePage> {
         student.phoneNumber = st.child("phoneNumber").val();
         student.photo = st.child("photo").val();
         student.gpa = st.child("gpa").val();
+
+        if(st.hasChild("pending")) {
+          student.hasPending = true;
+        }
+
         _students.add(student);
       });
-    }).then((value) {
     });
+    print("hmmmm");
+    // print(_students[0].pendingItems.gpa);
     return _students;
   }
 
-  Future<List<Event>> getCalendarEvents() async {
+  Future<Pending> getPendingItems(Student student) async {
+    Pending p = new Pending();
+    final fb.DatabaseReference pRef = fb.database().ref("users/" + student.key + "/pending");
+    await pRef.once("value").then((e) {
+      if (e.snapshot.hasChild("gpa")) {
+          print("has gpa");
+          p.gpa = e.snapshot.child("gpa").val();
+        }
+
+        if (e.snapshot.hasChild("major")) {
+          print("has major");
+          p.major = e.snapshot.child("major").val();
+        }
+
+        if (e.snapshot.hasChild("classification")) {
+          print("has classification");
+          p.classification = e.snapshot.child("classification").val();
+        }
+    });
+    return p;
+  }
+
+  Future<List<String>> getCalendars() async {
+    Map<String, String> authHeaders = await widget.auth.getAuthHeaders();
+    List<String> _calendars = [];
+    final httpClient = GoogleHttpClient(authHeaders);
+    var calendar = new calApi.CalendarApi(httpClient);
+    calApi.CalendarListResourceApi cals = calendar.calendarList;
+    await cals.list(showDeleted: false, showHidden: false).then((calApi.CalendarList calendars) {
+      calendars.items.forEach((calApi.CalendarListEntry calendar) {
+        _calendars.add(calendar.id);
+      });
+    });
+    return _calendars;
+  }
+
+  Future<List<Event>> getCalendarEvents(String calId) async {
     Map<String, String> authHeaders = await widget.auth.getAuthHeaders();
     List<Event> _events = [];
     DateTime now = DateTime.now();
     final httpClient = GoogleHttpClient(authHeaders);
     var calendar = new calApi.CalendarApi(httpClient);
     var data =
-        calendar.events.list("en.usa#holiday@group.v.calendar.google.com");
+        calendar.events.list(calId);
     await data.then((calApi.Events events) {
       events.items.forEach((calApi.Event event) {
         if (event.start.dateTime != null && event.start.dateTime.isAfter(now)) {
@@ -214,7 +268,7 @@ Top Navigation Bar
                       Navigation Bar
                     */
                 IconButton(
-                  tooltip: "Contact Advisor",
+                  tooltip: "Contact",
                   icon: Icon(
                     Icons.email,
                     color: Colors.blueAccent[900],
@@ -223,25 +277,38 @@ Top Navigation Bar
                     messagepopup(context, current);
                   },
                 ),
-                IconButton(
-                  tooltip: "Class Schedule",
-                  icon: Icon(
-                    Icons.calendar_today,
-                    color: Colors.blueAccent[900],
-                  ),
-                  onPressed: () {
-                    boardpopup(context);
-                  },
+                new Stack(
+                  children: <Widget>[
+                    new IconButton(icon: Icon(Icons.notifications), onPressed: () {
+                      setState(() {
+                        counter = 0;
+                      });
+                    }),
+                    counter != 0 ? new Positioned(
+                      right: 11,
+                      top: 11,
+                      child: new Container(
+                        padding: EdgeInsets.all(2),
+                        decoration: new BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        constraints: BoxConstraints(
+                          minWidth: 14,
+                          minHeight: 14,
+                        ),
+                        child: Text(
+                          '$counter',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 8,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ) : new Container()
+                  ],
                 ),
-                // IconButton(
-                //   icon: Icon(
-                //     Icons.timer,
-                //     color: Colors.blueAccent[900],
-                //   ),
-                //   onPressed: () {
-                //     bugpopup(context);
-                //   },
-                // ),
                 IconButton(
                   tooltip: "Sign out",
                   icon: Icon(
@@ -268,7 +335,7 @@ Top Navigation Bar
             AppDrawer(
               name: fbUser.displayName,
               email: fbUser.email,
-              photo: fbUser.photoURL,
+              photo: current.photo,
               role: current.role,
               onFrameSelect: (String selectedFrame) {
                   Navigator.of(context).pop();
@@ -288,17 +355,14 @@ Top Navigation Bar
       return new FAQ();
     } else if (frame == "Registration") {
       return new Registration();
-    } else if (frame == "Aid") {
-      return new FinancialAid();
     } else if (frame == "Tracker") {
       return new GraduationTracker();
     } else if (frame == "Settings") {
-      return new Settings();
+      return new Settings(user: current, userId: widget.userId);
     } 
     return new Dashboard(user: current);
   }
 }
-
 
 String _getMonth() {
   switch (DateTime.now().month.toString()) {

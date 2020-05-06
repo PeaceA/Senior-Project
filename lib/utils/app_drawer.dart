@@ -65,12 +65,10 @@ class AppDrawer extends StatelessWidget{
           CustomListTile(Icons.view_list, "Registration", () => onFrameSelect("Registration")),
           (role == "Student") ? CustomListTile(
               Icons.track_changes, "Graduation Tracker", () => onFrameSelect("Tracker")) : SizedBox.shrink(),
-          (role == "Student") ? CustomListTile(Icons.attach_money, "Financial Aid", () => onFrameSelect("Aid")) : SizedBox.shrink(),
           (role == "Student") ? CustomListTile(Icons.forum, "FAQ", () => onFrameSelect("FAQ")) : SizedBox.shrink(),
           CustomListTile(Icons.settings, "Settings", () => onFrameSelect("Settings")),
-          ListTile(
-            title: Text(''),
-            onTap: () {},
+          Container(
+            height: 20,
           ),
         ],
       ),

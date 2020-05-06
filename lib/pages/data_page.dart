@@ -44,6 +44,7 @@ class _UserDataState extends State<UserData> {
     else { 
       form.save();
       final fb.DatabaseReference ref = fb.database().ref("users/" + widget.userId);
+      student.advisor.key = '0GZHIgCVA9h5kGVKJqCEnl0bMnw2';
       var map = {
         "completeSignUp": "true",
         'firstName': newUser.firstName,
@@ -55,7 +56,9 @@ class _UserDataState extends State<UserData> {
         'startSemester': student.startSemester,
         'major': student.major,
         'gpa': student.gpa,
+        'calendar': "en.usa#holiday@group.v.calendar.google.com",
         'officeBuilding': advisor.officeBuilding,
+        'advisor': student.advisor.key,
       };
       await ref.update(map);
       widget.loginCallback();
