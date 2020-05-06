@@ -20,7 +20,7 @@ class StudentDashboard extends StatelessWidget {
             children: <Widget>[
               Container(width: 50,),
               Container(
-                width: 530,
+                width: 570,
                 child: Column(children: <Widget>[
                   Container(height: 30),
                   Column(children: <Widget>[
@@ -145,7 +145,7 @@ class StudentDashboard extends StatelessWidget {
                 ],),
                 ],),
               ),
-              Container(width: 50),
+              Container(width: 40),
               Container(
                 child: Column(children: <Widget>[
                   Container(height: 40,),
