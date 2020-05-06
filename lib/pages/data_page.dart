@@ -125,22 +125,35 @@ class _UserDataState extends State<UserData> {
     else { 
       form.save();
       final fb.DatabaseReference ref = fb.database().ref("users/" + widget.userId);
-      var map = {
-        "completeSignUp": "true",
-        'firstName': newUser.firstName,
-        'lastName': newUser.lastName,
-        'id': "@" + newUser.id,
-        'phoneNumber': newUser.phoneNumber,
-        'role': newUser.role,
-        'classification': student.classification,
-        'startSemester': student.startSemester,
-        'major': student.major,
-        'gpa': student.gpa,
-        'startYear': student.startYear,
-        'officeBuilding': advisor.officeBuilding,
-        'advisee_last_name_range': advisor.adviseeLastNameRange,
-        'checklist': assignChecklist(),
-      };
+      var map;
+
+      if (newUser.role == "Student") {
+        map = {
+          "completeSignUp": "true",
+          'firstName': newUser.firstName,
+          'lastName': newUser.lastName,
+          'id': "@" + newUser.id,
+          'phoneNumber': newUser.phoneNumber,
+          'role': newUser.role,
+          'classification': student.classification,
+          'startSemester': student.startSemester,
+          'major': student.major,
+          'gpa': student.gpa,
+          'calendar': "en.usa#holiday@group.v.calendar.google.com",
+          'advisor': '0GZHIgCVA9h5kGVKJqCEnl0bMnw2',
+        };
+      } else {
+        map = {
+          "completeSignUp": "true",
+          'firstName': newUser.firstName,
+          'lastName': newUser.lastName,
+          'id': "@" + newUser.id,
+          'phoneNumber': newUser.phoneNumber,
+          'role': newUser.role,
+          'calendar': "en.usa#holiday@group.v.calendar.google.com",
+          'officeBuilding': advisor.officeBuilding,
+        };
+      }
       await ref.update(map);
       widget.loginCallback();
     }
