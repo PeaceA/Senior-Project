@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class Settings extends StatelessWidget {
 
   Settings({this.user, this.userId});
-  final Student user;
+  final User user;
   final String userId;
   List<String> _cals = [""];
   List<String> _classifications = <String>['', 'Freshman', 'Sophomore', 'Junior', 'Senior'];
@@ -365,7 +365,6 @@ class Settings extends StatelessWidget {
         tag: controller.text,
       };
     } else {
-      print("here");
       ref = fb.database().ref("users/" + userId);
       map = {
         tag: controller.text,

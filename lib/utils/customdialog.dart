@@ -88,7 +88,10 @@ class CustomDialog extends StatelessWidget {
                                 OutlineButton(
                                 color: Colors.lightBlue[900],
                                 textColor: Colors.green,
-                                onPressed: () => approve("gpa"),
+                                onPressed: () => {
+                                  Navigator.pop(context),
+                                  approve("gpa"),
+                                },
                                 child: Text("Approve"),
                                 ),
                                 Container(
@@ -97,7 +100,10 @@ class CustomDialog extends StatelessWidget {
                                 OutlineButton(
                                   color: Colors.lightBlue[900],
                                   textColor: Colors.red,
-                                  onPressed: () => disapprove("gpa"),
+                                  onPressed: () => {
+                                    Navigator.pop(context),
+                                    disapprove("gpa"),
+                                  },
                                   child: Text("Disapprove"),
                                 ),
                               ],
@@ -127,7 +133,10 @@ class CustomDialog extends StatelessWidget {
                                 OutlineButton(
                                 color: Colors.lightBlue[900],
                                 textColor: Colors.green,
-                                onPressed: () => approve("major"),
+                                onPressed: () => {
+                                  Navigator.pop(context),
+                                  approve("major"),
+                                },
                                 child: Text("Approve"),
                                 ),
                                 Container(
@@ -137,8 +146,8 @@ class CustomDialog extends StatelessWidget {
                                   color: Colors.lightBlue[900],
                                   textColor: Colors.red,
                                   onPressed: () => {
-                                    disapprove("major")
-                                    
+                                    Navigator.pop(context),
+                                    disapprove("major"),
                                   },
                                   child: Text("Disapprove"),
                                 ),
@@ -169,7 +178,10 @@ class CustomDialog extends StatelessWidget {
                                 OutlineButton(
                                 color: Colors.lightBlue[900],
                                 textColor: Colors.green,
-                                onPressed: () => approve("classification"),
+                                onPressed: () => {
+                                  Navigator.pop(context),
+                                  approve("classification"),
+                                },
                                 child: Text("Approve"),
                                 ),
                                 Container(
@@ -178,7 +190,10 @@ class CustomDialog extends StatelessWidget {
                                 OutlineButton(
                                   color: Colors.lightBlue[900],
                                   textColor: Colors.red,
-                                  onPressed: () => disapprove("classification"),
+                                  onPressed: () => {
+                                    Navigator.pop(context),
+                                    disapprove("classification"),
+                                  },
                                   child: Text("Disapprove"),
                                 ),
                               ],
