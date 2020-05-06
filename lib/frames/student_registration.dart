@@ -80,7 +80,6 @@ class _StudentRegistrationState extends State<StudentRegistration> {
       var snap = e.snapshot;
       courses = new List<Course>(7);
       if (snap.hasChild("pendingClasses") == false) {
-        print("clearrr");
         var course = new Course();
         for (int i = 0; i < 7; i++) {
           course.crnNum = "";
@@ -106,7 +105,7 @@ class _StudentRegistrationState extends State<StudentRegistration> {
           courses[i] = course;
           course = new Course();
         }
-      }/*
+      }
       for (int i = 0; i < 7; i++) {
       var row = new DataRow(cells: [
         DataCell(TextFormField(initialValue: courses[i].crnNum, onSaved: (val) => courses[i].crnNum = val),showEditIcon: true),
@@ -117,7 +116,7 @@ class _StudentRegistrationState extends State<StudentRegistration> {
         DataCell(TextFormField(initialValue: courses[i].creditHours, onSaved: (val) => courses[i].creditHours = val), showEditIcon: true),
       ]);
       rows[i] = row;
-    }*/
+    }
     });
     return rows;
   }

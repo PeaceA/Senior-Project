@@ -18,7 +18,7 @@ class Registration extends StatelessWidget {
 
   Widget getRegistration() {
     if (user.role == "Advisor") {
-      return new AdvisorRegistration();
+      return new AdvisorRegistration(auth: auth, userId: userId);
     }
     return new StudentRegistration(auth: auth, userId: userId);
   }
