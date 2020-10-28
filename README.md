@@ -1,16 +1,10 @@
 # FirstStop
+FirstStop is a web application for students and advisors to have a shared portal for documents and tools regarding registration, financial aid, and any other useful information for new students. Students will also be able to join online queues for meeting with their advisors. The authentication process will ensure that students and advisors belong to Howard University. The purpose of this app is to automate the advising and registration process which will limit the burden of these processes on students and advisors.
 
-A new Flutter project.
+## Technologies
+- Firebase
+- Flutter
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Demos
+- [Student View](https://drive.google.com/file/d/1EpxgHPqY0saiKzYDO27n7ne11Hbt99iG/view?usp=sharing)
+- [Advisor View](https://drive.google.com/file/d/1NTCXoYUnYVUBq6cF8Dsi6gHfPupZftbn/view?usp=sharing)
